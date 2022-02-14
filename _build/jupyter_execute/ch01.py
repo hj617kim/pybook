@@ -8,7 +8,7 @@
 # 컴퓨터는 데이터를 입력받아 처리하고 그 결과를 저장하거나 출력하는 기기로, 
 # **하드웨어**<font size="2">Hardware</font>와 **소프트웨어**<font size="2">Software</font>로 구성된다. 
 
-# <div align="center"><img src="./images/ch01/hardware_software.png" style="width:700px;"></div>
+# <div align="center"><img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch01/hardware_software.png" style="width:700px;"></div>
 
 # 하드웨어는 컴퓨터의 물리적 부품을 일컫는 말로, 크게
 # 보통 CPU라 불리는 중앙처리장치<font size="2">Central Processing Unit</font>,
@@ -204,5 +204,5 @@ if you not in members :
 # 이에 지금 당장 프로그래밍을 배우고자 한다면, 파이썬을 추천한다. 
 
 # <div align="center">
-#     <img src="./images/ch01/tiobe.png" style="width:800px;">
+#     <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch01/tiobe.png" style="width:800px;">
 # </div>

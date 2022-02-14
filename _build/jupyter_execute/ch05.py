@@ -198,7 +198,8 @@ print("안녕, " + name)
 2 * "Hi "
 
 
-# :::{admonition} 주의 :class: caution  
+# :::{admonition} 주의 
+# :class: caution  
 # 변수에 할당된 값의 자료형에 따라 연산의 가능 여부가 결정된다. 예를 들어, 숫자와 문자열의 합은 정의되지 않으며, 실행할 경우 오류가 발생한다. 
 # :::
 
