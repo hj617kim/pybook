@@ -200,14 +200,17 @@ print("안녕, " + name)
 
 # :::{admonition} 주의 
 # :class: caution  
-# 변수에 할당된 값의 자료형에 따라 연산의 가능 여부가 결정된다. 예를 들어, 숫자와 문자열의 합은 정의되지 않으며, 실행할 경우 오류가 발생한다. 
+# 변수에 할당된 값의 자료형에 따라 연산의 가능 여부가 결정된다. 예를 들어, 숫자와 문자열의 합은 정의되지 않으며, 실행할 경우 오류가 발생한다.  
+# 
+# ```python
+# >>> 2 + name
+# TypeError                                 Traceback (most recent call last)
+# /tmp/ipykernel_279/3370966941.py in <module>
+# ----> 1 2 + name
+# 
+# TypeError: unsupported operand type(s) for +: 'int' and 'str'
+# ```
 # :::
-
-# In[21]:
-
-
-2 + name
-
 
 # ### whitespace
 
@@ -215,7 +218,7 @@ print("안녕, " + name)
 # 
 # `string.whitespace`는 공백으로 간주하는 문자를 포함하는 문자열로, 여기에는 스페이스<font size = "2">space</font>, 탭<font size = "2">tab</font>, 줄변경<font size = "2">line feed or new line</font>, 캐리지 리턴<font size = "2">carriage return</font>, 수직탭<font size = "2">vertical tab</font>, 폼피드<font size = "2">form feed</font> 문자가 포함된다.
 
-# In[32]:
+# In[21]:
 
 
 import string
@@ -231,13 +234,13 @@ string.whitespace
 # |`\v` 또는 `\x0b`|수직탭 <font size = "2">vertical tab</font>|
 # |`\f` 또는 `\x0c`|폼피드<font size = "2">form feed</font>|
 
-# In[36]:
+# In[22]:
 
 
 print('1\n2\t3')
 
 
-# In[37]:
+# In[23]:
 
 
 print('123\b4')
@@ -245,7 +248,7 @@ print('123\b4')
 
 # * 캐리지 리턴(`\r`)은 그 줄의 맨앞으로 이동시키는 특수 문자이다.
 
-# In[53]:
+# In[24]:
 
 
 print('1234\r56')
@@ -264,19 +267,19 @@ print('1234\r56')
 
 # 백슬래시(￦), 줄바꾸기(￦n), 탭(￦t) 등은 문자열에 사용될 경우 특수한 기능을 갖는다. 그리고 백슬래시(`\`)기호를 붙여서 특수 기능을 해제<font size= "2">escape</font>할 수 있다.
 
-# In[3]:
+# In[25]:
 
 
 print("Hello\\n World")
 
 
-# In[4]:
+# In[26]:
 
 
 print("Hello\\t World")
 
 
-# In[5]:
+# In[27]:
 
 
 print("Good\\night")
@@ -284,19 +287,23 @@ print("Good\\night")
 
 # 연속된 백슬래시 두 개를 출력하려면 아래와 같이 해야 한다.
 
-# In[7]:
+# In[28]:
 
 
 print("\\\\")
 
 
+# :::{admonition} 주의
+# :class: caution
+# 
 # 아래와 같이 코드를 작성하면 오류가 발생하므로 주의해야 한다.
-
-# In[6]:
-
-
-print("\\\")
-
+# ```python
+# >>> print("\\\")
+#   File "/tmp/ipykernel_76/2337434698.py", line 1
+#     print("\\\")
+#                 ^
+# SyntaxError: EOL while scanning string literal
+# ```
 
 # :::{admonition} 참고 
 # :class: info  
@@ -304,19 +311,19 @@ print("\\\")
 # '가공되지 않은'의 의미를 갖는 'raw' 단어의 첫 글자인 'r'을 문자열 앞에 두면 특수 기능이 사라진다.
 # :::
 
-# In[8]:
+# In[29]:
 
 
 print(r"Hello\n World")
 
 
-# In[9]:
+# In[30]:
 
 
 print(r"Hello\t World")
 
 
-# In[10]:
+# In[31]:
 
 
 print(r"Hello\ World")
@@ -326,7 +333,7 @@ print(r"Hello\ World")
 
 # 사용자의 입력은 `input()` 함수를 사용하여 받을 수 있다. 아래와 같이 `input()`을 입력하고 코드를 실행하면, 그 아래에 값을 입력하라는 창이 나온다. 그곳에 `Hello, python!`을 입력하고 엔터<font size ="2">enter</font>를 누르면 입력한 문자열이 그대로 출력된다.
 
-# In[75]:
+# In[32]:
 
 
 input()
@@ -545,19 +552,22 @@ print(f'{num:.3f}')
 # 
 # `x and y`는 `x`가 참일 때만 `y`를 확인한다.  
 # `x or y`는 `x`가 거짓일 때만 `y`를 확인한다.
+# 
+# 예를 들어, 아래와 같이  `False and 3/0`를 실행하면 `False`가 나온다. 
+# ```python
+# >>> False and 3/0
+# ```
+# 
+# 하지만 반대로 `3/0 and False`를 실행하면 오류가 발생한다. 
+# ```python
+# >>> False and 3/0
+# ZeroDivisionError                         Traceback (most recent call last)
+# /tmp/ipykernel_422/2156724109.py in <module>
+# ----> 1 True and 3/0
+# 
+# ZeroDivisionError: division by zero
+# ```
 # :::
-
-# In[55]:
-
-
-False and 3/0
-
-
-# In[56]:
-
-
-True and 3/0
-
 
 # ### 비교 연산자
 
@@ -662,19 +672,24 @@ str(6)
 # :::{admonition} 주의 
 # :class: caution  
 # `int()`함수의 인자로 문자열을 사용할 때는 그 모양이 정수모양이어야 하고, `float()` 함수의 인자로 문자열을 사용할 때는 그 모양이 정수 또는 부동소수점 모양이어야 한다. 
+# 
+# ```python
+# >>> int('5.0')
+# ValueError                                Traceback (most recent call last)
+# /tmp/ipykernel_279/3485297474.py in <module>
+# ----> 1 int('5.0')
+# 
+# ValueError: invalid literal for int() with base 10: '5.0'
+# ```
+# ```python
+# >>> float('5GB')
+# ValueError                                Traceback (most recent call last)
+# /tmp/ipykernel_279/814975516.py in <module>
+# ----> 1 float('5GB')
+# 
+# ValueError: could not convert string to float: '5GB'
+# ```
 # :::
-
-# In[68]:
-
-
-int('5.0')
-
-
-# In[70]:
-
-
-float('5GB')
-
 
 # :::{admonition} 참고 
 # :class: info
