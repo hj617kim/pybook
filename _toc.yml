@@ -1,0 +1,17 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+
+options:  
+  numbered: True
+  only_build_toc_files: true
+  
+chapters:
+- file: ch01
+- file: ch02
+- file: ch03
+- file: ch04
+- file: ch05
+
