@@ -861,22 +861,13 @@
 <div class="caution admonition">
 <p class="admonition-title">주의</p>
 <p>변수에 할당된 값의 자료형에 따라 연산의 가능 여부가 결정된다. 예를 들어, 숫자와 문자열의 합은 정의되지 않으며, 실행할 경우 오류가 발생한다.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="n">name</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1438</span><span class="o">/</span><span class="mf">3370966941.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">name</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">+</span> <span class="n">name</span>
+<span class="go">TypeError                                 Traceback (most recent call last)</span>
+<span class="go">/tmp/ipykernel_279/3370966941.py in &lt;module&gt;</span>
+<span class="go">----&gt; 1 2 + name</span>
 
-<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
+<span class="go">TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -944,7 +935,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>124
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1234
 </pre></div>
 </div>
 </div>
@@ -959,7 +950,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5634
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1234
+56
 </pre></div>
 </div>
 </div>
@@ -1025,20 +1017,15 @@
 </div>
 </div>
 </div>
+<div class="caution admonition">
+<p class="admonition-title">주의</p>
 <p>아래와 같이 코드를 작성하면 오류가 발생하므로 주의해야 한다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\\&quot;</span><span class="s2">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/tmp/ipykernel_76/2337434698.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\\&quot;</span><span class="s2">)</span>
+  File <span class="nb">&quot;/tmp/ipykernel_76/2337434698.py&quot;</span>, line <span class="m">1</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\\&quot;</span><span class="s2">)</span>
-                <span class="o">^</span>
-<span class="ne">SyntaxError</span>: EOL while scanning string literal
+                <span class="p p-Marker">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">EOL while scanning string literal</span>
 </pre></div>
-</div>
 </div>
 </div>
 <div class="info admonition">
@@ -1093,10 +1080,19 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Hello, python!
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello, python!&#39;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1653</span><span class="o">/</span><span class="mf">1290019835.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">input</span><span class="p">()</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1039</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1040</span><span class="s2">         if not self._allow_stdin:</span>
+<span class="ne">-&gt; </span><span class="mi">1041</span><span class="s2">             raise StdinNotImplementedError(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1042</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1043</span><span class="s2">             )</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>
@@ -1472,34 +1468,18 @@ bc	d
 <p class="admonition-title">참고</p>
 <p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">and</span> <span class="pre">y</span></code>는 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 참일 때만 <code class="docutils literal notranslate"><span class="pre">y</span></code>를 확인한다.<br />
 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">or</span> <span class="pre">y</span></code>는 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 거짓일 때만 <code class="docutils literal notranslate"><span class="pre">y</span></code>를 확인한다.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">False</span> <span class="ow">and</span> <span class="mi">3</span><span class="o">/</span><span class="mi">0</span>
+<p>예를 들어, 아래와 같이  <code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">and</span> <span class="pre">3/0</span></code>를 실행하면 <code class="docutils literal notranslate"><span class="pre">False</span></code>가 나온다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kc">False</span> <span class="ow">and</span> <span class="mi">3</span><span class="o">/</span><span class="mi">0</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="mi">3</span><span class="o">/</span><span class="mi">0</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_422</span><span class="o">/</span><span class="mf">2156724109.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kc">True</span> <span class="ow">and</span> <span class="mi">3</span><span class="o">/</span><span class="mi">0</span>
+<p>하지만 반대로 <code class="docutils literal notranslate"><span class="pre">3/0</span> <span class="pre">and</span> <span class="pre">False</span></code>를 실행하면 오류가 발생한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kc">False</span> <span class="ow">and</span> <span class="mi">3</span><span class="o">/</span><span class="mi">0</span>
+<span class="go">ZeroDivisionError                         Traceback (most recent call last)</span>
+<span class="go">/tmp/ipykernel_422/2156724109.py in &lt;module&gt;</span>
+<span class="go">----&gt; 1 True and 3/0</span>
 
-<span class="ne">ZeroDivisionError</span>: division by zero
+<span class="go">ZeroDivisionError: division by zero</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -1701,39 +1681,21 @@ bc	d
 <div class="caution admonition">
 <p class="admonition-title">주의</p>
 <p><code class="docutils literal notranslate"><span class="pre">int()</span></code>함수의 인자로 문자열을 사용할 때는 그 모양이 정수모양이어야 하고, <code class="docutils literal notranslate"><span class="pre">float()</span></code> 함수의 인자로 문자열을 사용할 때는 그 모양이 정수 또는 부동소수점 모양이어야 한다.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;5.0&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_279</span><span class="o">/</span><span class="mf">3485297474.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;5.0&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;5.0&#39;</span><span class="p">)</span>
+<span class="go">ValueError                                Traceback (most recent call last)</span>
+<span class="go">/tmp/ipykernel_279/3485297474.py in &lt;module&gt;</span>
+<span class="go">----&gt; 1 int(&#39;5.0&#39;)</span>
 
-<span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;5.0&#39;
+<span class="go">ValueError: invalid literal for int() with base 10: &#39;5.0&#39;</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;5GB&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_279</span><span class="o">/</span><span class="mf">814975516.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;5GB&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;5GB&#39;</span><span class="p">)</span>
+<span class="go">ValueError                                Traceback (most recent call last)</span>
+<span class="go">/tmp/ipykernel_279/814975516.py in &lt;module&gt;</span>
+<span class="go">----&gt; 1 float(&#39;5GB&#39;)</span>
 
-<span class="ne">ValueError</span>: could not convert string to float: &#39;5GB&#39;
+<span class="go">ValueError: could not convert string to float: &#39;5GB&#39;</span>
 </pre></div>
-</div>
 </div>
 </div>
 <div class="info admonition">
