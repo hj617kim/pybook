@@ -88,7 +88,8 @@
 -7 % 5
 
 
-# :::{admonition} 참고 :class: info
+# :::{admonition} 참고 
+# :class: info
 # 
 # (a // b) * b + a % b 를 구하면 a이다. 
 # :::
@@ -251,7 +252,8 @@ print('1234\r56')
 
 # * `\v` 또는 `\x0b`는 수직탭이고,  `\f` 또는 `\x0c`는 다음 페이지로 이동하는 것을 의미한다. 
 
-# :::{admonition} 문자열 `''`과 문자의 `' '` 차이첨 :class: info
+# :::{admonition} 문자열 `''`과 문자의 `' '` 차이첨 
+# :class: info
 # 
 # 빈 문자열<font size = "2">empty string</font> `''`는 아무런 문자도 포함하지 않았기 때문에 문자열의 길이 즉, 문자열에 포함된 문자의 개수가 0이다.   
 # 반면 `' '`는 눈에 보이지는 않지만 공백 문제 하나를 포함하는 문자열이며 길이가 1이다. 
@@ -295,7 +297,8 @@ print("\\\\")
 print("\\\")
 
 
-# :::{admonition} 참고 :class: info  
+# :::{admonition} 참고 
+# :class: info  
 # **순수 문자열**
 # '가공되지 않은'의 의미를 갖는 'raw' 단어의 첫 글자인 'r'을 문자열 앞에 두면 특수 기능이 사라진다.
 # :::
@@ -536,7 +539,8 @@ print(f'{num:.3f}')
 # |`or`|또는|`True or False`|`True`|
 # |`not`|부정|`not False`|`True`|
 
-# :::{admonition} 참고 :class: info
+# :::{admonition} 참고 
+# :class: info
 # 
 # `x and y`는 `x`가 참일 때만 `y`를 확인한다.  
 # `x or y`는 `x`가 거짓일 때만 `y`를 확인한다.
@@ -604,7 +608,8 @@ True and 3/0
 'apple' < 'banana'
 
 
-# :::{admonition} 참고 :class: info
+# :::{admonition} 참고 
+# :class: info
 # 영어 알파벳의 경우 대문자가 소문자보다 작다고 판단한다.
 # :::
 
@@ -653,7 +658,8 @@ float('7.9')
 str(6)
 
 
-# :::{admonition} 주의 :class: caution  
+# :::{admonition} 주의 
+# :class: caution  
 # `int()`함수의 인자로 문자열을 사용할 때는 그 모양이 정수모양이어야 하고, `float()` 함수의 인자로 문자열을 사용할 때는 그 모양이 정수 또는 부동소수점 모양이어야 한다. 
 # :::
 
@@ -669,7 +675,8 @@ int('5.0')
 float('5GB')
 
 
-# :::{admonition} 참고 :class: info
+# :::{admonition} 참고 
+# :class: info
 # `bool()` 함수는 `0`, `0.0`, `''`(빈 문자열)처럼 0이거나 비어 있는 값을 인자로 사용하면 `False`를 반환한다.  
 # :::
 
@@ -684,7 +691,8 @@ print(bool(4.2))
 print(bool('Hello'))
 
 
-# :::{admonition} 주의 :class: caution 
+# :::{admonition} 주의 
+# :class: caution 
 # 변수를 형변환한다고 해서 변수에 할당된 값이 변하는 것은 아니다. 다만, 형변환한 값을 다른 변수에 저장해서 사용할 수는 있다. 
 # :::
 
