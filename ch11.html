@@ -877,6 +877,43 @@
 </ul>
 </li>
 </ul>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
+<p>한 번 정해지면 절대 변경이 불가능한 자료형을 불변<font size = "2">immutable</font> 자료형, 변경이 가능한 자료형을 가변<font size = "2">mutable</font> 자료형이라 부른다.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>자료형</p></th>
+<th class="text-align:center head"><p>불변/가변</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>정수 <code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td class="text-align:center"><p>불변</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>부동소수점 <code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td class="text-align:center"><p>불변</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>불리언 <code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td class="text-align:center"><p>불변</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>문자열 <code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td class="text-align:center"><p>불변</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>리스트 <code class="docutils literal notranslate"><span class="pre">list</span></code></p></td>
+<td class="text-align:center"><p>가변</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>튜플 <code class="docutils literal notranslate"><span class="pre">tuple</span></code></p></td>
+<td class="text-align:center"><p>불변</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>집합 <code class="docutils literal notranslate"><span class="pre">set</span></code></p></td>
+<td class="text-align:center"><p>가변</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>사전 <code class="docutils literal notranslate"><span class="pre">dict</span></code></p></td>
+<td class="text-align:center"><p>가변</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="section" id="id2">
 <h2><span class="section-number">6.1. </span>시퀀스형<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>시퀀스형 <font size = "2">Sequence Types 또는 순차 자료형</font>은 값들 사이에 순서를 가지고 있고, 항목의 중복 사용을 허용하는 모음 자료형이다.<br />
@@ -1006,6 +1043,11 @@
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">max()</span></code> 함수 : 최댓값 확인</p></li>
 </ul>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
+<p>문자열은 사전식의 순서를 사용하며, 공백문자가 가장 작고,<br />
+영어 알파벳의 경우 대문자가 소문자보다 작다고 판단한다.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="s1">&#39;apple&#39;</span><span class="p">)</span>
@@ -1084,6 +1126,20 @@
 b
 </pre></div>
 </div>
+</div>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">주의</p>
+<p>문자열의 길이와 같거나 큰 인덱스를 사용하면 오류가 발생한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+<span class="go">17</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">colors</span><span class="p">[</span><span class="mi">50</span><span class="p">]</span>
+<span class="go">IndexError                                Traceback (most recent call last)</span>
+<span class="go">/tmp/ipykernel_1817/3232567937.py in &lt;module&gt;</span>
+<span class="go">----&gt; 1 colors[50]</span>
+
+<span class="go">IndexError: string index out of range</span>
+</pre></div>
 </div>
 </div>
 <ul class="simple">
@@ -1215,6 +1271,15 @@ b
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;bu,ylo&#39;
 </pre></div>
 </div>
+</div>
+</div>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
+<p>슬라이싱은 기본적으로 작은 인덱스에서 큰 인덱스 방향으로 확인한다. 역순으로 추출하고자 한다면 계단<font size = "2">step</font>에 음의 정수를 사용하면 된다.</p>
+<p>단, 계단이 <code class="docutils literal notranslate"><span class="pre">-1</span></code>일 때 시작인덱스와 끝인덱스를 생략하면 각각 <code class="docutils literal notranslate"><span class="pre">0</span></code>과 문자열의 길이가 들어 있는 것으로 처리되지 않고, 문자열을 역순으로 가져온다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">colors</span><span class="p">[</span> <span class="p">:</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&#39;wolley ,eulb ,der&#39;</span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -1365,6 +1430,16 @@ b
 </div>
 </div>
 </div>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
+<p>리스트에 포함된 항목들 사이의 순서는 중요하다. 리스트 항목의 순서 또는 개수가 다르면 서로 다른 리스트로 처리된다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="id9">
 <h4><span class="section-number">6.1.2.1. </span>빈 리스트<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
 <p>빈 리스트<font size = "2">empty list</font>는 아무것도 포함하지 않는 리스트를 의미한다. 빈 리스트를 만드는 방법은 아래와 같다.</p>
@@ -1380,6 +1455,43 @@ b
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
 </pre></div>
 </div>
+</div>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">주의</p>
+<p>아래 <code class="docutils literal notranslate"><span class="pre">a_singleton</span></code>은 빈 리스트가 아니라 빈 리스트를 포함하는 리스트이다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_singleton</span> <span class="o">=</span> <span class="p">[[]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a_singleton</span><span class="p">)</span>
+<span class="go">[[]]</span>
+</pre></div>
+</div>
+</div>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
+<p>변수 <code class="docutils literal notranslate"><span class="pre">a</span></code>와 <code class="docutils literal notranslate"><span class="pre">b</span></code>에 각각 빈 리스트를 할당하면, 두 개는 서로 다르고 독립적이다.<br />
+반면 <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">a</span></code>라고 하면, <code class="docutils literal notranslate"><span class="pre">a</span></code>와 <code class="docutils literal notranslate"><span class="pre">c</span></code>는 동일하다. 예를 들어, <code class="docutils literal notranslate"><span class="pre">a</span></code>에 정수 <code class="docutils literal notranslate"><span class="pre">1</span></code>를 추가하면
+<code class="docutils literal notranslate"><span class="pre">c</span></code>에도 <code class="docutils literal notranslate"><span class="pre">1</span></code>이 추가된다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">[1]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="go">[1]</span>
+</pre></div>
+</div>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch11/list01.png" style="width:400px;">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch11/list02.png" style="width:400px;">
+</div>
+<p>아래와 같이 <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">c</span> <span class="pre">=</span> <span class="pre">[]</span></code>라고 코드를 작성해도, <code class="docutils literal notranslate"><span class="pre">a</span></code>와 <code class="docutils literal notranslate"><span class="pre">c</span></code>는 동일하다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span> <span class="n">a</span> <span class="ow">is</span> <span class="n">c</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -1582,6 +1694,24 @@ b
 </div>
 </div>
 </div>
+<div class="caution admonition">
+<p class="admonition-title">주의</p>
+<p><code class="docutils literal notranslate"><span class="pre">del</span></code>은 매우 주의해서 사용해야 한다. 잘못하면 데이터 자체를 메모리에서 삭제시킬 수도 있다.</p>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">주의</p>
+<p>문자열은 불변 자료형이라 인덱싱과 슬라이싱을 사용하여 값을 변경할 수 없다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_word</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a_word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;H&#39;</span>
+<span class="go">TypeError                                 Traceback (most recent call last)</span>
+<span class="go">/tmp/ipykernel_1817/217255829.py in &lt;module&gt;</span>
+<span class="go">      1 a_word = &#39;hello&#39;</span>
+<span class="go">----&gt; 2 a_word[0] = &#39;H&#39;</span>
+
+<span class="go">TypeError: &#39;str&#39; object does not support item assignment</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="id15">
 <h4><span class="section-number">6.1.2.7. </span>리스트 메서드<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
@@ -1696,6 +1826,10 @@ b
 </pre></div>
 </div>
 </div>
+</div>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
+<p>두 개의 리스트를 덧셈 기호를 이용하여 확장할 수도 있지만, 원래의 리스트를 변경하는 것이 아니라 새로운 리스트를 생성한다.</p>
 </div>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">insert()</span></code> : 지정된 인덱스에 항목 추가. 반환값은 <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
@@ -2084,6 +2218,36 @@ b
 </div>
 </div>
 </div>
+<div class="caution admonition">
+<p class="admonition-title">주의</p>
+<p>튜플은 불변 자료형이라 값을 수정할 수 없다. 예를 들어, 아래와 같이 인덱싱을 사용하여 튜플의 항목을 변경하려고 하면 오류가 발생한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a_tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="go">TypeError                                 Traceback (most recent call last)</span>
+<span class="go">/tmp/ipykernel_1817/347940049.py in &lt;module&gt;</span>
+<span class="go">      1 a_tuple = (3, 15, 9, 12, 7, 14, 10)</span>
+<span class="go">----&gt; 2 a_tuple[0] = 100</span>
+
+<span class="go">TypeError: &#39;tuple&#39; object does not support item assignment</span>
+</pre></div>
+</div>
+</div>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
+<p>튜플이 변경 불가능한 자료형이라고 해서 튜플의 모든 항목이 모두 변경 불가능해야 하는 것은 아니다. 예를 들어, <code class="docutils literal notranslate"><span class="pre">tup</span></code>의 첫번째 항목은 <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2]</span></code>이고, 리스트는 변경가능한 자료형이다. 따라서 아래와 같이 첫번째 항목 자체는 변경이 가능하다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tup</span> <span class="o">=</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">tup</span><span class="p">)</span>
+<span class="go">([1, 2, 3], 10, 100)</span>
+</pre></div>
+</div>
+<p>이러한 성질이 가능한 이유는 아래와 같다.<br />
+<code class="docutils literal notranslate"><span class="pre">tup</span></code>은 <code class="docutils literal notranslate"><span class="pre">([1,</span> <span class="pre">2],</span> <span class="pre">10,</span> <span class="pre">100)</span></code>을 참조한다. 그리고 첫번째 항목인 <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2]</span></code> 또한 참조 형태로 다른 메모리에 저장된다. 즉, <code class="docutils literal notranslate"><span class="pre">tup</span></code>의 첫번째 항목은 <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2]</span></code>가 저장된 위치의 주소이다. 그런데 <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2]</span></code>가 변경되어도 주소 자체는 변하지 않는다. 따라서 <code class="docutils literal notranslate"><span class="pre">tup</span></code> 입장에서는 변한 것이 하나도 없다.</p>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch11/tuple01.png" style="width:400px;">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch11/tuple02.png" style="width:400px;">
+</div>
+</div>
 </div>
 <div class="section" id="id22">
 <h4><span class="section-number">6.1.3.7. </span>튜플 메서드<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
@@ -2130,7 +2294,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7f1ca86bb980&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7fcdb0266dc0&gt;
 </pre></div>
 </div>
 </div>
@@ -2210,6 +2374,19 @@ b
 </div>
 </div>
 </div>
+<div class="caution admonition">
+<p class="admonition-title">주의</p>
+<p>시퀀스 항목 각각을 변수에 지정하고자 할 때는 사용되는 변수의 수와 항목의 수는 일치해야 한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="p">,</span> <span class="n">e</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="go">ValueError                                Traceback (most recent call last)</span>
+<span class="go">/tmp/ipykernel_1817/4065688922.py in &lt;module&gt;</span>
+<span class="go">----&gt; 1 c, e = [3, 4, 5]</span>
+<span class="go">      2 print(c + e)</span>
+
+<span class="go">ValueError: too many values to unpack (expected 2)</span>
+</pre></div>
+</div>
+</div>
 <p>반면에 앞에 몇 개만 변수에 할당하고 나머지는 하나의 리스트로 묶을 수도 있다. 이를 위해 별표 기호<font size = "2">asterisk</font>(<code class="docutils literal notranslate"><span class="pre">*</span></code>)를 하나의 변수명과 함께 사용한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2269,6 +2446,18 @@ b
 </div>
 </div>
 <div class="info admonition">
+<p class="admonition-title">참고</p>
+<p>집합의 원소는 모두 해시 가능이어야 한다. 즉, 리스트는 집합의 원소가 될 수 없다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">{[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">4</span><span class="p">}</span>
+<span class="go">TypeError                                 Traceback (most recent call last)</span>
+<span class="go">/tmp/ipykernel_1817/2739416386.py in &lt;module&gt;</span>
+<span class="go">----&gt; 1 {[1, 3], 4}</span>
+
+<span class="go">TypeError: unhashable type: &#39;list&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="info admonition">
 <p class="admonition-title">해시 가능 <font size = "2">hashable</font></p>
 <p>어떤 객체가 변하지 않는 해시값을 갖고, 다른 객체와 비교될 수 있으면 해시 가능이라고 한다.<br />
 파이썬의 모든 불변 내장 객체들은 해시 가능하다. 반면 리스트나 딕셔너리와 같은 가변 객체들은 해시 불가능이다.<br />
@@ -2283,6 +2472,18 @@ b
 <span class="go">----&gt; 1 hash([1, 2])</span>
 
 <span class="go">TypeError: unhashable type: &#39;list&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">주의</p>
+<p>집합은 순서가 없는 자료형이라 인덱싱이나 슬라이싱을 지원하지 않는다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_set</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">TypeError                                 Traceback (most recent call last)</span>
+<span class="go">/tmp/ipykernel_1817/3483571857.py in &lt;module&gt;</span>
+<span class="go">----&gt; 1 a_set[0]</span>
+
+<span class="go">TypeError: &#39;set&#39; object is not subscriptable</span>
 </pre></div>
 </div>
 </div>
@@ -2315,6 +2516,15 @@ b
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>set()
 </pre></div>
 </div>
+</div>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">주의</p>
+<p>빈 집합을 만들 때는 <code class="docutils literal notranslate"><span class="pre">set()</span></code>을 사용해야 한다. <code class="docutils literal notranslate"><span class="pre">{}</span></code>은 빈 딕셔너리이다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">dict</span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -2441,6 +2651,25 @@ b
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
+</div>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">주의</p>
+<p>집합은 덧셈과 곱셈 연산자를 사용할 수 없다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span> <span class="o">+</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+<span class="go">TypeError                                 Traceback (most recent call last)</span>
+<span class="go">/tmp/ipykernel_1817/437379440.py in &lt;module&gt;</span>
+<span class="go">----&gt; 1 {1, 2} + {3, 4, 5}</span>
+
+<span class="go">TypeError: unsupported operand type(s) for +: &#39;set&#39; and &#39;set&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="go">TypeError                                 Traceback (most recent call last)</span>
+<span class="go">/tmp/ipykernel_1817/650599529.py in &lt;module&gt;</span>
+<span class="go">----&gt; 1 {1, 2} * 2</span>
+
+<span class="go">TypeError: unsupported operand type(s) for *: &#39;set&#39; and &#39;int&#39;</span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -2644,6 +2873,24 @@ b
 </div>
 </div>
 </div>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
+<p>해시 가능한 것만 딕셔너리의 키로 사용될 수 있다. 예를 들어, 정수, 실수, 문자열, 튜플 등이다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dic</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span> <span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">2.5</span> <span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="s1">&#39;a&#39;</span> <span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="p">:</span> <span class="s1">&#39;d&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
+<span class="go">{1: 5, 2.5: [3, 4], &#39;a&#39;: (2, 7, 4), (1, 2): &#39;d&#39;}</span>
+</pre></div>
+</div>
+<p>단, 키로 사용되는 튜플의 항목에 리스트 등 변경 가능한 값이 사용되지 않아야 한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">{([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">3</span><span class="p">):</span> <span class="mi">1</span><span class="p">}</span>
+<span class="go">TypeError                                 Traceback (most recent call last)</span>
+<span class="go">/tmp/ipykernel_1817/230770617.py in &lt;module&gt;</span>
+<span class="go">----&gt; 1 {([1, 2], 3): 1}</span>
+
+<span class="go">TypeError: unhashable type: &#39;list&#39;</span>
+</pre></div>
+</div>
+</div>
 <p>사전은 아래와 같은 형식으로 타입 힌트를 추가한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2769,6 +3016,19 @@ b
 </div>
 </div>
 </div>
+<div class="caution admonition">
+<p class="admonition-title">주의</p>
+<p>존재하지 않는 키로 값을 추출하려고 하면, 오류가 발생한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Hello&#39;</span> <span class="p">:</span> <span class="s1">&#39;안녕&#39;</span><span class="p">,</span> <span class="s1">&#39;World&#39;</span> <span class="p">:</span> <span class="s1">&#39;세계&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dic</span><span class="p">[</span><span class="s1">&#39;Python&#39;</span><span class="p">]</span>
+<span class="go">KeyError                                  Traceback (most recent call last)</span>
+<span class="go">/tmp/ipykernel_1817/1517958361.py in &lt;module&gt;</span>
+<span class="go">----&gt; 1 dic[&#39;Python&#39;]</span>
+
+<span class="go">KeyError: &#39;Python&#39;</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="id39">
 <h4><span class="section-number">6.3.1.6. </span>항목의 추가와 삭제<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h4>
@@ -2791,6 +3051,18 @@ b
 {&#39;Hello&#39;: &#39;안녕&#39;, &#39;World&#39;: &#39;세계&#39;, &#39;Python&#39;: &#39;파이썬&#39;}
 </pre></div>
 </div>
+</div>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">주의</p>
+<p>이미 사용하고 있는 키를 가진 항목을 추가하려고 하면, 그 키로 저장된 이전 값은 사라진다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Hello&#39;</span> <span class="p">:</span> <span class="s1">&#39;안녕&#39;</span><span class="p">,</span> <span class="s1">&#39;World&#39;</span> <span class="p">:</span> <span class="s1">&#39;세계&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
+<span class="go">{&#39;Hello&#39;: &#39;안녕&#39;, &#39;World&#39;: &#39;세계&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dic</span><span class="p">[</span><span class="s1">&#39;World&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;세상&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
+<span class="go">{&#39;Hello&#39;: &#39;안녕&#39;, &#39;World&#39;: &#39;세상&#39;}</span>
+</pre></div>
 </div>
 </div>
 <ul class="simple">
