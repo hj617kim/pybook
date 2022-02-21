@@ -168,7 +168,8 @@
 #     <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/vscode03.png" style="width:400px;">
 # </div>
 
-# :::{admonition} 참고 :class: info
+# :::{admonition} 참고 :
+# class: info
 # 특별한 경우가 아니면, 기본 경로를 그대로 두고 다음으로 넘어가면 된다. :::
 
 # * 시작 메뉴에 비주얼 스튜디오 코드가 보이도록 하고 싶다면 다음을 누르고, 아니라면 시작 메뉴 폴더를 만들지 않음을 선택하고 다음을 눌러 다음으로 넘어가면 된다. 

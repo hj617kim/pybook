@@ -17,7 +17,7 @@
 # * 매핑형 <font size = "2">Mapping Types</font>
 #     * 사전 <font size = "2">`dict`</font>
 
-# :::{admonition}  
+# :::{admonition} 참고  
 # :class: info    
 # 한 번 정해지면 절대 변경이 불가능한 자료형을 불변<font size = "2">immutable</font> 자료형, 변경이 가능한 자료형을 가변<font size = "2">mutable</font> 자료형이라 부른다.   
 # 
@@ -111,7 +111,7 @@ len('hello, world!')
 # #### 최대, 최소 함수  
 # * `max()` 함수 : 최댓값 확인
 
-# :::{admonition}    
+# :::{admonition} 참고    
 # :class: info  
 # 문자열은 사전식의 순서를 사용하며, 공백문자가 가장 작고,  
 # 영어 알파벳의 경우 대문자가 소문자보다 작다고 판단한다.
@@ -165,7 +165,7 @@ print(colors[0]) #0번 인덱스 값
 print(colors[5]) #3번 인덱스 값
 
 
-# :::{admonition}  
+# :::{admonition} 주의  
 # :class: caution  
 # 
 # 문자열의 길이와 같거나 큰 인덱스를 사용하면 오류가 발생한다. 
@@ -260,7 +260,7 @@ colors[ : 3] #계단을 생략할 떄는 콜론(:)도 함께 생략가능
 colors[5 : : 2]
 
 
-# :::{admonition}  
+# :::{admonition} 참고  
 # :class: info   
 # 슬라이싱은 기본적으로 작은 인덱스에서 큰 인덱스 방향으로 확인한다. 역순으로 추출하고자 한다면 계단<font size = "2">step</font>에 음의 정수를 사용하면 된다.   
 # 
@@ -344,7 +344,7 @@ mixed_list = [1, 2.3, 'abc', True, [1, 2], ('a', 'b')]
 mixed_list
 
 
-# :::{admonition}  
+# :::{admonition} 참고  
 # :class: info  
 # 
 # 리스트에 포함된 항목들 사이의 순서는 중요하다. 리스트 항목의 순서 또는 개수가 다르면 서로 다른 리스트로 처리된다.  
@@ -368,8 +368,9 @@ empty_list = list()
 empty_list
 
 
-# :::{admonition}  
-# :class: caution  
+# :::{admonition} 주의
+# :class: caution
+# 
 # 아래 `a_singleton`은 빈 리스트가 아니라 빈 리스트를 포함하는 리스트이다. 
 # 
 # ```python
@@ -379,7 +380,7 @@ empty_list
 # ```
 # :::
 
-# :::{admonition}  
+# :::{admonition} 참고  
 # :class: info  
 # 
 # 변수 `a`와 `b`에 각각 빈 리스트를 할당하면, 두 개는 서로 다르고 독립적이다.  
@@ -531,12 +532,12 @@ del a_list[0]
 print(a_list)
 
 
-# :::{admonition}  
+# :::{admonition} 주의  
 # :class: caution  
 # `del`은 매우 주의해서 사용해야 한다. 잘못하면 데이터 자체를 메모리에서 삭제시킬 수도 있다. 
 # :::
 
-# :::{admonition}  
+# :::{admonition} 주의 
 # :class: caution  
 # 문자열은 불변 자료형이라 인덱싱과 슬라이싱을 사용하여 값을 변경할 수 없다.  
 # ```python
@@ -619,7 +620,7 @@ food.extend(['eggplant', 'fig'])
 food
 
 
-# :::{admonition}  
+# :::{admonition} 참고 
 # :class: info  
 # 두 개의 리스트를 덧셈 기호를 이용하여 확장할 수도 있지만, 원래의 리스트를 변경하는 것이 아니라 새로운 리스트를 생성한다.
 # :::
@@ -841,7 +842,7 @@ print(a_tuple[-1])
 print(a_tuple[2:6:2])
 
 
-# :::{admonition}  
+# :::{admonition} 주의  
 # :class: caution  
 # 튜플은 불변 자료형이라 값을 수정할 수 없다. 예를 들어, 아래와 같이 인덱싱을 사용하여 튜플의 항목을 변경하려고 하면 오류가 발생한다.   
 # 
@@ -857,7 +858,7 @@ print(a_tuple[2:6:2])
 # ```
 # :::
 
-# :::{admonition}  
+# :::{admonition} 참고 
 # :class: info  
 # 
 # 튜플이 변경 불가능한 자료형이라고 해서 튜플의 모든 항목이 모두 변경 불가능해야 하는 것은 아니다. 예를 들어, `tup`의 첫번째 항목은 `[1, 2]`이고, 리스트는 변경가능한 자료형이다. 따라서 아래와 같이 첫번째 항목 자체는 변경이 가능하다. 
@@ -953,7 +954,7 @@ c, _, e = [3, 4, 5]
 print(c + e)
 
 
-# :::{admonition}  
+# :::{admonition} 주의  
 # :class: caution  
 # 시퀀스 항목 각각을 변수에 지정하고자 할 때는 사용되는 변수의 수와 항목의 수는 일치해야 한다.
 # 
@@ -1009,7 +1010,7 @@ a_set = {4, 9.2, "apple", True, 4}
 a_set
 
 
-# :::{admonition}  
+# :::{admonition} 참고 
 # :class: info  
 # 집합의 원소는 모두 해시 가능이어야 한다. 즉, 리스트는 집합의 원소가 될 수 없다. 
 # ```python
@@ -1045,7 +1046,7 @@ a_set
 # 
 # :::
 
-# :::{admonition}  
+# :::{admonition} 주의 
 # :class: caution  
 # 집합은 순서가 없는 자료형이라 인덱싱이나 슬라이싱을 지원하지 않는다.   
 # ```python
@@ -1079,7 +1080,7 @@ empty_set = set()
 empty_set
 
 
-# :::{admonition}  
+# :::{admonition} 주의 
 # :class: caution  
 # 
 # 빈 집합을 만들 때는 `set()`을 사용해야 한다. `{}`은 빈 딕셔너리이다. 
@@ -1147,7 +1148,7 @@ empty_set
 {1, 2} <= {1, 2, 3, 4, 5}
 
 
-# :::{admonition}  
+# :::{admonition} 주의  
 # :class: caution  
 # 
 # 집합은 덧셈과 곱셈 연산자를 사용할 수 없다. 
@@ -1267,7 +1268,7 @@ dic = {'Hello' : '안녕', 'World' : '세계'}
 dic
 
 
-# :::{admonition}  
+# :::{admonition} 참고  
 # :class: info  
 # 해시 가능한 것만 딕셔너리의 키로 사용될 수 있다. 예를 들어, 정수, 실수, 문자열, 튜플 등이다.  
 #  
@@ -1364,7 +1365,7 @@ dic = {'Hello' : '안녕', 'World' : '세계'}
 dic['Hello']
 
 
-# :::{admonition}  
+# :::{admonition} 주의 
 # :class: caution  
 # 
 # 존재하지 않는 키로 값을 추출하려고 하면, 오류가 발생한다. 
@@ -1394,7 +1395,7 @@ dic['Python'] = '파이썬'
 print(dic)
 
 
-# :::{admonition}  
+# :::{admonition} 주의  
 # :class: caution  
 # 이미 사용하고 있는 키를 가진 항목을 추가하려고 하면, 그 키로 저장된 이전 값은 사라진다.  
 # ```python
