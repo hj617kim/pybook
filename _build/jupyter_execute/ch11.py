@@ -400,8 +400,8 @@ empty_list
 # ```
 # 
 # <div align="center">
-#     <img src="./images/ch11/list01.png" style="width:400px;">
-#     <img src="./images/ch11/list02.png" style="width:400px;">
+#     <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch11/list01.png" style="width:400px;">
+#     <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch11/list02.png" style="width:400px;">
 # </div>
 # 
 # 아래와 같이 `a = c = []`라고 코드를 작성해도, `a`와 `c`는 동일하다. 
@@ -872,8 +872,8 @@ print(a_tuple[2:6:2])
 # `tup`은 `([1, 2], 10, 100)`을 참조한다. 그리고 첫번째 항목인 `[1, 2]` 또한 참조 형태로 다른 메모리에 저장된다. 즉, `tup`의 첫번째 항목은 `[1, 2]`가 저장된 위치의 주소이다. 그런데 `[1, 2]`가 변경되어도 주소 자체는 변하지 않는다. 따라서 `tup` 입장에서는 변한 것이 하나도 없다. 
 # 
 # <div align="center">
-#     <img src="./images/ch11/tuple01.png" style="width:400px;">
-#     <img src="./images/ch11/tuple02.png" style="width:400px;">
+#     <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch11/tuple01.png" style="width:400px;">
+#     <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch11/tuple02.png" style="width:400px;">
 # </div>
 # 
 # 
