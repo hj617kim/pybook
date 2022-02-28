@@ -1420,12 +1420,312 @@ print(dic)
 
 
 # #### 사전 메서드  
-# 집합 자료형이 제공하는 주요 메서드는 아래와 같다.
+# 사전 자료형이 제공하는 주요 메서드는 아래와 같다.
+
+# In[111]:
+
+
+dic = {'Hello' : '안녕', 'World' : '세계'}
+
 
 # |메서드|설명|예시|실행결과|
 # |:----------:|:----------:|:----------:|:----------:|
-# |`dict.keys()`||``|``|
-# |`dict.values()`||``|``|
-# |`dict.items()`||``|``|
-# |`dict.get()`||``|``|
-# |`dict.clear()`||``|``|
+# |`dict.keys()`|사전에 사용된 key들을 모두 모아서 리스트와 비슷한 자료형을 만들어서 반환|`dic.keys()`|`dict_keys(['Hello', 'World'])`|
+# |`dict.values()`|사전에 사용된 value들을 모두 모아서 리스트와 비슷한 자료형을 만들어서 반환|`dic.values()`|`dict_values(['안녕', '세계'])`|
+# |`dict.items()`|사전에 사용된 item들을 모두 모아서 리스트와 비슷한 자료형으로 만들어서 반환|`dic.items()`|`dict_items([('Hello', '안녕'), ('World', '세계')])`|
+# |`dict.get()`|key에 대응되는 value를 반환. 존재하지 않는 key를 사용하면 `None`을 반환|`dic.get('Hello')`|`'안녕'`|
+# |`dict.update()`|다른 사전과 합함. 반환값은 `None`|`dic.update({'Python' : '파이썬', 'Programming' : '프로그래밍'})`|`None`|
+# |`dict.pop()`|key에 해당하는 항목을 삭제. 반환값은 key에 대응하는 value. key가 존재하지 않으면 오류 발생.|`dic.pop('Python')`|`'파이썬'`|
+# |`dict.clear()`|사전 안의 모든 항목들을 삭제. 반환값은 `None`|`dic.clear()`|`None`|
+
+# In[112]:
+
+
+dic = {'Hello' : '안녕', 'World' : '세계'}
+print(dic)
+print(dic.update({'Python' : '파이썬', 'Programming' : '프로그래밍'}))
+print(dic)
+
+
+# In[113]:
+
+
+print(dic)
+print(dic.pop('Python'))
+print(dic)
+
+
+# In[114]:
+
+
+print(dic)
+print(dic.clear())
+print(dic)
+
+
+# ## 형변환함수
+
+# ### `list()` 함수
+
+# `list()` : 리스트형으로 변환.
+
+# In[115]:
+
+
+list('abc')  #문자열의 각 문자를 항목으로 갖는 리스트 반환
+
+
+# In[116]:
+
+
+list((1, 2, 3))
+
+
+# In[117]:
+
+
+list({1, 2, 5})
+
+
+# In[118]:
+
+
+dic = {'Hello' : '안녕', 'World' : '세계'}
+print(list(dic.keys()))
+print(list(dic.values()))
+print(list(dic.items()))
+
+
+# ### `tuple()` 함수
+
+# `tuple()` : 튜플형으로 변환.
+
+# In[119]:
+
+
+tuple('abc')
+
+
+# In[120]:
+
+
+tuple([1, 2, 3])
+
+
+# In[121]:
+
+
+tuple({1, 2, 5})
+
+
+# In[122]:
+
+
+dic = {'Hello' : '안녕', 'World' : '세계'}
+print(tuple(dic.keys()))
+print(tuple(dic.values()))
+print(tuple(dic.items()))
+
+
+# ### `set()` 함수
+
+# `set()` : 집합형으로 변환.
+
+# In[123]:
+
+
+set('abc')
+
+
+# In[124]:
+
+
+set([1, 1, 2, 5])
+
+
+# In[125]:
+
+
+set((1, 3, 3, 9, 1))
+
+
+# In[126]:
+
+
+dic = {'Hello' : '안녕', 'World' : '세계', 'Hi' : '안녕'}
+print(set(dic.keys()))
+print(set(dic.values()))
+print(set(dic.items()))
+
+
+# ### `dict()` 함수
+
+# `dict()` : 사전형으로 변환.  
+# 
+# 사전의 각 항목은 키와 값으로 이루어졌기 때문에 적절하게 짝지어진 데이터를 사용해야 사전을 만들 수 있다.
+
+# In[127]:
+
+
+data = [('Hello', '안녕'), ('World', '세계'), ('Programming', '프로그래밍')]
+dict(data)
+
+
+# In[128]:
+
+
+data = zip('abcde', [1, 2, 3, 4, 5])
+dict(data)
+
+
+# In[129]:
+
+
+dict(Hello = '안녕', World = '세계', Programming = '프로그래밍')
+
+
+# ## 조건제시법
+
+# 리스트, 집합, 사전은 조건제시법<font size = "2">comprehension</font>을 이용하여 정의할 수 있다.
+
+# ### 리스트 조건제시법
+
+# 리스트 조건제시법은 수학에서 집합을 정의할 때 사용하는 조건제시법과 매우 유사한다.   
+# 
+# * 0과 10사이에 있는 홀수들의 제곱을 원소로 갖는 집합을 조건제시법으로 표현한다.  
+# { x^2 | 0 <= x <= 10, 단 x는 홀수 }
+# 
+# * 집합 기호를 리스트 기호로 대체한다.   
+# [ x^2 | 0 <= x <= 10, 단 x는 홀수 ]  
+# 
+# * 집합의 짝대기(|) 기호는 `for`로 대체한다.   
+# [ x^2 for 0 <= x <= 10, 단 x는 홀수 ]  
+# 
+# * 짝대기 기호 왼편에 위치한 x^2를 파이썬 수식으로 변경한다. 즉, x ** 2로 변경한다.   
+# [ x ** 2 for 0 <= x <= 10, 단 x는 홀수 ]  
+# 
+# * 짝대기 기호 오른편에 위치하고, 변수 x가 어느 범위에서 움직이는지를 설명하는 부등식인 0 <= x <= 10 부분을 파이썬 수식으로 변경한다. 주로, 기존에 정의된 리스트를 사용하거나 `range()` 함수를 사용하여 범위를 x in ... 형식으로 지정한다.   
+# [ x ** 2 for x in range(11), 단 x는 홀수 ]  
+
+# :::{admonition} `range()` 함수
+# :class: info  
+# `range()` 함수는 규칙성을 가진 정수들의 모음<font size = "2">collection</font>을 반환한다. 반환된 값은 range객체이며, 리스트와 유사하게 작동한다.  
+# 
+# `range()` 함수는 인자를 최대 세 개까지 받을 수 있다. 각 인자들의 역할은 슬라이싱에 사용되는 세 개의 인자들의 역할과 동일하다. 
+# * `range([start, ] stop [, step])`
+# * `start`의 경우 주어지지 않으면 `0`을 기본값으로 갖는다.
+# * `step`의 경우 주어지지 않으면 `1`을 기본값으로 갖는다.
+# 
+# 예를 들어, 0부터 10까지의 정수들로 이루어진 `range`객체는 다음과 같이 생성한다.  
+# 리스트로 형변환하면 `range(11)` 안에 포함된 항목을 확인할 수 있다. 
+# ```python
+# >>> print(range(11))
+# range(0, 11)
+# >>> print(list(range(11)))
+# [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# ```
+# range형은 불변 시퀀스이다. 
+# :::
+# 
+
+# * 마지막으로 변수 `x`에 대한 제한조건인 `단 x는 홀수` 부분을 파이썬의 `if` 문장으로 변경한다. 예를 들어, `x는 홀수`는 파이썬의 `x % 2 == 1`로 나타낼 수 있다.  
+# [x**2 for x in range(11) if x % 2 == 1]
+
+# In[130]:
+
+
+a_list = [x**2 for x in range(11) if x % 2 == 1]
+a_list
+
+
+# :::{admonition} 참고 
+# :class: info  
+# 
+# 위의 조건제시법은 아래 `for` 반복문을 활용한 코드와 동일하다. 
+# 
+# ```python
+# >>> a_list = []
+# >>> for x in range(0, 10) :
+#         if x % 2 == 0 :
+#             a_list.append(x)
+# >>> print(a_list)
+# [0, 2, 4, 6, 8]
+# ```
+# :::
+# 
+
+# :::{admonition} 참고  
+# :class: info  
+# 아래와 같이 리스트를 초기화할 때, 리스트 조건제시법을 사용하면 좋다. 
+# ```python
+# >>> a = [[0] * 5 for x in range(5)]
+# >>> print(a)
+# [[0, 0, 0, 0, 0],
+#  [0, 0, 0, 0, 0],
+#  [0, 0, 0, 0, 0],
+#  [0, 0, 0, 0, 0],
+#  [0, 0, 0, 0, 0]]
+# ```
+# 
+# 리스트 `a`는 리스트`b`와 동일하지 않다. 
+# ```python
+# >>> b = [[0] * 5] * 5
+# >>> print(b)
+# [[0, 0, 0, 0, 0],
+#  [0, 0, 0, 0, 0],
+#  [0, 0, 0, 0, 0],
+#  [0, 0, 0, 0, 0],
+#  [0, 0, 0, 0, 0]]
+# ```
+# 
+# 아래 그림처럼 리스트 `a`의 각 항목은 서로 다른 리스트를 참조한다. 반면 리스트 `b`의 각 항목은 하나의 리스트를 참조한다. 
+# <div align="center">
+#     <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch11/list_comp01.png" style="width:400px;">
+# </div>
+# 
+# 이러한 성질로 아래와 같은 일이 발생한다. 예를 들어, `a[2][3] = 1` 코드를 사용하여 리스트 `a`의 3행 4열의 값을 1로 변경하고자 하면, 해당 값이 1로 변경된 것을 볼 수 있다. 반변 `b[2][3] = 1` 코드를 사용한 다음, `b`를 확인해보면 4열의 값이 모두 1로 변경된 것을 볼 수 있다. 즉, 리스트 `b`는 원하는 대로 동작하지 않는다. 
+# 
+# ```python
+# >>> a = [[0] * 5 for x in range(5)]
+# >>> a[2][3] = 1
+# [[0, 0, 0, 0, 0],
+#  [0, 0, 0, 0, 0],
+#  [0, 0, 0, 1, 0],
+#  [0, 0, 0, 0, 0],
+#  [0, 0, 0, 0, 0]]
+# >>> b[2][3] = 1
+# >>> print(b)
+# [[0, 0, 0, 1, 0],
+#  [0, 0, 0, 1, 0],
+#  [0, 0, 0, 1, 0],
+#  [0, 0, 0, 1, 0],
+#  [0, 0, 0, 1, 0]]
+# ```
+# :::
+# 
+
+# ### 집합 조건제시법  
+# 조건제시법을 이용하여 집합을 생성하는 과정은 리스트 조건제시법과 비슷하다. 
+
+# In[131]:
+
+
+words = 'Python is a general purpose language'.split()
+print(words)
+words_len = [len(x) for x in words] # 리스트 조건제시법
+print(words_len)
+unique_len = {len(x) for x in words} # 집합 조건제시법
+print(unique_len)
+
+
+# ### 사전 조건제시법   
+# 조건제시법을 이용하여 사전을 생성하는 과정도 유사하다. 
+
+# In[132]:
+
+
+words = 'Python is a general purpose language'.split()
+print(words)
+len_dict = {k : len(k) for k in words}
+print(len_dict)
+
