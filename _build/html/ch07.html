@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>7. 조건문 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>7. 제어문 &#8212; 파이썬 프로그래밍 기초</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -124,7 +124,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   7. 조건문
+   7. 제어문
   </a>
  </li>
 </ul>
@@ -233,12 +233,17 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   7.1. 중첩 조건문과 다중 조건문
+   7.1. 조건문
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   7.2. 중첩 조건문과 다중 조건문
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#while">
-   7.2.
+   7.3.
    <code class="docutils literal notranslate">
     <span class="pre">
      while
@@ -249,7 +254,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#for">
-   7.3.
+   7.4.
    <code class="docutils literal notranslate">
     <span class="pre">
      for
@@ -259,8 +264,8 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     7.3.1. 문자열과
+    <a class="reference internal nav-link" href="#id4">
+     7.4.1. 문자열과
      <code class="docutils literal notranslate">
       <span class="pre">
        for
@@ -271,7 +276,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#range-for">
-     7.3.2.
+     7.4.2.
      <code class="docutils literal notranslate">
       <span class="pre">
        range()
@@ -298,7 +303,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>조건문</h1>
+                <h1>제어문</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -310,12 +315,17 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   7.1. 중첩 조건문과 다중 조건문
+   7.1. 조건문
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   7.2. 중첩 조건문과 다중 조건문
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#while">
-   7.2.
+   7.3.
    <code class="docutils literal notranslate">
     <span class="pre">
      while
@@ -326,7 +336,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#for">
-   7.3.
+   7.4.
    <code class="docutils literal notranslate">
     <span class="pre">
      for
@@ -336,8 +346,8 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     7.3.1. 문자열과
+    <a class="reference internal nav-link" href="#id4">
+     7.4.1. 문자열과
      <code class="docutils literal notranslate">
       <span class="pre">
        for
@@ -348,7 +358,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#range-for">
-     7.3.2.
+     7.4.2.
      <code class="docutils literal notranslate">
       <span class="pre">
        range()
@@ -375,7 +385,9 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1><span class="section-number">7. </span>조건문<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">7. </span>제어문<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2><span class="section-number">7.1. </span>조건문<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>어떤 일은 특정 조건 하에서만 할 수 있는 경우가 있다.</p>
 <p>예를 들어, 주어진 숫자 <code class="docutils literal notranslate"><span class="pre">num</span></code>이 홀수인 경우에만 그 값에 1을 더하라고 할 수 있다.</p>
 <p>위 문장을 코드로 나타내려면 아래의 요소들이 필요하다.</p>
@@ -492,8 +504,9 @@
 </div>
 </div>
 </div>
-<div class="section" id="id2">
-<h2><span class="section-number">7.1. </span>중첩 조건문과 다중 조건문<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">7.2. </span>중첩 조건문과 다중 조건문<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>반면에, 예를 들어, 크거나 같거나 작거나 등 세 가지 이상의 경우를 처리하려면 <code class="docutils literal notranslate"><span class="pre">if...else</span></code>문을 중첩해서 사용하거나 <code class="docutils literal notranslate"><span class="pre">if...elif...elif...else</span></code>처럼 다중 조건문을 사용할 수 있다.</p>
 <p>예제를 통해 중첩 조건문과 다중 조건문을 살펴보자. 아래는 두 개의 숫자 <code class="docutils literal notranslate"><span class="pre">num1</span></code>과 <code class="docutils literal notranslate"><span class="pre">num2</span></code>가 주어졌을 때, 두 숫자의 크기 비교 결과를 출력해주는 프로그램이다.</p>
 <ul class="simple">
@@ -549,7 +562,7 @@
 <p>여기서는 먼저 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문을 살펴보고 이후에 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문을 살펴본다.</p>
 </div>
 <div class="section" id="while">
-<h2><span class="section-number">7.2. </span><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문<a class="headerlink" href="#while" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.3. </span><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문<a class="headerlink" href="#while" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문은 항상 아래의 형식을 따른다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">while</span> <span class="n">조건</span> <span class="p">:</span>
       <span class="n">본문코드1</span>
@@ -598,7 +611,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문을 작성할 때 조건문이 언젠가는 만족되지 않아서 더 이상 루프가 돌지 않도록 코드를 작성하는 것이 가장 중요하다.</p>
 </div>
 <div class="section" id="for">
-<h2><span class="section-number">7.3. </span><code class="docutils literal notranslate"><span class="pre">for</span> </code> 반복문<a class="headerlink" href="#for" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.4. </span><code class="docutils literal notranslate"><span class="pre">for</span> </code> 반복문<a class="headerlink" href="#for" title="Permalink to this headline">¶</a></h2>
 <p>몇 번 반복되어야 하는지를 아는 경우 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문을 사용할 수 있으며, 아래의 형식을 따른다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">for</span> <span class="n">항목변수</span> <span class="ow">in</span> <span class="n">문자열</span><span class="p">(</span><span class="n">또는</span> <span class="n">리스트</span><span class="p">,</span> <span class="n">튜플</span><span class="p">)</span> <span class="p">:</span>
       <span class="n">코드1</span>
@@ -606,8 +619,8 @@
       <span class="o">...</span>
 </pre></div>
 </div>
-<div class="section" id="id3">
-<h3><span class="section-number">7.3.1. </span>문자열과 <code class="docutils literal notranslate"><span class="pre">for</span></code>문<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3><span class="section-number">7.4.1. </span>문자열과 <code class="docutils literal notranslate"><span class="pre">for</span></code>문<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>아래 코드는 문자열에 포함된 문자 각각을 출력한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -669,7 +682,7 @@ l
 </div>
 </div>
 <div class="section" id="range-for">
-<h3><span class="section-number">7.3.2. </span><code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수와 <code class="docutils literal notranslate"><span class="pre">for</span></code> 문<a class="headerlink" href="#range-for" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.4.2. </span><code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수와 <code class="docutils literal notranslate"><span class="pre">for</span></code> 문<a class="headerlink" href="#range-for" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">range()</span></code> 함수는 일정한 규칙에 따라 나열된 수열을 생성한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
