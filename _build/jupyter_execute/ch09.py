@@ -54,7 +54,8 @@
 # * `File "<ipython-input-19-a5674619cc6b>", line 1`  
 # 1번 줄에서 오류 발생
 # 
-# * ```
+# * 
+# ```
 #     "Hello, world
 #                  ^
 # ```
