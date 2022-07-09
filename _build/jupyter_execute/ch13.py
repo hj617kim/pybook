@@ -194,7 +194,7 @@ print(len(dic3))
 'k' in dic3
 
 
-# ##딕셔너리 관련 메소드
+# ## 딕셔너리 관련 메소드
 
 # * `keys` 메소드는 사전에 사용된 key들을 모두 모아서 리스트와 비슷한 자료형을 만들어서 리턴한다.  
 # 주의) 리스트와 다르지만 매우 비슷하다. 단, `append()`, `remove()` 등과 같은 리스트 메소드를 사용할 수 없다. 
@@ -414,4 +414,10 @@ count = 1
 for key in sorted_keys :
     print(count,"등은",game_score_dic[key], "이고, 점수는 ", key, "입니다.")
     count += 1
+
+
+# In[ ]:
+
+
+
 
