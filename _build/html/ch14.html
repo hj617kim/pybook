@@ -847,19 +847,14 @@ ex) <code class="docutils literal notranslate"><span class="pre">say.txt</span><
 <p>지금까지 <code class="docutils literal notranslate"><span class="pre">open</span></code> 함수를 사용하여 파일을 열고, <code class="docutils literal notranslate"><span class="pre">close()</span></code>를 사용하여 파일을 닫았는데,<br />
 <code class="docutils literal notranslate"><span class="pre">with</span></code> 문을 사용하면 <code class="docutils literal notranslate"><span class="pre">close()</span></code>를 사용하지 않아도 열린 파일을 자동으로 닫아준다.</p>
 <p>다음 형식은</p>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;say.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span> <span class="p">:</span>
+    <span class="n">코드</span>
 </pre></div>
 </div>
-</div></blockquote>
-<p>with open(‘say.txt’) as f :
-코드</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-아래 코드에 대응한다. 
-&gt;```
-f = open(&#39;say.txt&#39;)
-코드
-f.close()
+<p>아래 코드에 대응한다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;say.txt&#39;</span><span class="p">)</span>
+<span class="n">코드</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>예제를 하나 살펴보자.</p>

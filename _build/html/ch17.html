@@ -1,0 +1,4974 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>판다스(Pandas) 2 &#8212; 파이썬 프로그래밍 기초</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">파이썬 프로그래밍 기초</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   소개
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch01.html">
+   1. 프로그래밍이란?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch02.html">
+   2. 파이썬 프로그래밍 개발 환경
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch03.html">
+   3. 프로그래밍 시작하기
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch04.html">
+   4. 변수, 값, 표현식, 명령문
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch05.html">
+   5. 기본자료형
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch06.html">
+   6. 문자열
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch07.html">
+   7. 제어문
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch08.html">
+   8. 입력과 출력
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch09.html">
+   9. 오류 및 예외처리
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch10.html">
+   10. 함수
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch11.html">
+   12. 리스트
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch12.html">
+   13. 튜플
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch13.html">
+   14. 딕셔너리
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch14.html">
+   15. 파일 다루기
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch15.html">
+   16. 웹 사이트에서 데이터 가져오기
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch16.html">
+   18. 넘파이(Numpy)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ch17.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/hj617kim/pybook1"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/hj617kim/pybook1/issues/new?title=Issue%20on%20page%20%2Fch17.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/hj617kim/pybook1/master?urlpath=tree/docs/ch17.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   판다스(Pandas) 2
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     데이터 호출1
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     데이터 분석
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#groupby">
+       groupby()
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     데이터 시각화1
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       막대 그래프
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       원 그래프(파이 차트)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     데이터 호출2
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     데이터 전처리
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     데이터 시각화2
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       선 그래프
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       산점도
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       움직이는 산점도
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id12">
+   판다스2 요약
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id13">
+   데이터 시각화 요약
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>판다스(Pandas) 2</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   판다스(Pandas) 2
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     데이터 호출1
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     데이터 분석
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#groupby">
+       groupby()
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     데이터 시각화1
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       막대 그래프
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       원 그래프(파이 차트)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     데이터 호출2
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     데이터 전처리
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     데이터 시각화2
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       선 그래프
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       산점도
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       움직이는 산점도
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id12">
+   판다스2 요약
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id13">
+   데이터 시각화 요약
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="pandas-2">
+<h1>판다스(Pandas) 2<a class="headerlink" href="#pandas-2" title="Permalink to this headline">¶</a></h1>
+<p>여기서는 아래와 같은 내용을 다룬다.</p>
+<ul class="simple">
+<li><p>csv 파일 불러오기</p></li>
+<li><p>결측치 처리</p></li>
+<li><p>데이터프레임 합하기</p></li>
+<li><p>데이터 시각화(막대 그래프, 원 그래프, 선 그래프, 산점도)</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">drinks.csv</span></code>에는 국가별 음주 데이터가 담겨있다.</p>
+<p>참고) csv는 Comma-Separated Values의 줄임말로, 쉼표(콤마,)를 기준으로 항목을 구분하여 정리되어 있는 파일을 의미한다.</p>
+<p>우선, pandas 모듈을 임포트하자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>데이터 호출1<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>csv 파일을 불러오기 위해, pandas 모듈의 <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> 함수를 이용한다.<br />
+<code class="docutils literal notranslate"><span class="pre">read_csv</span></code> 함수에 대해 알고 싶으면, <code class="docutils literal notranslate"><span class="pre">help</span></code> 함수를 사용하여 확인할 수 있다.</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">help(pd.read_csv)</span></code></p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">read_csv</span></code> 함수는 많은 인자들을 받을 수 있지만 여기서 우리는 csv 파일의 위치만 사용한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drinks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;drinks.csv&#39;</span><span class="p">)</span>
+<span class="n">drinks</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>beer_servings</th>
+      <th>spirit_servings</th>
+      <th>wine_servings</th>
+      <th>total_litres_of_pure_alcohol</th>
+      <th>continent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>AS</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Albania</td>
+      <td>89</td>
+      <td>132</td>
+      <td>54</td>
+      <td>4.9</td>
+      <td>EU</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Algeria</td>
+      <td>25</td>
+      <td>0</td>
+      <td>14</td>
+      <td>0.7</td>
+      <td>AF</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Andorra</td>
+      <td>245</td>
+      <td>138</td>
+      <td>312</td>
+      <td>12.4</td>
+      <td>EU</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Angola</td>
+      <td>217</td>
+      <td>57</td>
+      <td>45</td>
+      <td>5.9</td>
+      <td>AF</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>188</th>
+      <td>Venezuela</td>
+      <td>333</td>
+      <td>100</td>
+      <td>3</td>
+      <td>7.7</td>
+      <td>SA</td>
+    </tr>
+    <tr>
+      <th>189</th>
+      <td>Vietnam</td>
+      <td>111</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>AS</td>
+    </tr>
+    <tr>
+      <th>190</th>
+      <td>Yemen</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.1</td>
+      <td>AS</td>
+    </tr>
+    <tr>
+      <th>191</th>
+      <td>Zambia</td>
+      <td>32</td>
+      <td>19</td>
+      <td>4</td>
+      <td>2.5</td>
+      <td>AF</td>
+    </tr>
+    <tr>
+      <th>192</th>
+      <td>Zimbabwe</td>
+      <td>64</td>
+      <td>18</td>
+      <td>4</td>
+      <td>4.7</td>
+      <td>AF</td>
+    </tr>
+  </tbody>
+</table>
+<p>193 rows × 6 columns</p>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">drinks</span></code>의 타입을 확인하면, 판다스 모듈의 데이터프레임이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">drinks</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.frame.DataFrame
+</pre></div>
+</div>
+</div>
+</div>
+<p>데이터프레임 <code class="docutils literal notranslate"><span class="pre">drinks</span></code>의 처음 7개의 데이터를 확인해보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drinks</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>beer_servings</th>
+      <th>spirit_servings</th>
+      <th>wine_servings</th>
+      <th>total_litres_of_pure_alcohol</th>
+      <th>continent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>AS</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Albania</td>
+      <td>89</td>
+      <td>132</td>
+      <td>54</td>
+      <td>4.9</td>
+      <td>EU</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Algeria</td>
+      <td>25</td>
+      <td>0</td>
+      <td>14</td>
+      <td>0.7</td>
+      <td>AF</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Andorra</td>
+      <td>245</td>
+      <td>138</td>
+      <td>312</td>
+      <td>12.4</td>
+      <td>EU</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Angola</td>
+      <td>217</td>
+      <td>57</td>
+      <td>45</td>
+      <td>5.9</td>
+      <td>AF</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Antigua &amp; Barbuda</td>
+      <td>102</td>
+      <td>128</td>
+      <td>45</td>
+      <td>4.9</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Argentina</td>
+      <td>193</td>
+      <td>25</td>
+      <td>221</td>
+      <td>8.3</td>
+      <td>SA</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>데이터프레임 <code class="docutils literal notranslate"><span class="pre">drinks</span></code>의 끝에 있는 5개의 데이터를 확인해보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drinks</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>beer_servings</th>
+      <th>spirit_servings</th>
+      <th>wine_servings</th>
+      <th>total_litres_of_pure_alcohol</th>
+      <th>continent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>188</th>
+      <td>Venezuela</td>
+      <td>333</td>
+      <td>100</td>
+      <td>3</td>
+      <td>7.7</td>
+      <td>SA</td>
+    </tr>
+    <tr>
+      <th>189</th>
+      <td>Vietnam</td>
+      <td>111</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>AS</td>
+    </tr>
+    <tr>
+      <th>190</th>
+      <td>Yemen</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.1</td>
+      <td>AS</td>
+    </tr>
+    <tr>
+      <th>191</th>
+      <td>Zambia</td>
+      <td>32</td>
+      <td>19</td>
+      <td>4</td>
+      <td>2.5</td>
+      <td>AF</td>
+    </tr>
+    <tr>
+      <th>192</th>
+      <td>Zimbabwe</td>
+      <td>64</td>
+      <td>18</td>
+      <td>4</td>
+      <td>4.7</td>
+      <td>AF</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">drinks</span></code>의 열(column) 이름을 확인해보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drinks</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;country&#39;, &#39;beer_servings&#39;, &#39;spirit_servings&#39;, &#39;wine_servings&#39;,
+       &#39;total_litres_of_pure_alcohol&#39;, &#39;continent&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">drinks</span></code>의 인덱스(index)를 확인해보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drinks</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RangeIndex(start=0, stop=193, step=1)
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">info()</span></code> 메소드로 데이터의 기본 정보 몇 가지를 확인해보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drinks</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 193 entries, 0 to 192
+Data columns (total 6 columns):
+ #   Column                        Non-Null Count  Dtype  
+---  ------                        --------------  -----  
+ 0   country                       193 non-null    object 
+ 1   beer_servings                 193 non-null    int64  
+ 2   spirit_servings               193 non-null    int64  
+ 3   wine_servings                 193 non-null    int64  
+ 4   total_litres_of_pure_alcohol  193 non-null    float64
+ 5   continent                     170 non-null    object 
+dtypes: float64(1), int64(3), object(2)
+memory usage: 9.2+ KB
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">drinks</span></code>의 <code class="docutils literal notranslate"><span class="pre">continent</span></code>열에는 23개의 결측치가 있는 것을 알 수 있다. 이는 아래의 코드로도 확인 가능하다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drinks</span><span class="o">.</span><span class="n">continent</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">describe()</span></code> 메소드로 빈도수, 평균, 표준편차, 최댓값, 최솟값 등과 같은 기초통계량을 확인할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drinks</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>beer_servings</th>
+      <th>spirit_servings</th>
+      <th>wine_servings</th>
+      <th>total_litres_of_pure_alcohol</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>193.000000</td>
+      <td>193.000000</td>
+      <td>193.000000</td>
+      <td>193.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>106.160622</td>
+      <td>80.994819</td>
+      <td>49.450777</td>
+      <td>4.717098</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>101.143103</td>
+      <td>88.284312</td>
+      <td>79.697598</td>
+      <td>3.773298</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>20.000000</td>
+      <td>4.000000</td>
+      <td>1.000000</td>
+      <td>1.300000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>76.000000</td>
+      <td>56.000000</td>
+      <td>8.000000</td>
+      <td>4.200000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>188.000000</td>
+      <td>128.000000</td>
+      <td>59.000000</td>
+      <td>7.200000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>376.000000</td>
+      <td>438.000000</td>
+      <td>370.000000</td>
+      <td>14.400000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">unique()</span></code> 메소드를 사용하면, 중복 값을 제거하고 유일한 값만을 보여준다.<br />
+예를 들어, <code class="docutils literal notranslate"><span class="pre">continent</span></code>열에 어떠한 항목들이 있는지 알고 싶을 때 아래와 같이 <code class="docutils literal notranslate"><span class="pre">unique()</span></code> 메소드를 사용할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drinks</span><span class="o">.</span><span class="n">continent</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;AS&#39;, &#39;EU&#39;, &#39;AF&#39;, nan, &#39;SA&#39;, &#39;OC&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> 메소드는 유일한 값과 그 개수를 확인할 때 사용한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drinks</span><span class="o">.</span><span class="n">continent</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AF    53
+EU    45
+AS    44
+OC    16
+SA    12
+Name: continent, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>데이터 분석<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>예를 들어, 맥주 소비량이 가장 높은 나라의 이름을 찾기 위해서 다음 두 가지 방식 중에 한 가지를 활용할 수 있다.</p>
+<ul class="simple">
+<li><p>방법 1 : <code class="docutils literal notranslate"><span class="pre">beer_servings</span></code> 열을 기준으로 내림차순으로 정렬한 후 첫째 항 선택</p></li>
+<li><p>방법 2 : <code class="docutils literal notranslate"><span class="pre">beer_servings</span></code> 열에 대해 <code class="docutils literal notranslate"><span class="pre">max()</span></code> 함수 적용.</p></li>
+</ul>
+<ul class="simple">
+<li><p>방법 1 : 특정 열을 기준으로 내림차순으로 정렬하는 방법은 아래와 같다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_beer</span> <span class="o">=</span> <span class="n">drinks</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;beer_servings&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">sorted_beer</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>beer_servings</th>
+      <th>spirit_servings</th>
+      <th>wine_servings</th>
+      <th>total_litres_of_pure_alcohol</th>
+      <th>continent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>117</th>
+      <td>Namibia</td>
+      <td>376</td>
+      <td>3</td>
+      <td>1</td>
+      <td>6.8</td>
+      <td>AF</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>Czech Republic</td>
+      <td>361</td>
+      <td>170</td>
+      <td>134</td>
+      <td>11.8</td>
+      <td>EU</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>Gabon</td>
+      <td>347</td>
+      <td>98</td>
+      <td>59</td>
+      <td>8.9</td>
+      <td>AF</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>Germany</td>
+      <td>346</td>
+      <td>117</td>
+      <td>175</td>
+      <td>11.3</td>
+      <td>EU</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>Lithuania</td>
+      <td>343</td>
+      <td>244</td>
+      <td>56</td>
+      <td>12.9</td>
+      <td>EU</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>107</th>
+      <td>Mauritania</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>AF</td>
+    </tr>
+    <tr>
+      <th>158</th>
+      <td>Somalia</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>AF</td>
+    </tr>
+    <tr>
+      <th>111</th>
+      <td>Monaco</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>EU</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>Pakistan</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>AS</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>AS</td>
+    </tr>
+  </tbody>
+</table>
+<p>193 rows × 6 columns</p>
+</div></div></div>
+</div>
+<p>이제 첫째 행을 확인하면 된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_beer</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>beer_servings</th>
+      <th>spirit_servings</th>
+      <th>wine_servings</th>
+      <th>total_litres_of_pure_alcohol</th>
+      <th>continent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>117</th>
+      <td>Namibia</td>
+      <td>376</td>
+      <td>3</td>
+      <td>1</td>
+      <td>6.8</td>
+      <td>AF</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>맥주 소비량이 가장 높은 나라는 나미비아Namibia인 것을 알 수 있다.</p>
+<ul class="simple">
+<li><p>방법 2 : <code class="docutils literal notranslate"><span class="pre">beer_servings</span></code>열의 포함된 숫자들을 대상으로 최댓값을 찾기 위해 <code class="docutils literal notranslate"><span class="pre">max()</span></code> 함수를 적용하는 방식은 다음과 같다. 특정 열에 대해 일괄적으로 어떤 함수를 적용하는 방식은 <code class="docutils literal notranslate"><span class="pre">max()</span></code> 함수를 활용하는 방식과 유사하다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drinks</span><span class="p">[</span><span class="s1">&#39;beer_servings&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>376
+</pre></div>
+</div>
+</div>
+</div>
+<p>최댓값은 376이다. 이제 <code class="docutils literal notranslate"><span class="pre">beer_servings</span></code> 열의 값이 376인 데이터를 확인하자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drinks</span><span class="p">[</span><span class="n">drinks</span><span class="o">.</span><span class="n">beer_servings</span> <span class="o">==</span> <span class="n">drinks</span><span class="o">.</span><span class="n">beer_servings</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>beer_servings</th>
+      <th>spirit_servings</th>
+      <th>wine_servings</th>
+      <th>total_litres_of_pure_alcohol</th>
+      <th>continent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>117</th>
+      <td>Namibia</td>
+      <td>376</td>
+      <td>3</td>
+      <td>1</td>
+      <td>6.8</td>
+      <td>AF</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="groupby">
+<h3>groupby()<a class="headerlink" href="#groupby" title="Permalink to this headline">¶</a></h3>
+<p>데이터를 그룹별로 나누어 분석하고자 할 때, <code class="docutils literal notranslate"><span class="pre">groupby()</span></code>를 사용할 수 있다.<br />
+예를 들어, <code class="docutils literal notranslate"><span class="pre">drinks</span></code>를 대륙(continent)별로 분석하고 싶다면, 아래와 같이 코드를 작성하면 된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drinks_gp</span> <span class="o">=</span> <span class="n">drinks</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span>  <span class="c1">#그룹을 만들 때 누락된 값(nan)은 무시됨. </span>
+<span class="n">drinks_gp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7fe9c95c68e0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">drinks_gp</span></code>은 <code class="docutils literal notranslate"><span class="pre">GroupBy</span></code>객체로, 그룹 연산을 위해 필요한 정보를 가지고 있다.<br />
+아래와 같이 <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">...</span> <span class="pre">in</span> </code>문을 사용하면, 그룹명과 그 그룹에 해당하는 데이터를 튜플로 묶어 보여준다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">gp</span> <span class="ow">in</span> <span class="n">drinks_gp</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">gp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;AF&#39;,                       country  beer_servings  spirit_servings  wine_servings  \
+2                     Algeria             25                0             14   
+4                      Angola            217               57             45   
+18                      Benin             34                4             13   
+22                   Botswana            173               35             35   
+26               Burkina Faso             25                7              7   
+27                    Burundi             88                0              0   
+28              Cote d&#39;Ivoire             37                1              7   
+29                 Cabo Verde            144               56             16   
+31                   Cameroon            147                1              4   
+33   Central African Republic             17                2              1   
+34                       Chad             15                1              1   
+38                    Comoros              1                3              1   
+39                      Congo             76                1              9   
+47                   DR Congo             32                3              1   
+49                   Djibouti             15               44              3   
+53                      Egypt              6                4              1   
+55          Equatorial Guinea             92                0            233   
+56                    Eritrea             18                0              0   
+58                   Ethiopia             20                3              0   
+62                      Gabon            347               98             59   
+63                     Gambia              8                0              1   
+66                      Ghana             31                3             10   
+70                     Guinea              9                0              2   
+71              Guinea-Bissau             28               31             21   
+88                      Kenya             58               22              2   
+95                    Lesotho             82               29              0   
+96                    Liberia             19              152              2   
+97                      Libya              0                0              0   
+100                Madagascar             26               15              4   
+101                    Malawi              8               11              1   
+104                      Mali              5                1              1   
+107                Mauritania              0                0              0   
+108                 Mauritius             98               31             18   
+114                   Morocco             12                6             10   
+115                Mozambique             47               18              5   
+117                   Namibia            376                3              1   
+123                     Niger              3                2              1   
+124                   Nigeria             42                5              2   
+142                    Rwanda             43                2              0   
+148       Sao Tome &amp; Principe             56               38            140   
+150                   Senegal              9                1              7   
+152                Seychelles            157               25             51   
+153              Sierra Leone             25                3              2   
+158                   Somalia              0                0              0   
+159              South Africa            225               76             81   
+162                     Sudan              8               13              0   
+164                 Swaziland             90                2              2   
+172                      Togo             36                2             19   
+175                   Tunisia             51                3             20   
+179                    Uganda             45                9              0   
+183                  Tanzania             36                6              1   
+191                    Zambia             32               19              4   
+192                  Zimbabwe             64               18              4   
+
+     total_litres_of_pure_alcohol continent  
+2                             0.7        AF  
+4                             5.9        AF  
+18                            1.1        AF  
+22                            5.4        AF  
+26                            4.3        AF  
+27                            6.3        AF  
+28                            4.0        AF  
+29                            4.0        AF  
+31                            5.8        AF  
+33                            1.8        AF  
+34                            0.4        AF  
+38                            0.1        AF  
+39                            1.7        AF  
+47                            2.3        AF  
+49                            1.1        AF  
+53                            0.2        AF  
+55                            5.8        AF  
+56                            0.5        AF  
+58                            0.7        AF  
+62                            8.9        AF  
+63                            2.4        AF  
+66                            1.8        AF  
+70                            0.2        AF  
+71                            2.5        AF  
+88                            1.8        AF  
+95                            2.8        AF  
+96                            3.1        AF  
+97                            0.0        AF  
+100                           0.8        AF  
+101                           1.5        AF  
+104                           0.6        AF  
+107                           0.0        AF  
+108                           2.6        AF  
+114                           0.5        AF  
+115                           1.3        AF  
+117                           6.8        AF  
+123                           0.1        AF  
+124                           9.1        AF  
+142                           6.8        AF  
+148                           4.2        AF  
+150                           0.3        AF  
+152                           4.1        AF  
+153                           6.7        AF  
+158                           0.0        AF  
+159                           8.2        AF  
+162                           1.7        AF  
+164                           4.7        AF  
+172                           1.3        AF  
+175                           1.3        AF  
+179                           8.3        AF  
+183                           5.7        AF  
+191                           2.5        AF  
+192                           4.7        AF  )
+(&#39;AS&#39;,                   country  beer_servings  spirit_servings  wine_servings  \
+0             Afghanistan              0                0              0   
+12                Bahrain             42               63              7   
+13             Bangladesh              0                0              0   
+19                 Bhutan             23                0              0   
+24                 Brunei             31                2              1   
+30               Cambodia             57               65              1   
+36                  China             79              192              8   
+46            North Korea              0                0              0   
+77                  India              9              114              0   
+78              Indonesia              5                1              0   
+79                   Iran              0                0              0   
+80                   Iraq              9                3              0   
+82                 Israel             63               69              9   
+85                  Japan             77              202             16   
+86                 Jordan              6               21              1   
+87             Kazakhstan            124              246             12   
+90                 Kuwait              0                0              0   
+91             Kyrgyzstan             31               97              6   
+92                   Laos             62                0            123   
+94                Lebanon             20               55             31   
+102              Malaysia             13                4              0   
+103              Maldives              0                0              0   
+112              Mongolia             77              189              8   
+116               Myanmar              5                1              0   
+119                 Nepal              5                6              0   
+127                  Oman             22               16              1   
+128              Pakistan              0                0              0   
+134           Philippines             71              186              1   
+137                 Qatar              1               42              7   
+138           South Korea            140               16              9   
+141    Russian Federation            247              326             73   
+149          Saudi Arabia              0                5              0   
+154             Singapore             60               12             11   
+161             Sri Lanka             16              104              0   
+167                 Syria              5               35             16   
+168            Tajikistan              2               15              0   
+169              Thailand             99              258              1   
+171           Timor-Leste              1                1              4   
+176                Turkey             51               22              7   
+177          Turkmenistan             19               71             32   
+181  United Arab Emirates             16              135              5   
+186            Uzbekistan             25              101              8   
+189               Vietnam            111                2              1   
+190                 Yemen              6                0              0   
+
+     total_litres_of_pure_alcohol continent  
+0                             0.0        AS  
+12                            2.0        AS  
+13                            0.0        AS  
+19                            0.4        AS  
+24                            0.6        AS  
+30                            2.2        AS  
+36                            5.0        AS  
+46                            0.0        AS  
+77                            2.2        AS  
+78                            0.1        AS  
+79                            0.0        AS  
+80                            0.2        AS  
+82                            2.5        AS  
+85                            7.0        AS  
+86                            0.5        AS  
+87                            6.8        AS  
+90                            0.0        AS  
+91                            2.4        AS  
+92                            6.2        AS  
+94                            1.9        AS  
+102                           0.3        AS  
+103                           0.0        AS  
+112                           4.9        AS  
+116                           0.1        AS  
+119                           0.2        AS  
+127                           0.7        AS  
+128                           0.0        AS  
+134                           4.6        AS  
+137                           0.9        AS  
+138                           9.8        AS  
+141                          11.5        AS  
+149                           0.1        AS  
+154                           1.5        AS  
+161                           2.2        AS  
+167                           1.0        AS  
+168                           0.3        AS  
+169                           6.4        AS  
+171                           0.1        AS  
+176                           1.4        AS  
+177                           2.2        AS  
+181                           2.8        AS  
+186                           2.4        AS  
+189                           2.0        AS  
+190                           0.1        AS  )
+(&#39;EU&#39;,                 country  beer_servings  spirit_servings  wine_servings  \
+1               Albania             89              132             54   
+3               Andorra            245              138            312   
+7               Armenia             21              179             11   
+9               Austria            279               75            191   
+10           Azerbaijan             21               46              5   
+15              Belarus            142              373             42   
+16              Belgium            295               84            212   
+21   Bosnia-Herzegovina             76              173              8   
+25             Bulgaria            231              252             94   
+42              Croatia            230               87            254   
+44               Cyprus            192              154            113   
+45       Czech Republic            361              170            134   
+48              Denmark            224               81            278   
+57              Estonia            224              194             59   
+60              Finland            263              133             97   
+61               France            127              151            370   
+64              Georgia             52              100            149   
+65              Germany            346              117            175   
+67               Greece            133              112            218   
+75              Hungary            234              215            185   
+76              Iceland            233               61             78   
+81              Ireland            313              118            165   
+83                Italy             85               42            237   
+93               Latvia            281              216             62   
+98            Lithuania            343              244             56   
+99           Luxembourg            236              133            271   
+105               Malta            149              100            120   
+111              Monaco              0                0              0   
+113          Montenegro             31              114            128   
+120         Netherlands            251               88            190   
+126              Norway            169               71            129   
+135              Poland            343              215             56   
+136            Portugal            194               67            339   
+139             Moldova            109              226             18   
+140             Romania            297              122            167   
+147          San Marino              0                0              0   
+151              Serbia            283              131            127   
+155            Slovakia            196              293            116   
+156            Slovenia            270               51            276   
+160               Spain            284              157            112   
+165              Sweden            152               60            186   
+166         Switzerland            185              100            280   
+170           Macedonia            106               27             86   
+180             Ukraine            206              237             45   
+182      United Kingdom            219              126            195   
+
+     total_litres_of_pure_alcohol continent  
+1                             4.9        EU  
+3                            12.4        EU  
+7                             3.8        EU  
+9                             9.7        EU  
+10                            1.3        EU  
+15                           14.4        EU  
+16                           10.5        EU  
+21                            4.6        EU  
+25                           10.3        EU  
+42                           10.2        EU  
+44                            8.2        EU  
+45                           11.8        EU  
+48                           10.4        EU  
+57                            9.5        EU  
+60                           10.0        EU  
+61                           11.8        EU  
+64                            5.4        EU  
+65                           11.3        EU  
+67                            8.3        EU  
+75                           11.3        EU  
+76                            6.6        EU  
+81                           11.4        EU  
+83                            6.5        EU  
+93                           10.5        EU  
+98                           12.9        EU  
+99                           11.4        EU  
+105                           6.6        EU  
+111                           0.0        EU  
+113                           4.9        EU  
+120                           9.4        EU  
+126                           6.7        EU  
+135                          10.9        EU  
+136                          11.0        EU  
+139                           6.3        EU  
+140                          10.4        EU  
+147                           0.0        EU  
+151                           9.6        EU  
+155                          11.4        EU  
+156                          10.6        EU  
+160                          10.0        EU  
+165                           7.2        EU  
+166                          10.2        EU  
+170                           3.9        EU  
+180                           8.9        EU  
+182                          10.4        EU  )
+(&#39;OC&#39;,               country  beer_servings  spirit_servings  wine_servings  \
+8           Australia            261               72            212   
+40       Cook Islands              0              254             74   
+59               Fiji             77               35              1   
+89           Kiribati             21               34              1   
+106  Marshall Islands              0                0              0   
+110        Micronesia             62               50             18   
+118             Nauru             49                0              8   
+121       New Zealand            203               79            175   
+125              Niue            188              200              7   
+129             Palau            306               63             23   
+131  Papua New Guinea             44               39              1   
+146             Samoa            105               18             24   
+157   Solomon Islands             56               11              1   
+173             Tonga             36               21              5   
+178            Tuvalu              6               41              9   
+187           Vanuatu             21               18             11   
+
+     total_litres_of_pure_alcohol continent  
+8                            10.4        OC  
+40                            5.9        OC  
+59                            2.0        OC  
+89                            1.0        OC  
+106                           0.0        OC  
+110                           2.3        OC  
+118                           1.0        OC  
+121                           9.3        OC  
+125                           7.0        OC  
+129                           6.9        OC  
+131                           1.5        OC  
+146                           2.6        OC  
+157                           1.2        OC  
+173                           1.1        OC  
+178                           1.0        OC  
+187                           0.9        OC  )
+(&#39;SA&#39;,        country  beer_servings  spirit_servings  wine_servings  \
+6    Argentina            193               25            221   
+20     Bolivia            167               41              8   
+23      Brazil            245              145             16   
+35       Chile            130              124            172   
+37    Colombia            159               76              3   
+52     Ecuador            162               74              3   
+72      Guyana             93              302              1   
+132   Paraguay            213              117             74   
+133       Peru            163              160             21   
+163   Suriname            128              178              7   
+185    Uruguay            115               35            220   
+188  Venezuela            333              100              3   
+
+     total_litres_of_pure_alcohol continent  
+6                             8.3        SA  
+20                            3.8        SA  
+23                            7.2        SA  
+35                            7.6        SA  
+37                            4.2        SA  
+52                            4.2        SA  
+72                            7.1        SA  
+132                           7.3        SA  
+133                           6.1        SA  
+163                           5.6        SA  
+185                           6.6        SA  
+188                           7.7        SA  )
+</pre></div>
+</div>
+</div>
+</div>
+<p>예를 들어, 대륙별 각 열의 평균이 알고 싶다면, <code class="docutils literal notranslate"><span class="pre">GroupBy</span></code> 객체에 <code class="docutils literal notranslate"><span class="pre">mean()</span></code> 메소드를 사용하면 된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drinks_gp</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>beer_servings</th>
+      <th>spirit_servings</th>
+      <th>wine_servings</th>
+      <th>total_litres_of_pure_alcohol</th>
+    </tr>
+    <tr>
+      <th>continent</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>AF</th>
+      <td>61.471698</td>
+      <td>16.339623</td>
+      <td>16.264151</td>
+      <td>3.007547</td>
+    </tr>
+    <tr>
+      <th>AS</th>
+      <td>37.045455</td>
+      <td>60.840909</td>
+      <td>9.068182</td>
+      <td>2.170455</td>
+    </tr>
+    <tr>
+      <th>EU</th>
+      <td>193.777778</td>
+      <td>132.555556</td>
+      <td>142.222222</td>
+      <td>8.617778</td>
+    </tr>
+    <tr>
+      <th>OC</th>
+      <td>89.687500</td>
+      <td>58.437500</td>
+      <td>35.625000</td>
+      <td>3.381250</td>
+    </tr>
+    <tr>
+      <th>SA</th>
+      <td>175.083333</td>
+      <td>114.750000</td>
+      <td>62.416667</td>
+      <td>6.308333</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>그룹별 특정열에 대한 분석도 할 수 있다.<br />
+예를 들어, 대륙별 맥주 소비량의 평균이 알고 싶다면, 아래와 같이 코드를 작성하면 된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beer_mean</span> <span class="o">=</span> <span class="n">drinks_gp</span><span class="o">.</span><span class="n">beer_servings</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">beer_mean</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>continent
+AF     61.471698
+AS     37.045455
+EU    193.777778
+OC     89.687500
+SA    175.083333
+Name: beer_servings, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">median()</span></code> 메소드를 사용하여, 대륙별 맥주 소비량의 중앙값을 구할 수도 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beer_median</span> <span class="o">=</span> <span class="n">drinks_gp</span><span class="o">.</span><span class="n">beer_servings</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">beer_median</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>continent
+AF     32.0
+AS     17.5
+EU    219.0
+OC     52.5
+SA    162.5
+Name: beer_servings, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>대륙별 와인 소비량의 평균을 확인해보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wine_mean</span> <span class="o">=</span> <span class="n">drinks_gp</span><span class="o">.</span><span class="n">wine_servings</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">wine_mean</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>continent
+AF     16.264151
+AS      9.068182
+EU    142.222222
+OC     35.625000
+SA     62.416667
+Name: wine_servings, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>대륙별 와인 소비량의 중앙값도 확인해보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wine_median</span> <span class="o">=</span> <span class="n">drinks_gp</span><span class="o">.</span><span class="n">wine_servings</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">wine_median</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>continent
+AF      2.0
+AS      1.0
+EU    128.0
+OC      8.5
+SA     12.0
+Name: wine_servings, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>데이터 시각화1<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>데이터 분석을 위해 기본적으로 하는 일 중 하나가 데이터 시각화이다. 데이터를 시각화하는 것은 어렵지 않지만, 적합한 시각화를 만드는 일은 매우 어려우며, 많은 훈련과 직관이 요구된다.</p>
+<p>여기서는 데이터를 시각화하는 기본적인 두 가지 방법을 배운다.</p>
+<ul class="simple">
+<li><p>막대 그래프</p></li>
+<li><p>원 그래프</p></li>
+</ul>
+<div class="section" id="id4">
+<h3>막대 그래프<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>막대 그래프는 각 항목의 크기를 한 눈에 비교할 수 있도록 도와주는 그래프이다.<br />
+<code class="docutils literal notranslate"><span class="pre">plt.bar()</span></code> 를 이용하여 막대 그래프를 그릴 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;gray&#39;</span><span class="p">]</span> <span class="c1"># 각 막대의 색을 담은 리스트</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span> <span class="c1"># 그래프를 그릴 도화지</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;wine_servings&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>  <span class="c1">#큰 제목 더하기</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># 도화지 분할</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">wine_mean</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">wine_mean</span><span class="p">)</span>  <span class="c1">#막대 그래프 그리기</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;wine_mean&#39;</span><span class="p">)</span>  <span class="c1"># 제목 더하기</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># 도화지 분할</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">wine_median</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">wine_median</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">)</span>  <span class="c1">#막대 그래프 그리기, 색은 colors로 지정</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;wine_median&#39;</span><span class="p">)</span> <span class="c1">#제목 더하기</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">top</span> <span class="o">=</span> <span class="mf">0.80</span><span class="p">,</span> <span class="n">wspace</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span> <span class="c1"># 그래프간 간격 조절</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ch17_53_0.png" src="_images/ch17_53_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>원 그래프(파이 차트)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>원 그래프는 각 항목이 전체에서 차지하는 비중을 한 눈에 알아볼 수 있도록 도와주는 그래프이다.<br />
+<code class="docutils literal notranslate"><span class="pre">plt.pie()</span></code> 를 이용하여 원 그래프를 그릴 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;silver&#39;</span><span class="p">,</span> <span class="s1">&#39;whitesmoke&#39;</span><span class="p">,</span> <span class="s1">&#39;lightgray&#39;</span><span class="p">,</span> <span class="s1">&#39;gold&#39;</span><span class="p">,</span> <span class="s1">&#39;gray&#39;</span><span class="p">]</span> <span class="c1"># 각 조각의 색을 담은 리스트</span>
+<span class="n">explode</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>   <span class="c1">#특정 조각을 돌출시켜 강조하기 위한 값 지정</span>
+<span class="n">wedgeprops</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">}</span> 
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span> <span class="c1">#그래프를 그릴 도화지, figsize로 그래프의 크기 변경가능!</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;beer_servings&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span> <span class="c1">#큰 제목 더하기</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">#도화지 분할</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">beer_mean</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">beer_mean</span><span class="o">.</span><span class="n">index</span><span class="p">)</span> <span class="c1">#원 그래프 그리기, labels는 원 조각에 라벨 지정 </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;beer_mean&#39;</span><span class="p">)</span> <span class="c1">#제목 더하기</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">#도화지 분할</span>
+
+<span class="c1"># autopct은 각 조각의 전체 대비 백분율 표시 방법 지정</span>
+<span class="c1"># colors로 색 지정</span>
+<span class="c1"># explode는 특정 조각을 돌출시키기 위해 지정</span>
+<span class="c1"># 도넛 모양의 그래프를 그리고 싶다면, wedgeprops를 딕셔너리로 설정.  </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">beer_median</span><span class="p">,</span> <span class="n">autopct</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%0.1f%%</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">colors</span> <span class="o">=</span> <span class="n">colors</span><span class="p">,</span> <span class="n">explode</span><span class="o">=</span><span class="n">explode</span><span class="p">,</span> <span class="n">wedgeprops</span><span class="o">=</span><span class="n">wedgeprops</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;beer_median&#39;</span><span class="p">)</span> <span class="c1">#제목 더하기</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">beer_median</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">top</span> <span class="o">=</span> <span class="mf">0.90</span><span class="p">,</span> <span class="n">wspace</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span> <span class="c1">#그래프간 간격 조절</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;wine_servings.png&#39;</span><span class="p">)</span> <span class="c1">#그래프 저장하기</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ch17_55_0.png" src="_images/ch17_55_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>데이터 호출2<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code> 함수를 이용해, <code class="docutils literal notranslate"><span class="pre">ABdata.csv</span></code> 파일을 불러오자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">ab_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ABdata.csv&#39;</span><span class="p">)</span>
+<span class="n">ab_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rng</th>
+      <th>A</th>
+      <th>B</th>
+      <th>gp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-01-07</td>
+      <td>10.0</td>
+      <td>36.0</td>
+      <td>gp1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-01-14</td>
+      <td>NaN</td>
+      <td>21.0</td>
+      <td>gp1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-01-21</td>
+      <td>91.0</td>
+      <td>107.0</td>
+      <td>gp4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-01-28</td>
+      <td>15.0</td>
+      <td>39.0</td>
+      <td>gp2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-02-04</td>
+      <td>15.0</td>
+      <td>24.0</td>
+      <td>gp1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>112</th>
+      <td>2021-03-01</td>
+      <td>1.0</td>
+      <td>29.0</td>
+      <td>gp1</td>
+    </tr>
+    <tr>
+      <th>113</th>
+      <td>2021-03-08</td>
+      <td>50.0</td>
+      <td>65.0</td>
+      <td>gp3</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>2021-03-15</td>
+      <td>15.0</td>
+      <td>53.0</td>
+      <td>gp2</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>2021-03-22</td>
+      <td>1.0</td>
+      <td>39.0</td>
+      <td>gp1</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>2021-03-29</td>
+      <td>58.0</td>
+      <td>61.0</td>
+      <td>gp3</td>
+    </tr>
+  </tbody>
+</table>
+<p>117 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>특정 열을 인덱스로 사용하고 싶다면, <code class="docutils literal notranslate"><span class="pre">index_col</span></code>이라는 매개변수를 사용하면 된다.<br />
+예를 들어, 아래는 <code class="docutils literal notranslate"><span class="pre">rng</span></code>열을 인덱스로 사용하는 코드이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ab_df_rng</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ABdata.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;rng&#39;</span><span class="p">)</span>
+<span class="n">ab_df_rng</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>gp</th>
+    </tr>
+    <tr>
+      <th>rng</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2019-01-07</th>
+      <td>10.0</td>
+      <td>36.0</td>
+      <td>gp1</td>
+    </tr>
+    <tr>
+      <th>2019-01-14</th>
+      <td>NaN</td>
+      <td>21.0</td>
+      <td>gp1</td>
+    </tr>
+    <tr>
+      <th>2019-01-21</th>
+      <td>91.0</td>
+      <td>107.0</td>
+      <td>gp4</td>
+    </tr>
+    <tr>
+      <th>2019-01-28</th>
+      <td>15.0</td>
+      <td>39.0</td>
+      <td>gp2</td>
+    </tr>
+    <tr>
+      <th>2019-02-04</th>
+      <td>15.0</td>
+      <td>24.0</td>
+      <td>gp1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2021-03-01</th>
+      <td>1.0</td>
+      <td>29.0</td>
+      <td>gp1</td>
+    </tr>
+    <tr>
+      <th>2021-03-08</th>
+      <td>50.0</td>
+      <td>65.0</td>
+      <td>gp3</td>
+    </tr>
+    <tr>
+      <th>2021-03-15</th>
+      <td>15.0</td>
+      <td>53.0</td>
+      <td>gp2</td>
+    </tr>
+    <tr>
+      <th>2021-03-22</th>
+      <td>1.0</td>
+      <td>39.0</td>
+      <td>gp1</td>
+    </tr>
+    <tr>
+      <th>2021-03-29</th>
+      <td>58.0</td>
+      <td>61.0</td>
+      <td>gp3</td>
+    </tr>
+  </tbody>
+</table>
+<p>117 rows × 3 columns</p>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">info()</span></code> 메소드로 데이터의 기본 정보 몇 가지를 확인해보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ab_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 117 entries, 0 to 116
+Data columns (total 4 columns):
+ #   Column  Non-Null Count  Dtype  
+---  ------  --------------  -----  
+ 0   rng     117 non-null    object 
+ 1   A       107 non-null    float64
+ 2   B       111 non-null    float64
+ 3   gp      117 non-null    object 
+dtypes: float64(2), object(2)
+memory usage: 3.8+ KB
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">describe()</span></code> 메소드로 기초통계량을 확인해보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ab_df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>107.000000</td>
+      <td>111.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>37.607477</td>
+      <td>57.396396</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>25.648111</td>
+      <td>24.959705</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>21.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>17.000000</td>
+      <td>38.500000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>35.000000</td>
+      <td>54.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>55.500000</td>
+      <td>72.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>97.000000</td>
+      <td>119.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>데이터 전처리<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>여러 개의 데이터를 합하는 방법과 결측치를 처리하는 방법을 살펴보자.</p>
+<p><code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code> 함수를 이용해 <code class="docutils literal notranslate"><span class="pre">ABdata1.csv</span></code>파일을 불러오자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ab_df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ABdata1.csv&#39;</span><span class="p">)</span>
+<span class="n">ab_df1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rng</th>
+      <th>A</th>
+      <th>B</th>
+      <th>gp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2021-04-05</td>
+      <td>12</td>
+      <td>34</td>
+      <td>gp1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2021-04-12</td>
+      <td>18</td>
+      <td>28</td>
+      <td>gp1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2021-04-19</td>
+      <td>11</td>
+      <td>26</td>
+      <td>gp3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2021-04-26</td>
+      <td>7</td>
+      <td>36</td>
+      <td>gp3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><strong>데이터프레임 합하기</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code> 함수를 이용하면 여러 개의 데이터를 하나로 합할 수 있다.<br />
+예를 들어, <code class="docutils literal notranslate"><span class="pre">ab_df</span></code>와 <code class="docutils literal notranslate"><span class="pre">ab_df1</span></code>를 위아래(행방향)로 합하고 싶으면, 아래와 같이 코드를 작성하면 된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ab_df_concat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">ab_df</span><span class="p">,</span> <span class="n">ab_df1</span><span class="p">])</span>
+<span class="n">ab_df_concat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rng</th>
+      <th>A</th>
+      <th>B</th>
+      <th>gp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-01-07</td>
+      <td>10.0</td>
+      <td>36.0</td>
+      <td>gp1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-01-14</td>
+      <td>NaN</td>
+      <td>21.0</td>
+      <td>gp1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-01-21</td>
+      <td>91.0</td>
+      <td>107.0</td>
+      <td>gp4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-01-28</td>
+      <td>15.0</td>
+      <td>39.0</td>
+      <td>gp2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-02-04</td>
+      <td>15.0</td>
+      <td>24.0</td>
+      <td>gp1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>2021-03-29</td>
+      <td>58.0</td>
+      <td>61.0</td>
+      <td>gp3</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>2021-04-05</td>
+      <td>12.0</td>
+      <td>34.0</td>
+      <td>gp1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2021-04-12</td>
+      <td>18.0</td>
+      <td>28.0</td>
+      <td>gp1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2021-04-19</td>
+      <td>11.0</td>
+      <td>26.0</td>
+      <td>gp3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2021-04-26</td>
+      <td>7.0</td>
+      <td>36.0</td>
+      <td>gp3</td>
+    </tr>
+  </tbody>
+</table>
+<p>121 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>합할 때 인덱스도 그대로 가져온다. 매개변수<code class="docutils literal notranslate"><span class="pre">ignore_index</span></code>를 <code class="docutils literal notranslate"><span class="pre">True</span></code>로 지정하면 인덱스를 재배열한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ab_df_concat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">ab_df</span><span class="p">,</span> <span class="n">ab_df1</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ab_df_concat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rng</th>
+      <th>A</th>
+      <th>B</th>
+      <th>gp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-01-07</td>
+      <td>10.0</td>
+      <td>36.0</td>
+      <td>gp1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-01-14</td>
+      <td>NaN</td>
+      <td>21.0</td>
+      <td>gp1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-01-21</td>
+      <td>91.0</td>
+      <td>107.0</td>
+      <td>gp4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-01-28</td>
+      <td>15.0</td>
+      <td>39.0</td>
+      <td>gp2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-02-04</td>
+      <td>15.0</td>
+      <td>24.0</td>
+      <td>gp1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>2021-03-29</td>
+      <td>58.0</td>
+      <td>61.0</td>
+      <td>gp3</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>2021-04-05</td>
+      <td>12.0</td>
+      <td>34.0</td>
+      <td>gp1</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>2021-04-12</td>
+      <td>18.0</td>
+      <td>28.0</td>
+      <td>gp1</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>2021-04-19</td>
+      <td>11.0</td>
+      <td>26.0</td>
+      <td>gp3</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>2021-04-26</td>
+      <td>7.0</td>
+      <td>36.0</td>
+      <td>gp3</td>
+    </tr>
+  </tbody>
+</table>
+<p>121 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>데이터를 좌우(열방향)로 합하는 방법도 살펴보자.<br />
+이를 위해 <code class="docutils literal notranslate"><span class="pre">ABdata2.csv</span></code>를 불러온다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ab_df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ABdata2.csv&#39;</span><span class="p">)</span>
+<span class="n">ab_df2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>80.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>18.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>68.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>89.0</td>
+      <td>78.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>12.0</td>
+      <td>48.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>22.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>65.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>65.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>84.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>6.0</td>
+      <td>98.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>121 rows × 2 columns</p>
+</div></div></div>
+</div>
+<p>데이터를 좌우(열방향)로 합할 때는 아래와 같이 <code class="docutils literal notranslate"><span class="pre">axis</span></code>를 <code class="docutils literal notranslate"><span class="pre">1</span></code>로 지정하면 된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">ab_df_concat</span><span class="p">,</span> <span class="n">ab_df2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rng</th>
+      <th>A</th>
+      <th>B</th>
+      <th>gp</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-01-07</td>
+      <td>10.0</td>
+      <td>36.0</td>
+      <td>gp1</td>
+      <td>80.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-01-14</td>
+      <td>NaN</td>
+      <td>21.0</td>
+      <td>gp1</td>
+      <td>18.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-01-21</td>
+      <td>91.0</td>
+      <td>107.0</td>
+      <td>gp4</td>
+      <td>68.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-01-28</td>
+      <td>15.0</td>
+      <td>39.0</td>
+      <td>gp2</td>
+      <td>89.0</td>
+      <td>78.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-02-04</td>
+      <td>15.0</td>
+      <td>24.0</td>
+      <td>gp1</td>
+      <td>12.0</td>
+      <td>48.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>2021-03-29</td>
+      <td>58.0</td>
+      <td>61.0</td>
+      <td>gp3</td>
+      <td>22.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>2021-04-05</td>
+      <td>12.0</td>
+      <td>34.0</td>
+      <td>gp1</td>
+      <td>65.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>2021-04-12</td>
+      <td>18.0</td>
+      <td>28.0</td>
+      <td>gp1</td>
+      <td>65.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>2021-04-19</td>
+      <td>11.0</td>
+      <td>26.0</td>
+      <td>gp3</td>
+      <td>84.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>2021-04-26</td>
+      <td>7.0</td>
+      <td>36.0</td>
+      <td>gp3</td>
+      <td>6.0</td>
+      <td>98.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>121 rows × 6 columns</p>
+</div></div></div>
+</div>
+<p>이제 합한 데이터프레임을 csv 파일로 저장해보자.</p>
+<p><code class="docutils literal notranslate"><span class="pre">to_csv</span></code> 메소드를 이용하면, 데이터프레임을 csv 파일로 저장할 수 있다. 이때, 인덱스와 열 이름은 함께 저장되는데,<br />
+이를 포함하지 않으려면 아래와 같이 <code class="docutils literal notranslate"><span class="pre">index</span></code>와 <code class="docutils literal notranslate"><span class="pre">header</span></code>를 각각 <code class="docutils literal notranslate"><span class="pre">False</span></code>로 두면 된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;df.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>참고) <code class="docutils literal notranslate"><span class="pre">pd.merge()</span></code>를 사용하여 데이터프레임을 합할 수도 있다.
+예제와 함께 살펴보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 데이터프레임 df1과 df2를 만들자.</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;key&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">],</span> <span class="s1">&#39;data1&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">]})</span>  
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;key&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">],</span> <span class="s1">&#39;data2&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]})</span>
+
+<span class="c1"># pd.merge()를 사용하면, 두 데이터프레임에 공통으로 있는 열을 기준으로 합해준다. </span>
+<span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">)</span>
+<span class="n">df3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>key</th>
+      <th>data1</th>
+      <th>data2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>a</td>
+      <td>5</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>c</td>
+      <td>15</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;key1&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">],</span> <span class="s1">&#39;data1&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">]})</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;key2&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">],</span> <span class="s1">&#39;data2&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]})</span>
+
+<span class="c1"># 두 데이터프레임에 공통으로 있는 열이 없는 경우, 어느 열을 기준으로 할지 지정해줄 수 있다. </span>
+<span class="c1"># left_on에는 왼쪽 데이터프레임(df1)에서 기준으로 할 열(column)이름을, right_on에는 오른쪽 데이터프레임에서 기준으로 할 열(right_on)이름을 지정</span>
+<span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">,</span> <span class="n">left_on</span> <span class="o">=</span> <span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="n">right_on</span> <span class="o">=</span> <span class="s1">&#39;key2&#39;</span><span class="p">)</span>
+<span class="n">df3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>key1</th>
+      <th>data1</th>
+      <th>key2</th>
+      <th>data2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>a</td>
+      <td>5</td>
+      <td>a</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>c</td>
+      <td>15</td>
+      <td>c</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><strong>결측치 처리</strong></p>
+<p>데이터프레임 <code class="docutils literal notranslate"><span class="pre">df</span></code>에는 여러 결측치가 보인다. 각 열에 있는 결측치의 개수를 확인해보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rng     0
+A      10
+B       6
+gp      0
+C       4
+D      56
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>결측치가 많은 <code class="docutils literal notranslate"><span class="pre">D</span></code>열을 삭제하고자 할 때는 <code class="docutils literal notranslate"><span class="pre">del</span></code>을 이용한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;D&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>데이터프레임 <code class="docutils literal notranslate"><span class="pre">df</span></code>을 다시 확인해보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rng</th>
+      <th>A</th>
+      <th>B</th>
+      <th>gp</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-01-07</td>
+      <td>10.0</td>
+      <td>36.0</td>
+      <td>gp1</td>
+      <td>80.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-01-14</td>
+      <td>NaN</td>
+      <td>21.0</td>
+      <td>gp1</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-01-21</td>
+      <td>91.0</td>
+      <td>107.0</td>
+      <td>gp4</td>
+      <td>68.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-01-28</td>
+      <td>15.0</td>
+      <td>39.0</td>
+      <td>gp2</td>
+      <td>89.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-02-04</td>
+      <td>15.0</td>
+      <td>24.0</td>
+      <td>gp1</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>2021-03-29</td>
+      <td>58.0</td>
+      <td>61.0</td>
+      <td>gp3</td>
+      <td>22.0</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>2021-04-05</td>
+      <td>12.0</td>
+      <td>34.0</td>
+      <td>gp1</td>
+      <td>65.0</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>2021-04-12</td>
+      <td>18.0</td>
+      <td>28.0</td>
+      <td>gp1</td>
+      <td>65.0</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>2021-04-19</td>
+      <td>11.0</td>
+      <td>26.0</td>
+      <td>gp3</td>
+      <td>84.0</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>2021-04-26</td>
+      <td>7.0</td>
+      <td>36.0</td>
+      <td>gp3</td>
+      <td>6.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>121 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">A</span></code>열에서 결측치인 데이터는 아래와 같이 확인 가능하다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rng</th>
+      <th>A</th>
+      <th>B</th>
+      <th>gp</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>2019-01-14</td>
+      <td>NaN</td>
+      <td>21.0</td>
+      <td>gp1</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2019-03-11</td>
+      <td>NaN</td>
+      <td>31.0</td>
+      <td>gp1</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2019-05-13</td>
+      <td>NaN</td>
+      <td>42.0</td>
+      <td>gp2</td>
+      <td>29.0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>2019-06-24</td>
+      <td>NaN</td>
+      <td>58.0</td>
+      <td>gp2</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>2019-11-25</td>
+      <td>NaN</td>
+      <td>53.0</td>
+      <td>gp2</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>2020-02-03</td>
+      <td>NaN</td>
+      <td>39.0</td>
+      <td>gp1</td>
+      <td>94.0</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>2020-04-06</td>
+      <td>NaN</td>
+      <td>37.0</td>
+      <td>gp1</td>
+      <td>46.0</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>2020-04-27</td>
+      <td>NaN</td>
+      <td>70.0</td>
+      <td>gp3</td>
+      <td>92.0</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>2020-08-17</td>
+      <td>NaN</td>
+      <td>55.0</td>
+      <td>gp3</td>
+      <td>89.0</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>2020-11-23</td>
+      <td>NaN</td>
+      <td>57.0</td>
+      <td>gp3</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>결측치는 <code class="docutils literal notranslate"><span class="pre">fillna()</span></code>를 사용해 다른 값으로 대체할 수 있다. 인자로 대체하고 싶은 값을 사용하면 된다.<br />
+예를 들어, 모든 결측치를 0으로 변경하려면 <code class="docutils literal notranslate"><span class="pre">fillna()</span></code>의 인자로 0을 사용하면 된다.<br />
+확인하면, A열의 1번 인덱스 값은 <code class="docutils literal notranslate"><span class="pre">NaN</span></code>에서 0으로 변경되었다.</p>
+<p>주의) 기존의 데이터프레임 <code class="docutils literal notranslate"><span class="pre">df</span></code>는 변경되지 않는다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rng</th>
+      <th>A</th>
+      <th>B</th>
+      <th>gp</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-01-07</td>
+      <td>10.0</td>
+      <td>36.0</td>
+      <td>gp1</td>
+      <td>80.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-01-14</td>
+      <td>0.0</td>
+      <td>21.0</td>
+      <td>gp1</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-01-21</td>
+      <td>91.0</td>
+      <td>107.0</td>
+      <td>gp4</td>
+      <td>68.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-01-28</td>
+      <td>15.0</td>
+      <td>39.0</td>
+      <td>gp2</td>
+      <td>89.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-02-04</td>
+      <td>15.0</td>
+      <td>24.0</td>
+      <td>gp1</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>2021-03-29</td>
+      <td>58.0</td>
+      <td>61.0</td>
+      <td>gp3</td>
+      <td>22.0</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>2021-04-05</td>
+      <td>12.0</td>
+      <td>34.0</td>
+      <td>gp1</td>
+      <td>65.0</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>2021-04-12</td>
+      <td>18.0</td>
+      <td>28.0</td>
+      <td>gp1</td>
+      <td>65.0</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>2021-04-19</td>
+      <td>11.0</td>
+      <td>26.0</td>
+      <td>gp3</td>
+      <td>84.0</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>2021-04-26</td>
+      <td>7.0</td>
+      <td>36.0</td>
+      <td>gp3</td>
+      <td>6.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>121 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">A</span></code>열에서 결측치인 데이터를 확인해보면, 모두 0으로 대체된 것을 볼 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)[</span><span class="n">df</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rng</th>
+      <th>A</th>
+      <th>B</th>
+      <th>gp</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>2019-01-14</td>
+      <td>0.0</td>
+      <td>21.0</td>
+      <td>gp1</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2019-03-11</td>
+      <td>0.0</td>
+      <td>31.0</td>
+      <td>gp1</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2019-05-13</td>
+      <td>0.0</td>
+      <td>42.0</td>
+      <td>gp2</td>
+      <td>29.0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>2019-06-24</td>
+      <td>0.0</td>
+      <td>58.0</td>
+      <td>gp2</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>2019-11-25</td>
+      <td>0.0</td>
+      <td>53.0</td>
+      <td>gp2</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>2020-02-03</td>
+      <td>0.0</td>
+      <td>39.0</td>
+      <td>gp1</td>
+      <td>94.0</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>2020-04-06</td>
+      <td>0.0</td>
+      <td>37.0</td>
+      <td>gp1</td>
+      <td>46.0</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>2020-04-27</td>
+      <td>0.0</td>
+      <td>70.0</td>
+      <td>gp3</td>
+      <td>92.0</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>2020-08-17</td>
+      <td>0.0</td>
+      <td>55.0</td>
+      <td>gp3</td>
+      <td>89.0</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>2020-11-23</td>
+      <td>0.0</td>
+      <td>57.0</td>
+      <td>gp3</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">B</span></code>열에서 결측치인 데이터도 모두 0으로 대체되었다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)[</span><span class="n">df</span><span class="o">.</span><span class="n">B</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rng</th>
+      <th>A</th>
+      <th>B</th>
+      <th>gp</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6</th>
+      <td>2019-02-18</td>
+      <td>13.0</td>
+      <td>0.0</td>
+      <td>gp1</td>
+      <td>13.0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2019-04-22</td>
+      <td>5.0</td>
+      <td>0.0</td>
+      <td>gp1</td>
+      <td>13.0</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>2020-08-31</td>
+      <td>18.0</td>
+      <td>0.0</td>
+      <td>gp2</td>
+      <td>52.0</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>2020-10-19</td>
+      <td>10.0</td>
+      <td>0.0</td>
+      <td>gp1</td>
+      <td>19.0</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>2020-11-09</td>
+      <td>36.0</td>
+      <td>0.0</td>
+      <td>gp2</td>
+      <td>45.0</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>2020-12-14</td>
+      <td>55.0</td>
+      <td>0.0</td>
+      <td>gp3</td>
+      <td>81.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>마찬가지로, <code class="docutils literal notranslate"><span class="pre">C</span></code>열에서 결측치인 데이터도 모두 0으로 대체되었다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)[</span><span class="n">df</span><span class="o">.</span><span class="n">C</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rng</th>
+      <th>A</th>
+      <th>B</th>
+      <th>gp</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>7</th>
+      <td>2019-02-25</td>
+      <td>22.0</td>
+      <td>56.0</td>
+      <td>gp2</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2019-04-08</td>
+      <td>6.0</td>
+      <td>34.0</td>
+      <td>gp1</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>2019-07-08</td>
+      <td>23.0</td>
+      <td>46.0</td>
+      <td>gp2</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>2020-09-07</td>
+      <td>36.0</td>
+      <td>39.0</td>
+      <td>gp2</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">fillna()</span></code>함수의 <code class="docutils literal notranslate"><span class="pre">method</span></code>를 <code class="docutils literal notranslate"><span class="pre">ffill</span></code>로 지정하면, 결측치의 위치 위쪽으로부터 가장 가까운 값을 이용하여 결측치가 채워진다.</p>
+<p>참고) ffill는 forward fill 방식의 줄임말이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;ffill&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rng</th>
+      <th>A</th>
+      <th>B</th>
+      <th>gp</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-01-07</td>
+      <td>10.0</td>
+      <td>36.0</td>
+      <td>gp1</td>
+      <td>80.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-01-14</td>
+      <td>10.0</td>
+      <td>21.0</td>
+      <td>gp1</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-01-21</td>
+      <td>91.0</td>
+      <td>107.0</td>
+      <td>gp4</td>
+      <td>68.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-01-28</td>
+      <td>15.0</td>
+      <td>39.0</td>
+      <td>gp2</td>
+      <td>89.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-02-04</td>
+      <td>15.0</td>
+      <td>24.0</td>
+      <td>gp1</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>2021-03-29</td>
+      <td>58.0</td>
+      <td>61.0</td>
+      <td>gp3</td>
+      <td>22.0</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>2021-04-05</td>
+      <td>12.0</td>
+      <td>34.0</td>
+      <td>gp1</td>
+      <td>65.0</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>2021-04-12</td>
+      <td>18.0</td>
+      <td>28.0</td>
+      <td>gp1</td>
+      <td>65.0</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>2021-04-19</td>
+      <td>11.0</td>
+      <td>26.0</td>
+      <td>gp3</td>
+      <td>84.0</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>2021-04-26</td>
+      <td>7.0</td>
+      <td>36.0</td>
+      <td>gp3</td>
+      <td>6.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>121 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>잘 변경되었는지 몇 개 확인해보자.<br />
+<code class="docutils literal notranslate"><span class="pre">A</span></code>열의 1번 인덱스 값은 바로 위쪽 값인 10으로 대체되었고,  <code class="docutils literal notranslate"><span class="pre">B</span></code>열의 6번 인덱스 값도 바로 위의 값인 56으로 변경되었다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;=======================&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;ffill&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          rng     A      B   gp     C
+0  2019-01-07  10.0   36.0  gp1  80.0
+1  2019-01-14   NaN   21.0  gp1  18.0
+2  2019-01-21  91.0  107.0  gp4  68.0
+3  2019-01-28  15.0   39.0  gp2  89.0
+4  2019-02-04  15.0   24.0  gp1  12.0
+5  2019-02-11  22.0   56.0  gp2  87.0
+6  2019-02-18  13.0    NaN  gp1  13.0
+7  2019-02-25  22.0   56.0  gp2   NaN
+8  2019-03-04  36.0   48.0  gp2  10.0
+9  2019-03-11   NaN   31.0  gp1   8.0
+=======================
+          rng     A      B   gp     C
+0  2019-01-07  10.0   36.0  gp1  80.0
+1  2019-01-14  10.0   21.0  gp1  18.0
+2  2019-01-21  91.0  107.0  gp4  68.0
+3  2019-01-28  15.0   39.0  gp2  89.0
+4  2019-02-04  15.0   24.0  gp1  12.0
+5  2019-02-11  22.0   56.0  gp2  87.0
+6  2019-02-18  13.0   56.0  gp1  13.0
+7  2019-02-25  22.0   56.0  gp2  13.0
+8  2019-03-04  36.0   48.0  gp2  10.0
+9  2019-03-11  36.0   31.0  gp1   8.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>딕셔너리를 사용하여 각 열마다 다른 값을 채워 넣을 수도 있다.<br />
+예를 들어, 아래는 <code class="docutils literal notranslate"><span class="pre">A</span></code>열의 결측치는 0으로, <code class="docutils literal notranslate"><span class="pre">B</span></code>열의 결측치는 1로, <code class="docutils literal notranslate"><span class="pre">C</span></code>열의 결측치는 2로 변경하라는 코드이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rng</th>
+      <th>A</th>
+      <th>B</th>
+      <th>gp</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-01-07</td>
+      <td>10.0</td>
+      <td>36.0</td>
+      <td>gp1</td>
+      <td>80.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-01-14</td>
+      <td>0.0</td>
+      <td>21.0</td>
+      <td>gp1</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-01-21</td>
+      <td>91.0</td>
+      <td>107.0</td>
+      <td>gp4</td>
+      <td>68.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-01-28</td>
+      <td>15.0</td>
+      <td>39.0</td>
+      <td>gp2</td>
+      <td>89.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-02-04</td>
+      <td>15.0</td>
+      <td>24.0</td>
+      <td>gp1</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>2021-03-29</td>
+      <td>58.0</td>
+      <td>61.0</td>
+      <td>gp3</td>
+      <td>22.0</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>2021-04-05</td>
+      <td>12.0</td>
+      <td>34.0</td>
+      <td>gp1</td>
+      <td>65.0</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>2021-04-12</td>
+      <td>18.0</td>
+      <td>28.0</td>
+      <td>gp1</td>
+      <td>65.0</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>2021-04-19</td>
+      <td>11.0</td>
+      <td>26.0</td>
+      <td>gp3</td>
+      <td>84.0</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>2021-04-26</td>
+      <td>7.0</td>
+      <td>36.0</td>
+      <td>gp3</td>
+      <td>6.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>121 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">A</span></code>열에서 결측치인 데이터를 확인해보면, 모두 0으로 대체되었다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">values</span><span class="p">)[</span><span class="n">df</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rng</th>
+      <th>A</th>
+      <th>B</th>
+      <th>gp</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>2019-01-14</td>
+      <td>0.0</td>
+      <td>21.0</td>
+      <td>gp1</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2019-03-11</td>
+      <td>0.0</td>
+      <td>31.0</td>
+      <td>gp1</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2019-05-13</td>
+      <td>0.0</td>
+      <td>42.0</td>
+      <td>gp2</td>
+      <td>29.0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>2019-06-24</td>
+      <td>0.0</td>
+      <td>58.0</td>
+      <td>gp2</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>2019-11-25</td>
+      <td>0.0</td>
+      <td>53.0</td>
+      <td>gp2</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>2020-02-03</td>
+      <td>0.0</td>
+      <td>39.0</td>
+      <td>gp1</td>
+      <td>94.0</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>2020-04-06</td>
+      <td>0.0</td>
+      <td>37.0</td>
+      <td>gp1</td>
+      <td>46.0</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>2020-04-27</td>
+      <td>0.0</td>
+      <td>70.0</td>
+      <td>gp3</td>
+      <td>92.0</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>2020-08-17</td>
+      <td>0.0</td>
+      <td>55.0</td>
+      <td>gp3</td>
+      <td>89.0</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>2020-11-23</td>
+      <td>0.0</td>
+      <td>57.0</td>
+      <td>gp3</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">B</span></code>열에서 결측치는 모두 1로 채워졌다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">values</span><span class="p">)[</span><span class="n">df</span><span class="o">.</span><span class="n">B</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rng</th>
+      <th>A</th>
+      <th>B</th>
+      <th>gp</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6</th>
+      <td>2019-02-18</td>
+      <td>13.0</td>
+      <td>1.0</td>
+      <td>gp1</td>
+      <td>13.0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2019-04-22</td>
+      <td>5.0</td>
+      <td>1.0</td>
+      <td>gp1</td>
+      <td>13.0</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>2020-08-31</td>
+      <td>18.0</td>
+      <td>1.0</td>
+      <td>gp2</td>
+      <td>52.0</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>2020-10-19</td>
+      <td>10.0</td>
+      <td>1.0</td>
+      <td>gp1</td>
+      <td>19.0</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>2020-11-09</td>
+      <td>36.0</td>
+      <td>1.0</td>
+      <td>gp2</td>
+      <td>45.0</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>2020-12-14</td>
+      <td>55.0</td>
+      <td>1.0</td>
+      <td>gp3</td>
+      <td>81.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">C</span></code>열에서 결측치는 모두 2로 변경되었다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">values</span><span class="p">)[</span><span class="n">df</span><span class="o">.</span><span class="n">C</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rng</th>
+      <th>A</th>
+      <th>B</th>
+      <th>gp</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>7</th>
+      <td>2019-02-25</td>
+      <td>22.0</td>
+      <td>56.0</td>
+      <td>gp2</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2019-04-08</td>
+      <td>6.0</td>
+      <td>34.0</td>
+      <td>gp1</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>2019-07-08</td>
+      <td>23.0</td>
+      <td>46.0</td>
+      <td>gp2</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>2020-09-07</td>
+      <td>36.0</td>
+      <td>39.0</td>
+      <td>gp2</td>
+      <td>2.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">fillna()</span></code> 함수를 사용했을 때 기존 데이터프레임은 변경되지 않는데, <code class="docutils literal notranslate"><span class="pre">inplace</span></code>를 <code class="docutils literal notranslate"><span class="pre">True</span></code>로 지정하면 기존의 데이터프레임을 변경할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;ffill&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rng</th>
+      <th>A</th>
+      <th>B</th>
+      <th>gp</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-01-07</td>
+      <td>10.0</td>
+      <td>36.0</td>
+      <td>gp1</td>
+      <td>80.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-01-14</td>
+      <td>10.0</td>
+      <td>21.0</td>
+      <td>gp1</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-01-21</td>
+      <td>91.0</td>
+      <td>107.0</td>
+      <td>gp4</td>
+      <td>68.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-01-28</td>
+      <td>15.0</td>
+      <td>39.0</td>
+      <td>gp2</td>
+      <td>89.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-02-04</td>
+      <td>15.0</td>
+      <td>24.0</td>
+      <td>gp1</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>2021-03-29</td>
+      <td>58.0</td>
+      <td>61.0</td>
+      <td>gp3</td>
+      <td>22.0</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>2021-04-05</td>
+      <td>12.0</td>
+      <td>34.0</td>
+      <td>gp1</td>
+      <td>65.0</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>2021-04-12</td>
+      <td>18.0</td>
+      <td>28.0</td>
+      <td>gp1</td>
+      <td>65.0</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>2021-04-19</td>
+      <td>11.0</td>
+      <td>26.0</td>
+      <td>gp3</td>
+      <td>84.0</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>2021-04-26</td>
+      <td>7.0</td>
+      <td>36.0</td>
+      <td>gp3</td>
+      <td>6.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>121 rows × 5 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>데이터 시각화2<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>여기서는 데이터를 시각화하는 두 가지 방법을 살펴보자.</p>
+<ul class="simple">
+<li><p>선 그래프</p></li>
+<li><p>산점도</p></li>
+</ul>
+<div class="section" id="id9">
+<h3>선 그래프<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>선 그래프는 변화 추이를 살펴보는 것을 도와주는 그래프이다.<br />
+plt.plot() 를 이용하여 선 그래프를 그릴 수 있다.</p>
+<p>예를 들어, 데이터프레임 <code class="docutils literal notranslate"><span class="pre">df</span></code>의 일부 자료로 선 그래프를 그려보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># x축에 rng열에 있는 연도 일부, y축에 A열에 있는 데이터 일부로 선 그래프 만들기</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">rng</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">A</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span> <span class="c1">#선 스타일은 --로, 마커를 o로 두면, 각 점에 o가 표시됨, 선 색은 red</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">rng</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">B</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">],</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span> <span class="c1"># 마커를 x로 두면, 각 점에 x가 표시됨, 선 색은 green</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">((</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>  <span class="c1">#범례는 plt.legend()로 표시할 수 있음, loc를 이용해 위치 조정</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">df</span><span class="o">.</span><span class="n">rng</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">],</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>  <span class="c1">#xticks()를 이용해 x축의 눈금을 변경. </span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ch17_111_0.png" src="_images/ch17_111_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>산점도<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>산점도는 두 변수의 관계를 보여주는 데에 매우 적합한 그래프이다.</p>
+<p>산점도를 그리기 전에 피어슨 상관계수(Pearson correlation coefficient)를 구해보자.<br />
+피어슨 상관계수는 두 변수 간의 관련성 정도를 나타낸다.</p>
+<blockquote>
+<div><p>두 변수 X와 Y의 상관계수(r) = X와 Y가 함께 변하는 정도와 X와 Y가 따로 변하는 정도 사이의 비율</p>
+</div></blockquote>
+<p>의미:</p>
+<ul class="simple">
+<li><p>r = 1: X와 Y 가 완전히 동일.</p></li>
+<li><p>r = 0: X와 Y가 아무 연관이 없음.</p></li>
+<li><p>r = -1: X와 Y가 반대방향으로 완전히 동일.</p></li>
+</ul>
+<p>선형관계 설명에도 사용되며, 보통 아래와 같이 말한다. 물론, 예외가 존재한다.</p>
+<ul class="simple">
+<li><p>-1.0 &lt;= r &lt; -0.7: 강한 음적 선형관계</p></li>
+<li><p>-0.7 &lt;= r &lt; -0.3: 뚜렷한 음적 선형관계</p></li>
+<li><p>-0.3 &lt;= r &lt; -0.1: 약한 음적 선형관계</p></li>
+<li><p>-0.1 &lt;= r &lt;= 0.1: 거의 무시될 수 있는 관계</p></li>
+<li><p>0.1 &lt; r &lt;= +0.3: 약한 양적 선형관계</p></li>
+<li><p>0.3 &lt; r &lt;= 0.7: 뚜렷한 양적 선형관계</p></li>
+<li><p>0.7 &lt; r &lt;= 1.0: 강한 양적 선형관계</p></li>
+</ul>
+<p>예를 들어, 데이터프레임 <code class="docutils literal notranslate"><span class="pre">df</span></code>의 <code class="docutils literal notranslate"><span class="pre">A</span></code>열과 <code class="docutils literal notranslate"><span class="pre">B</span></code>열의 피어슨 상관계수는 0.815357로 강한 양적 선형관계가 있을 것으로 보인다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corr</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;pearson&#39;</span><span class="p">)</span>
+<span class="n">corr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>1.000000</td>
+      <td>0.815357</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.815357</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>산점도를 그려서 확인해보자.<br />
+산점도는 <code class="docutils literal notranslate"><span class="pre">plt.scatter()</span></code>를 이용해서 그릴 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">])</span>  <span class="c1">#산점도 그리기</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span> <span class="c1">#x축 라벨</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span> <span class="c1">#y축 라벨</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ch17_116_0.png" src="_images/ch17_116_0.png" />
+</div>
+</div>
+<p>그룹별로 다르게 색을 지정해보자.<br />
+<code class="docutils literal notranslate"><span class="pre">scatter()</span></code> 함수의 <code class="docutils literal notranslate"><span class="pre">s</span></code>를 지정하여 각 점의 크기를 변경할 수 있다.<br />
+예를 들어, 아래는 <code class="docutils literal notranslate"><span class="pre">C</span></code> 열에 따라 점의 크기가 달라진다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_gp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;gp&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">df_gp</span> <span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">group</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">group</span><span class="o">.</span><span class="n">B</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">name</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">group</span><span class="o">.</span><span class="n">C</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ch17_118_0.png" src="_images/ch17_118_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>움직이는 산점도<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>시간에 따라 움직이는 산점도를 그려보자.<br />
+데이터프레임 <code class="docutils literal notranslate"><span class="pre">df</span></code>는 아래와 같다. 이 데이터는 시간(Time)이 0일 때라고 가정하자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rng</th>
+      <th>A</th>
+      <th>B</th>
+      <th>gp</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-01-07</td>
+      <td>10.0</td>
+      <td>36.0</td>
+      <td>gp1</td>
+      <td>80.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-01-14</td>
+      <td>10.0</td>
+      <td>21.0</td>
+      <td>gp1</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-01-21</td>
+      <td>91.0</td>
+      <td>107.0</td>
+      <td>gp4</td>
+      <td>68.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-01-28</td>
+      <td>15.0</td>
+      <td>39.0</td>
+      <td>gp2</td>
+      <td>89.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-02-04</td>
+      <td>15.0</td>
+      <td>24.0</td>
+      <td>gp1</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>2021-03-29</td>
+      <td>58.0</td>
+      <td>61.0</td>
+      <td>gp3</td>
+      <td>22.0</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>2021-04-05</td>
+      <td>12.0</td>
+      <td>34.0</td>
+      <td>gp1</td>
+      <td>65.0</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>2021-04-12</td>
+      <td>18.0</td>
+      <td>28.0</td>
+      <td>gp1</td>
+      <td>65.0</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>2021-04-19</td>
+      <td>11.0</td>
+      <td>26.0</td>
+      <td>gp3</td>
+      <td>84.0</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>2021-04-26</td>
+      <td>7.0</td>
+      <td>36.0</td>
+      <td>gp3</td>
+      <td>6.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>121 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>시간이 1, 2, 3, 4일 때는 데이터는 <code class="docutils literal notranslate"><span class="pre">ani.csv</span></code>에 담겨있다.<br />
+<code class="docutils literal notranslate"><span class="pre">df</span></code>에서 산점도를 그리는 데 필요한 열만 가져오고, 0이 들어 있는 <code class="docutils literal notranslate"><span class="pre">Time</span></code>열을 추가한 다음, <code class="docutils literal notranslate"><span class="pre">ani.csv</span></code>파일의 데이터와 합하자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ani</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ani.csv&#39;</span><span class="p">)</span>
+<span class="n">df_temp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()[[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;gp&#39;</span><span class="p">]]</span>
+<span class="n">df_temp</span><span class="p">[</span><span class="s1">&#39;Time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">df_ani</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_temp</span><span class="p">,</span> <span class="n">ani</span><span class="p">])</span>
+<span class="n">df_ani</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>gp</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>10.0</td>
+      <td>36.0</td>
+      <td>80.0</td>
+      <td>gp1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10.0</td>
+      <td>21.0</td>
+      <td>18.0</td>
+      <td>gp1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>91.0</td>
+      <td>107.0</td>
+      <td>68.0</td>
+      <td>gp4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15.0</td>
+      <td>39.0</td>
+      <td>89.0</td>
+      <td>gp2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>15.0</td>
+      <td>24.0</td>
+      <td>12.0</td>
+      <td>gp1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>479</th>
+      <td>62.0</td>
+      <td>64.0</td>
+      <td>71.0</td>
+      <td>gp3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>480</th>
+      <td>7.0</td>
+      <td>35.0</td>
+      <td>1.0</td>
+      <td>gp1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>481</th>
+      <td>14.0</td>
+      <td>40.0</td>
+      <td>86.0</td>
+      <td>gp1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>482</th>
+      <td>6.0</td>
+      <td>23.0</td>
+      <td>95.0</td>
+      <td>gp3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>483</th>
+      <td>5.0</td>
+      <td>38.0</td>
+      <td>1.0</td>
+      <td>gp3</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+<p>605 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>움직이는 산점도를 그리기 위해 필요한 모듈을 임포트하자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">animation</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>   <span class="c1">#도화지 준비</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>  
+<span class="n">title</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;scatter plot&#39;</span><span class="p">)</span> <span class="c1"># 제목 달기 </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">200</span><span class="p">])</span> <span class="c1"># x축과 y축이 표시되는 범위 지정</span>
+
+<span class="n">scats</span> <span class="o">=</span> <span class="p">[]</span>  
+<span class="n">df_ani_gp</span> <span class="o">=</span> <span class="n">df_ani</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;gp&#39;</span><span class="p">)</span> <span class="c1"># gp을 기준으로 그룹화</span>
+
+<span class="c1"># 정적 그래프를 만들기  </span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">df_ani_gp</span> <span class="p">:</span> 
+    <span class="n">scat</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([],</span> <span class="p">[],</span><span class="n">label</span> <span class="o">=</span> <span class="n">name</span><span class="p">)</span>
+    <span class="n">scats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">scat</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe9c51f8070&gt;
+</pre></div>
+</div>
+<img alt="_images/ch17_126_1.png" src="_images/ch17_126_1.png" />
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">i</span><span class="p">):</span> <span class="c1"># update 함수는 각 프레임에서 호출할 함수</span>
+<span class="go">        for scat, (name, data) in zip(scats, df_ani_gp) :</span>
+<span class="go">            sample = data[data[&#39;Time&#39;]==i] </span>
+<span class="go">            scat.set_offsets(sample[[&#39;A&#39;, &#39;B&#39;]])  </span>
+<span class="go">            scat.set_sizes(sample.C) </span>
+<span class="go">            title.set_text(&#39;scatter plot, time={}&#39;.format(i)) </span>
+<span class="go">        return scats,</span>
+<span class="go"># fig는 도화지, frames는 그릴 그림의 수, func은 각 프레임에서 호출할 함수</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">anim</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span> <span class="o">=</span> <span class="n">fig</span><span class="p">,</span> <span class="n">func</span> <span class="o">=</span> <span class="n">update</span><span class="p">,</span> <span class="n">frames</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">HTML</span><span class="p">(</span><span class="n">anim</span><span class="o">.</span><span class="n">to_html5_video</span><span class="p">())</span> <span class="c1">#코랩에서 애니메이션을 보기 위해 작성하는 코드</span>
+</pre></div>
+</div>
+<p>만든 영상을 저장하는 코드는 아래와 같다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">anim</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;ani.mp4&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="id12">
+<h1>판다스2 요약<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p>판다스 모듈 임포트 : <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code></p></li>
+<li><p><font color="red">csv 파일</font> 불러오기 : <code class="docutils literal notranslate"><span class="pre">pd.read_csv(파일이름)</span></code> 파일이름에는 경로를 포함하고, 문자열로 지정</p>
+<ul class="simple">
+<li><p>특정열을 인덱스로 사용 : <code class="docutils literal notranslate"><span class="pre">index_col</span></code> 지정</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ABdata.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;rng&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>csv 파일로 저장 : <code class="docutils literal notranslate"><span class="pre">df.to_csv('df.csv',</span> <span class="pre">index=</span> <span class="pre">False,</span> <span class="pre">header=False)</span></code> #df의 인덱스와 열이름 함께 저장 안 함.</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>데이터프레임의 <font color="red">기본정보 확인</font> : <code class="docutils literal notranslate"><span class="pre">df.info()</span></code></p></li>
+<li><p>데이터프레임의 <font color="red">기초통계량</font>(빈도수, 평균, 최대최소 등) 확인 : <code class="docutils literal notranslate"><span class="pre">df.describe()</span></code></p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><font color="red">유일한 값</font> 확인 : <code class="docutils literal notranslate"><span class="pre">df.특정열이름.unique()</span></code></p></li>
+<li><p><font color="red">유일한 값과 그 빈도수</font> : <code class="docutils literal notranslate"><span class="pre">df.특정열이름.value_counts()</span></code></p></li>
+<li><p><font color="red">최댓값 또는 최솟값</font> 확인 : <code class="docutils literal notranslate"><span class="pre">max()</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">min()</span></code></p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>특정열을 기준으로 <font color="red">오름차순 정렬</font> : <code class="docutils literal notranslate"><span class="pre">df.sort_values('특정열이름')</span></code></p></li>
+<li><p>특정열을 기준으로 <font color="red">내림차순 정렬</font> : <code class="docutils literal notranslate"><span class="pre">df.sort_values('특정열이름',</span> <span class="pre">ascending=False)</span></code></p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><font color="red">그룹별</font>로 나누기 : <code class="docutils literal notranslate"><span class="pre">df.groupby('기준이될특정열이름')</span></code></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_gp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;기준이될특정열이름&#39;</span><span class="p">)</span> <span class="c1">#특정열기준으로 그룹이 나뉨</span>
+<span class="k">for</span> <span class="n">gp</span> <span class="ow">in</span> <span class="n">df_gp</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">gp</span><span class="p">)</span>     <span class="c1">#그룹명과 그룹에 해당하는 데이터를 튜플로 묶어서 보여줌</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_gp</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="c1">#그룹별 평균을 보여줌.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_gp</span><span class="o">.</span><span class="n">median</span><span class="p">())</span> <span class="c1">#그룹별 중앙값을 보여줌.</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul>
+<li><p><font color="red">데이터프레임 합하기</font> : <code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">pd.merge()</span></code> 사용</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code></p>
+<ul class="simple">
+<li><p>위아래(<font color="red">행방향</font>)으로 합하기 : <code class="docutils literal notranslate"><span class="pre">pd.concat([df1,</span> <span class="pre">df2])</span></code></p></li>
+<li><p><font color="red">인덱스 재배열</font> : <code class="docutils literal notranslate"><span class="pre">pd.concat([df1,</span> <span class="pre">df2],</span> <span class="pre">ignore_index</span> <span class="pre">=</span> <span class="pre">True)</span></code></p></li>
+<li><p>좌우(<font color="red">열방향</font>)으로 합하기 : <code class="docutils literal notranslate"><span class="pre">pd.concat([df1,</span> <span class="pre">df2],</span> <span class="pre">axis</span> <span class="pre">=</span> <span class="pre">1)</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pd.merge()</span></code></p>
+<ul class="simple">
+<li><p>두 데이터프레임에 <font color="red">공통으로 있는 열을 기준</font>으로 합하기 : <code class="docutils literal notranslate"><span class="pre">pd.merge(df1,</span> <span class="pre">df2)</span></code></p></li>
+<li><p><font color="red">기준으로 할 열을 지정</font> 가능. <code class="docutils literal notranslate"><span class="pre">left_on</span></code>에는 왼쪽 데이터프레임(df1)에서 기준으로 할 열이름, <code class="docutils literal notranslate"><span class="pre">right_on</span></code>에는 오른쪽 데이터프레임(df2)에서 기준으로 할 열이름</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">,</span> <span class="n">left_on</span> <span class="o">=</span> <span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="n">right_on</span> <span class="o">=</span> <span class="s1">&#39;key2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<ul>
+<li><p><font color="red">결측치 처리<font color="red"></p>
+<ul>
+<li><p>특정열 <font color="red">삭제</font> : <code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">특정열</span></code></p></li>
+<li><p>결측치 다른 값으로 대체 : <code class="docutils literal notranslate"><span class="pre">df.fillna()</span></code></p>
+<ul class="simple">
+<li><p>모두 <font color="red">특정값</font>으로 대체 : <code class="docutils literal notranslate"><span class="pre">df.fillna(특정값)</span></code> #기존의 데이터프레임 변경 안됨 주의.</p></li>
+<li><p>결측치 위치 <font color="red">위쪽으로부터 가장 가까운 값</font> 넣기 : <code class="docutils literal notranslate"><span class="pre">df.fillna(method</span> <span class="pre">='ffill')</span> </code></p></li>
+<li><p><font color="red">열마다 다른 값</font>으로 대체. 예를 들어, A열의 결측치는 0, B열의 결측치는 1, C열의 결측치는 2로 변경하고 싶다면, 아래 코드 이용.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fillna()</span></code>를 사용해도 기존 데이터프레임 변경 안 됨. 변경하고 싶다면, <code class="docutils literal notranslate"><span class="pre">inplace</span></code>를 <code class="docutils literal notranslate"><span class="pre">True</span></code>로 지정</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;ffill&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>상관계수. 예를 들어, df의 A열과 B열의 <font color="red">피어슨 상관계수</font></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">corr</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;pearson&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="id13">
+<h1>데이터 시각화 요약<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>시각화 모듈 임포트 : <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">matplotlib.pyplot</span> <span class="pre">as</span> <span class="pre">plt</span></code></p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>그래프 그릴 도화지 준비: <code class="docutils literal notranslate"><span class="pre">fig</span> <span class="pre">=</span> <span class="pre">plt.figure()</span></code></p>
+<ul>
+<li><p>도화지 사이즈 변경 : <code class="docutils literal notranslate"><span class="pre">fig</span> <span class="pre">=</span> <span class="pre">plt.figure(figsize</span> <span class="pre">=</span> <span class="pre">(10,</span> <span class="pre">8))</span></code> #10과 8을 적당한 값으로 변경</p></li>
+<li><p>도화지 분할 : <code class="docutils literal notranslate"><span class="pre">plt.subplot(1,</span> <span class="pre">2,</span> <span class="pre">1)</span></code> #도화지를 1x2크기로 나눈 다음 첫 번째 선택</p></li>
+<li><p>분할된 그래프간 간격 조절 : <code class="docutils literal notranslate"><span class="pre">plt.subplots_adjust(top</span> <span class="pre">=</span> <span class="pre">0.80,</span> <span class="pre">wspace</span> <span class="pre">=</span> <span class="pre">0.5)</span></code> #top은 그래프들 위의 여백, wspace는 그래프 양 옆의 간격</p></li>
+</ul>
+</li>
+<li><p>그래프 저장하기 : plt.savefig(‘파일이름.png’)</p></li>
+<li><p>그래프 보이기 : <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code></p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>큰 제목 넣기 : <code class="docutils literal notranslate"><span class="pre">plt.suptitle('제목')</span></code></p>
+<ul>
+<li><p>제목 크기 변경 : <code class="docutils literal notranslate"><span class="pre">plt.suptitle('제목',</span> <span class="pre">fontsize=20)</span></code> #20을 적당한 값으로 변경</p></li>
+</ul>
+</li>
+<li><p>제목 넣기 : <code class="docutils literal notranslate"><span class="pre">plt.title('제목')</span></code></p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>범례표시 : <code class="docutils literal notranslate"><span class="pre">plt.legend(median.index,</span> <span class="pre">loc</span> <span class="pre">=</span> <span class="pre">(1,</span> <span class="pre">0.5))</span></code> #loc의 숫자 변경하여, 범례 위치 지정</p></li>
+</ul>
+<hr class="docutils" />
+<ul>
+<li><p><font color ='red'>막대그래프</font> : <code class="docutils literal notranslate"><span class="pre">plt.bar(항목,</span> <span class="pre">빈도)</span></code></p>
+<ul class="simple">
+<li><p>막대 색 변경 : <code class="docutils literal notranslate"><span class="pre">plt.bar(항목,</span> <span class="pre">빈도,</span> <span class="pre">color</span> <span class="pre">=</span> <span class="pre">색을담은배열)</span></code></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">median</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">median</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">)</span> <span class="c1"># 이때 항목이 3개여야 함. 항목의 수가 n라면, colors의 크기도 n개를 사용. </span>
+</pre></div>
+</div>
+</li>
+</ul>
+<hr class="docutils" />
+<ul>
+<li><p><font color="red">원그래프(파이차트)</font> : <code class="docutils literal notranslate"><span class="pre">plt.pie(빈도)</span></code></p>
+<ul class="simple">
+<li><p>원 조각에 라벨 지정 :  <code class="docutils literal notranslate"><span class="pre">plt.pie(빈도,</span> <span class="pre">labels</span> <span class="pre">=</span> <span class="pre">각조각에대한라벨)</span></code> ex)  <code class="docutils literal notranslate"><span class="pre">plt.pie(median,</span> <span class="pre">labels</span> <span class="pre">=</span> <span class="pre">median.index)</span></code></p></li>
+<li><p>백분율 표시 방법 : <code class="docutils literal notranslate"><span class="pre">autopct</span></code> 지정 ex)  <code class="docutils literal notranslate"><span class="pre">plt.pie(median,</span> <span class="pre">labels</span> <span class="pre">=</span> <span class="pre">median.index,</span> <span class="pre">autopct</span> <span class="pre">=</span> <span class="pre">'%0.1f%%')</span></code> #소수점 아래 한 자리까지 표시. %기호도 넣기.</p></li>
+<li><p>특정 조각 돌출 : <code class="docutils literal notranslate"><span class="pre">explode</span></code> 지정</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">explode</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span> <span class="c1">#총 4조각이 있고, 2번째 조각을 돌출</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">median</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">median</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">autopct</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%0.1f%%</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">explode</span><span class="o">=</span><span class="n">explode</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>도넛 모양 그래프 그리기 : <code class="docutils literal notranslate"><span class="pre">wedgeprops</span></code> 지정</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">explode</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+<span class="n">wedgeprops</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">}</span> <span class="c1">#숫자 변경하면 그래프의 두께가 달라짐 </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">median</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">median</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">autopct</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%0.1f%%</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">explode</span><span class="o">=</span><span class="n">explode</span><span class="p">,</span> <span class="n">wedgeprops</span><span class="o">=</span><span class="n">wedgeprops</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><font color="red">선그래프</font> : <code class="docutils literal notranslate"><span class="pre">plt.plot(x축데이터,</span> <span class="pre">y축데이터)</span></code></p>
+<ul>
+<li><p>선 스타일 변경 : <code class="docutils literal notranslate"><span class="pre">linestyle</span></code> 지정   ex) <code class="docutils literal notranslate"><span class="pre">plt.plot(x축데이터,</span> <span class="pre">y축데이터,</span> <span class="pre">linestyle</span> <span class="pre">='--')</span></code></p></li>
+<li><p>마커 변경 : <code class="docutils literal notranslate"><span class="pre">marker</span></code> 지정 ex) <code class="docutils literal notranslate"><span class="pre">plt.plot(x축데이터,</span> <span class="pre">y축데이터,</span> <span class="pre">linestyle</span> <span class="pre">='--',</span> <span class="pre">marker</span> <span class="pre">=</span> <span class="pre">'o')</span></code></p></li>
+<li><p>선 색 변경 : <code class="docutils literal notranslate"><span class="pre">color</span></code> 지정 ex) <code class="docutils literal notranslate"><span class="pre">plt.plot(x축데이터,</span> <span class="pre">y축데이터,</span> <span class="pre">linestyle</span> <span class="pre">='--',</span> <span class="pre">marker</span> <span class="pre">=</span> <span class="pre">'o',</span> <span class="pre">color</span> <span class="pre">=</span> <span class="pre">'red')</span></code></p></li>
+</ul>
+</li>
+<li><p>x축 눈금 변경 : <code class="docutils literal notranslate"><span class="pre">plt.xticks()</span></code>이용</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">df</span><span class="o">.</span><span class="n">rng</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">],</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span> <span class="c1">#10개 구간으로 나눠서, df.rng의 10부터 19까지의 값을 넣음. 값을 45도 기울림</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul>
+<li><p><font color="red">산점도</font> : <code class="docutils literal notranslate"><span class="pre">plt.scatter(x축값,</span> <span class="pre">y축값)</span></code></p>
+<ul class="simple">
+<li><p>x축 라벨 : <code class="docutils literal notranslate"><span class="pre">plt.xlabel('라벨')</span></code></p></li>
+<li><p>y축 라벨 : <code class="docutils literal notranslate"><span class="pre">plt.ylabel('라벨')</span></code></p></li>
+<li><p>점의 크기 변경 : <code class="docutils literal notranslate"><span class="pre">s</span></code> 지정</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x축값</span><span class="p">,</span> <span class="n">y축값</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">각점의크기배열</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By HJ & codingalzi<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
