@@ -1,0 +1,2636 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>26. 판다스(Pandas) 3 &#8212; 파이썬 프로그래밍 기초</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="23. 판다스(Pandas) 2" href="ch17.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">파이썬 프로그래밍 기초</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   소개
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch01.html">
+   1. 프로그래밍이란?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch02.html">
+   2. 파이썬 프로그래밍 개발 환경
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch03.html">
+   3. 프로그래밍 시작하기
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch04.html">
+   4. 변수, 값, 표현식, 명령문
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch05.html">
+   5. 기본자료형
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch06.html">
+   6. 문자열
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch07.html">
+   7. 제어문
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch08.html">
+   8. 입력과 출력
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch09.html">
+   9. 오류 및 예외처리
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch10.html">
+   10. 함수
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch11.html">
+   12. 리스트
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch12.html">
+   13. 튜플
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch13.html">
+   14. 딕셔너리
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch14.html">
+   15. 파일 다루기
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch15.html">
+   16. 웹 사이트에서 데이터 가져오기
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch16.html">
+   18. 넘파이(Numpy)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch17.html">
+   23. 판다스(Pandas) 2
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   26. 판다스(Pandas) 3
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ch18.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/hj617kim/pybook1"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/hj617kim/pybook1/issues/new?title=Issue%20on%20page%20%2Fch18.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/hj617kim/pybook1/master?urlpath=tree/docs/ch18.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   26. 판다스(Pandas) 3
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lambda">
+     26.1. lambda
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#apply">
+     26.2. apply() 메소드
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transform">
+     26.3. transform() 메소드
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     26.4. 그룹 연산
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       26.4.1. 이상치 처리
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   27. 데이터시각화
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   28. 판다스3 요약
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>판다스(Pandas) 3</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   26. 판다스(Pandas) 3
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lambda">
+     26.1. lambda
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#apply">
+     26.2. apply() 메소드
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transform">
+     26.3. transform() 메소드
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     26.4. 그룹 연산
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       26.4.1. 이상치 처리
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   27. 데이터시각화
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   28. 판다스3 요약
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="pandas-3">
+<h1><span class="section-number">26. </span>판다스(Pandas) 3<a class="headerlink" href="#pandas-3" title="Permalink to this headline">¶</a></h1>
+<p>여기서는 아래의 내용을 다룬다.</p>
+<ul class="simple">
+<li><p>lambda, apply(), transform() 메소드</p></li>
+<li><p>groupby + apply(), transform() 메소드<br />
+→ 결측치(missing data) 처리, 이상치(outlier) 처리</p></li>
+<li><p>데이터 시각화</p>
+<ul>
+<li><p>상자 그림(box plot)</p></li>
+</ul>
+</li>
+</ul>
+<p>우선 수업에서 필요한 모듈을 임포트하자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="lambda">
+<h2><span class="section-number">26.1. </span>lambda<a class="headerlink" href="#lambda" title="Permalink to this headline">¶</a></h2>
+<p>파이썬은 익명함수 또는 lambda 함수라고 하는, 값을 반환하는 단순한 한 문장으로 이루어진 함수를 지원한다. 람다 함수는 데이터 분석에서는 특히 편리한데, 이는 람다함수를 사용하면 코드를 적게 쓰며, 코드도 더 간결해지기 때문이다.</p>
+<p>람다 함수는 아래와 같이 사용한다.</p>
+<blockquote>
+<div><p>lambda <em>arguments</em> : <em>expression</em></p>
+</div></blockquote>
+<p>예제와 함께 살펴보자.</p>
+<p>예를 들어, 숫자를 인자로 받아 5를 더한 값을 반환하는 함수는 아래와 같이 정의할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plus_5</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">:</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">plus_5</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> <span class="c1">#15</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plus_5</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>  <span class="c1">#12</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+12
+</pre></div>
+</div>
+</div>
+</div>
+<p>람다 함수를 사용하면, 아래와 같이 코드를 작성할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span> <span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> <span class="c1">#15</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span> <span class="c1">#12</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+12
+</pre></div>
+</div>
+</div>
+</div>
+<p>두 개의 argument의 곱을 리턴하는 코드는 아래와 같다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">:</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>  <span class="c1">#21</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>map() 함수</strong></p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">map(func,</span> <span class="pre">iterable)</span></code></p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">map()</span></code>은 내장함수로, <code class="docutils literal notranslate"><span class="pre">iterable</span></code>의 각 항목에 <code class="docutils literal notranslate"><span class="pre">func</span></code>를 실행한 결과를 묶어서 돌려준다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">iterable</span></code>은 반복 가능한 객체로, 예를 들어, 리스트, 튜플 등을 말한다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">func</span></code>은 <code class="docutils literal notranslate"><span class="pre">iterable</span></code>에 실행할 함수다.</p></li>
+</ul>
+<p>예를 들어, 두 정수를 입력받아, 두 정수의 합을 출력하는 코드를 작성할 때 <code class="docutils literal notranslate"><span class="pre">map()</span></code>를 사용할 수 있다(강의노트5 [입력과 출력] 참고).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">numA</span><span class="p">,</span> <span class="n">numB</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;두 정수를 콤마(,)로 구분하여 입력하세요 : &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numA</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="n">numB</span><span class="p">,</span> <span class="s2">&quot;= &quot;</span><span class="p">,</span> <span class="n">numA</span> <span class="o">+</span> <span class="n">numB</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>예를 들어, 리스트<code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></code>의 각 항목을 제곱한 다음 5를 더한 값을 항목으로 갖는 리스트<code class="docutils literal notranslate"><span class="pre">[6,</span> <span class="pre">9,</span> <span class="pre">14,</span> <span class="pre">21,</span> <span class="pre">30]</span></code>를 만들 때, <code class="docutils literal notranslate"><span class="pre">map()</span></code>함수를 사용할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>
+<span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, 9, 14, 21, 30]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="apply">
+<h2><span class="section-number">26.2. </span>apply() 메소드<a class="headerlink" href="#apply" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">df.apply()</span></code> 메소드는 데이터프레임의 행 또는 열을 따라 인자로 입력된 함수를 적용한다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">df.apply()</span></code>메소드의 aixs 키워드(default는 axis = 0)는 행을 기준으로 할지, 열을 기준으로 할지를 결정한다.</p>
+<ul class="simple">
+<li><p>axis = 0은 열별로 함수를 적용</p></li>
+<li><p>axis = 1은 행별로 함수를 적용</p></li>
+</ul>
+<p>예제를 통해 살펴보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>각 열에 <code class="docutils literal notranslate"><span class="pre">np.sqrt()</span></code> 함수를 적용해보자.<br />
+참고) <code class="docutils literal notranslate"><span class="pre">np.sqrt()</span></code>는 제곱근을 반환하는 함수이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2.0</td>
+      <td>3.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">apply()</span></code>메소드를 사용해도 데이터프레임df는 변하지 않는다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>각 열별로 합을 구해보자. 아래는 각 열의 합을 구하기 위해 <code class="docutils literal notranslate"><span class="pre">np.sum()</span></code>을 사용했다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">#axis의 default 값은 0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A    12
+B    27
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>그러면 열 단위로 집계된 결과를 확인할 수 있다.</p>
+<p>이번에는 각 행별로 합을 구해보자. 각 행별로 <code class="docutils literal notranslate"><span class="pre">np.sum()</span></code>함수를 적용하기 위해 axis = 1로 둔다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    13
+1    13
+2    13
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">apply()</span></code>메소드의 인자로 람다함수를 사용해보자. 아래는 10을 더한 값을 반환하는 함수를 적용한 코드이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>14</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>14</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14</td>
+      <td>19</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>물론, 다음과 같이 실제 함수를 정의한 다음 <code class="docutils literal notranslate"><span class="pre">apply()</span></code>메소드의 인자로 사용할 수도 있다.<br />
+하지만 람다함수를 사용하면 실제 함수를 사용할 때보다 더 적게, 더 간결하게 코드를 작성할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plus_10</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">:</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">plus_10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>14</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>14</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14</td>
+      <td>19</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>데이터프레임df의 A열에 100을 더한 값을 반환하는 함수를 적용해보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    104
+1    104
+2    104
+Name: A, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>예제) 데이터프레임df의 각 행별로 최솟값을 구하는 코드를 작성해보자.<br />
+최솟값은 <code class="docutils literal notranslate"><span class="pre">min()</span></code>으로 구할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    4
+1    4
+2    4
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="transform">
+<h2><span class="section-number">26.3. </span>transform() 메소드<a class="headerlink" href="#transform" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">df.transform()</span></code> 메소드는 인자로 입력된 함수에 의해 변환된 값을 가진 데이터프레임을 만든다.</p>
+<ul class="simple">
+<li><p>aixs = 0 은 열별로 함수를 적용</p></li>
+<li><p>axis = 1 은 행별로 함수를 적용</p></li>
+</ul>
+<p>예제를 통해 살펴보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>데이터프레임 df의 모양(shape)은 (3, 2)이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<p>데이터프레임 df에 <code class="docutils literal notranslate"><span class="pre">np.sqrt</span></code>를 적용하는 코드는 아래와 같다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">)</span> <span class="c1">#모양(shape)은 df와 같다.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2.0</td>
+      <td>3.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>각 열별로 <code class="docutils literal notranslate"><span class="pre">np.sqrt</span></code>와 <code class="docutils literal notranslate"><span class="pre">np.exp</span></code>를 적용하는 코드는 아래와 같다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">transform</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="2" halign="left">A</th>
+      <th colspan="2" halign="left">B</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>sqrt</th>
+      <th>exp</th>
+      <th>sqrt</th>
+      <th>exp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2.0</td>
+      <td>54.59815</td>
+      <td>3.0</td>
+      <td>8103.083928</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.0</td>
+      <td>54.59815</td>
+      <td>3.0</td>
+      <td>8103.083928</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2.0</td>
+      <td>54.59815</td>
+      <td>3.0</td>
+      <td>8103.083928</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>생성된 데이터프레임의 모양(shape)은 (3, 4)이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">transform</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>  <span class="c1">#df와 행의 길이가 같다. </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 4)
+</pre></div>
+</div>
+</div>
+</div>
+<p>각 행별로 <code class="docutils literal notranslate"><span class="pre">np.sqrt</span></code>와 <code class="docutils literal notranslate"><span class="pre">np.exp</span></code>를 적용하는 코드는 아래와 같다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">transform</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">0</th>
+      <th>sqrt</th>
+      <td>2.00000</td>
+      <td>3.000000</td>
+    </tr>
+    <tr>
+      <th>exp</th>
+      <td>54.59815</td>
+      <td>8103.083928</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1</th>
+      <th>sqrt</th>
+      <td>2.00000</td>
+      <td>3.000000</td>
+    </tr>
+    <tr>
+      <th>exp</th>
+      <td>54.59815</td>
+      <td>8103.083928</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2</th>
+      <th>sqrt</th>
+      <td>2.00000</td>
+      <td>3.000000</td>
+    </tr>
+    <tr>
+      <th>exp</th>
+      <td>54.59815</td>
+      <td>8103.083928</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>생성된 데이터프레임의 모양(shape)은 (6, 2)이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">transform</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>  <span class="c1">#df와 열의 길이가 같다. </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(6, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<p>df의 A열에 5를 더한 값을 반환하는 함수를 적용하면 아래와 같다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">plus_5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    9
+1    9
+2    9
+Name: A, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>주의) <code class="docutils literal notranslate"><span class="pre">apply()</span></code>와 <code class="docutils literal notranslate"><span class="pre">transform()</span></code>은 다르다. 예를 들어, <code class="docutils literal notranslate"><span class="pre">transform()</span></code>은 집계된 결과를 만들지 못한다.<br />
+아래와 같이 <code class="docutils literal notranslate"><span class="pre">transform()</span></code> 메소드를 이용하여 각 열별 합을 구하려고 하면 오류가 발생한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">)</span>
+<span class="go">---------------------------------------------------------------------------</span>
+<span class="go">ValueError                                Traceback (most recent call last)</span>
+<span class="go">&lt;ipython-input-40-7d77bb905920&gt; in &lt;module&gt;()</span>
+<span class="go">----&gt; 1 df.transform(np.sum)</span>
+
+<span class="go">/usr/local/lib/python3.7/dist-packages/pandas/core/frame.py in transform(self, func, axis, *args, **kwargs)</span>
+<span class="go">   7402         if axis == 1:</span>
+<span class="go">   7403             return self.T.transform(func, *args, **kwargs).T</span>
+<span class="go">-&gt; 7404         return super().transform(func, *args, **kwargs)</span>
+<span class="go">   7405 </span>
+<span class="go">   7406     def apply(self, func, axis=0, raw=False, result_type=None, args=(), **kwds):</span>
+
+<span class="go">/usr/local/lib/python3.7/dist-packages/pandas/core/generic.py in transform(self, func, *args, **kwargs)</span>
+<span class="go">  10676         result = self.agg(func, *args, **kwargs)</span>
+<span class="go">  10677         if is_scalar(result) or len(result) != len(self):</span>
+<span class="go">&gt; 10678             raise ValueError(&quot;transforms cannot produce aggregated results&quot;)</span>
+<span class="go">  10679 </span>
+<span class="go">  10680         return result</span>
+
+<span class="go">ValueError: transforms cannot produce aggregated results</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2><span class="section-number">26.4. </span>그룹 연산<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>보통 그룹 연산은 ‘분할-적용-결합(split-apply-combine)’의 과정으로, 판다스에서는 데이터프레임을 자연스럽게 나누어 사용할 수 있는 <code class="docutils literal notranslate"><span class="pre">groupby</span></code>라는 방법을 제공한다.</p>
+<p>그룹 연산의 예시는 아래 그림과 같다.</p>
+<div align="center"><img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch18/gp01.png" style="width:700px;"></div>  <p>여기서는 다양한 그룹 연산을 수행할 수 있는 <code class="docutils literal notranslate"><span class="pre">apply()</span></code>와 <code class="docutils literal notranslate"><span class="pre">transfrom()</span></code> 메소드를 예제와 함께 살펴보자.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">apply()</span></code> : 데이터프레임의 행 또는 열을 따라 인자로 입력된 함수를 적용한다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">transform()</span></code> : 인자로 입력된 함수에 의해 변환된 값을 가진 데이터프레임을 만든다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#데이터프레임 만들기</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span> <span class="p">],</span> 
+                       <span class="s1">&#39;data1&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> 
+                       <span class="s1">&#39;data2&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">]})</span>
+
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>key</th>
+      <th>data1</th>
+      <th>data2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A</td>
+      <td>0</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>B</td>
+      <td>5</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>C</td>
+      <td>10</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>A</td>
+      <td>5</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>B</td>
+      <td>10</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>C</td>
+      <td>15</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>A</td>
+      <td>10</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>B</td>
+      <td>15</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>C</td>
+      <td>20</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>데이터프레임 <code class="docutils literal notranslate"><span class="pre">df</span></code>를 <code class="docutils literal notranslate"><span class="pre">key</span></code>열을 기준으로 분리하자. 이때 <code class="docutils literal notranslate"><span class="pre">groupby</span></code>를 이용하면 된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_gp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">apply()</span></code>메소드를 사용하여, 각 그룹별로 합을 구해보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_gp</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>key</th>
+      <th>data1</th>
+      <th>data2</th>
+    </tr>
+    <tr>
+      <th>key</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>AAA</td>
+      <td>15</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>BBB</td>
+      <td>30</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>CCC</td>
+      <td>45</td>
+      <td>25</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>그러면, 각 그룹별로 <code class="docutils literal notranslate"><span class="pre">key</span></code>, <code class="docutils literal notranslate"><span class="pre">data1</span></code>, <code class="docutils literal notranslate"><span class="pre">data2</span></code>열의 합을 집계된 결과로 얻을 수 있다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">apply()</span></code> 메소드의 인자로 람다함수를 사용할 수도 있다.<br />
+예를 들어, 각 그룹별로 최댓값을 구하는 코드는 아래와 같다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_gp</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>key</th>
+      <th>data1</th>
+      <th>data2</th>
+    </tr>
+    <tr>
+      <th>key</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>A</td>
+      <td>10</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>B</td>
+      <td>15</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>C</td>
+      <td>20</td>
+      <td>25</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">apply()</span></code> 메소드의 인자로 사용했던 함수를 <code class="docutils literal notranslate"><span class="pre">transform()</span></code> 메소드의 인자로 사용해보자.<br />
+<code class="docutils literal notranslate"><span class="pre">transform()</span></code> 메소드를 사용하면, 데이터프레임(또는 시리즈)와 같은 길이의 데이터프레임(또는 시리즈)가 만들어진다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_gp</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>data1</th>
+      <th>data2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>15</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>30</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>45</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>30</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>45</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>15</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>30</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>45</td>
+      <td>25</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_gp</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>data1</th>
+      <th>data2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>10</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>10</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>###결측치 처리
+예제) 아래와 같은 데이터프레임<code class="docutils literal notranslate"><span class="pre">df_score</span></code>가 있다. 영어 점수의 결측치를 각 그룹(Group)의 평균으로 대체해보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_score</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">df_score</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">]</span>
+<span class="n">df_score</span><span class="p">[</span><span class="s1">&#39;Korean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">df_score</span><span class="p">[</span><span class="s1">&#39;Math&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">90</span><span class="p">]</span>
+<span class="n">df_score</span><span class="p">[</span><span class="s1">&#39;English&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">48</span><span class="p">]</span>
+<span class="n">df_score</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+<span class="n">df_score</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Group</th>
+      <th>Korean</th>
+      <th>Math</th>
+      <th>English</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A</td>
+      <td>50.0</td>
+      <td>30.0</td>
+      <td>45.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>B</td>
+      <td>90.0</td>
+      <td>100.0</td>
+      <td>75.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>C</td>
+      <td>NaN</td>
+      <td>95.0</td>
+      <td>60.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>A</td>
+      <td>80.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>B</td>
+      <td>20.0</td>
+      <td>45.0</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>C</td>
+      <td>97.0</td>
+      <td>NaN</td>
+      <td>88.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>A</td>
+      <td>73.0</td>
+      <td>83.0</td>
+      <td>62.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>B</td>
+      <td>81.0</td>
+      <td>NaN</td>
+      <td>78.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>C</td>
+      <td>50.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>A</td>
+      <td>86.0</td>
+      <td>NaN</td>
+      <td>95.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>B</td>
+      <td>86.0</td>
+      <td>40.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>C</td>
+      <td>3.0</td>
+      <td>90.0</td>
+      <td>48.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>각 열의 평균은 아래와 같다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_score</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1364/2122284044.py:1: FutureWarning: Dropping of nuisance columns in DataFrame reductions (with &#39;numeric_only=None&#39;) is deprecated; in a future version this will raise TypeError.  Select only valid columns before calling the reduction.
+  df_score.mean()
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Korean     65.090909
+Math       69.000000
+English    72.333333
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Group열을 기준으로 그룹화를 해보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_score_gp</span> <span class="o">=</span> <span class="n">df_score</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Group&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>각 그룹별 국영수 점수의 평균은 아래와 같다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_score_gp</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Korean</th>
+      <th>Math</th>
+      <th>English</th>
+    </tr>
+    <tr>
+      <th>Group</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>72.25</td>
+      <td>56.500000</td>
+      <td>67.333333</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>69.25</td>
+      <td>61.666667</td>
+      <td>84.333333</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>50.00</td>
+      <td>92.500000</td>
+      <td>65.333333</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">apply()</span></code> 메소드를 사용하여, 각 그룹별 영어 점수의 평균을 구하는 코드는 아래와 같다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_score_gp</span><span class="o">.</span><span class="n">English</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Group
+A    67.333333
+B    84.333333
+C    65.333333
+Name: English, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">transform()</span></code> 메소드를 사용하여, 각 그룹별 영어 점수의 평균을 구하는 코드는 아래와 같다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_score_gp</span><span class="o">.</span><span class="n">English</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     67.333333
+1     84.333333
+2     65.333333
+3     67.333333
+4     84.333333
+5     65.333333
+6     67.333333
+7     84.333333
+8     65.333333
+9     67.333333
+10    84.333333
+11    65.333333
+Name: English, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">apply()</span></code> 메소드를 사용하여, 각 그룹별 영어 점수의 결측치를 해당하는 그룹의 영어 점수 평균으로 대체하는 코드는 아래와 같다.</p>
+<p>참고) 결측치는 <code class="docutils literal notranslate"><span class="pre">fillna()</span></code>를 사용해 다른 값으로 대체할 수 있다. 인자로 대체하고 싶은 값을 사용하면 된다.<br />
+참고) <code class="docutils literal notranslate"><span class="pre">round()</span></code> 함수는 인자로 들어온 값을 반올림해준다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_score_gp</span><span class="o">.</span><span class="n">English</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">())))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      45.0
+1      75.0
+2      60.0
+3      67.0
+4     100.0
+5      88.0
+6      62.0
+7      78.0
+8      65.0
+9      95.0
+10     84.0
+11     48.0
+Name: English, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">transform()</span></code> 메소드를 사용하여, 각 그룹별 영어 점수의 결측치를 해당하는 그룹의 영어 점수 평균으로 대체하는 코드는 아래와 같다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_score_gp</span><span class="o">.</span><span class="n">English</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">())))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      45.0
+1      75.0
+2      60.0
+3      67.0
+4     100.0
+5      88.0
+6      62.0
+7      78.0
+8      65.0
+9      95.0
+10     84.0
+11     48.0
+Name: English, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3><span class="section-number">26.4.1. </span>이상치 처리<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>이상치(outlier)는 비정상적으로 분포를 벗어난 값으로, 이를 처리하지 않고 통계 분석을 실시하면 왜곡된 결과를 얻을 수도 있다.<br />
+이에 분석을 하기 전에 적절하게 이상치를 처리하는 것이 좋다. 여기서는 이상치를 처리하는 방법 중 사분위수를 이용하는 방법을 소개한다.</p>
+<p>사분위수(quantile)는 전체 관측값을 작은 것부터 크기 순서대로 배열하였을 때, 전체를 사등분하는 값이다.</p>
+<ul class="simple">
+<li><p>전체의 4분의 1, 4분의 2, 4분의 3은 각각 전체의 25%, 50%, 75%이고,<br />
+이를 제 1사분위수(Q1), 제 2사분위수(Q2) = 중앙값, 제 3사분위수(Q3)이라 한다.</p></li>
+<li><p>사분위수 범위(IQR) = 제 3사분위수 - 제 1사분위수 = Q3 - Q1</p></li>
+<li><p>관측값이 <code class="docutils literal notranslate"><span class="pre">Q1</span> <span class="pre">-</span> <span class="pre">1.5*IQR</span></code>보다 작거나 <code class="docutils literal notranslate"><span class="pre">Q3</span> <span class="pre">+</span> <span class="pre">1.5IQR</span></code>보다 크면, 이 값을 **이상치(outlier)**라고 함.</p></li>
+</ul>
+<p>상자그림(boxplot)은 주로 사분위수와 최댓값, 최솟값을 가지고 표현한 그래프로, 아래 그림과 같다.<br />
+상자 양끝에서 <code class="docutils literal notranslate"><span class="pre">1.5*IQR</span></code> 크기의 범위를 경계로 하여, 이 범위에 포함되는 최댓값과 최솟값을 Q1과 Q3로부터 각각 선으로 연결한다.<br />
+양 경계를 벗어난 자료값들은 *로 표시하고, 이 점들이 이상점이다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="n">Q1</span><span class="o">-</span><span class="mf">1.5</span><span class="n">IQR</span>   <span class="n">Q1</span>   <span class="n">median</span>  <span class="n">Q3</span>   <span class="n">Q3</span><span class="o">+</span><span class="mf">1.5</span><span class="n">IQR</span>
+                  <span class="o">|-----</span><span class="p">:</span><span class="o">-----|</span>
+  <span class="n">o</span>      <span class="o">|--------|</span>     <span class="p">:</span>     <span class="o">|--------|</span>    <span class="n">o</span>  <span class="n">o</span>
+                  <span class="o">|-----</span><span class="p">:</span><span class="o">-----|</span>
+<span class="n">outlier</span>           <span class="o">&lt;-----------&gt;</span>            <span class="n">outliers</span>
+                       <span class="n">IQR</span>
+</pre></div>
+</div>
+<p>(출처: <a class="reference external" href="http://matplotlib.org">matplotlib.org</a>)</p>
+<p>예제와 함께 살펴보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;iris&#39;</span><span class="p">)</span>  <span class="c1">#iris을 가져오는 코드</span>
+<span class="n">iris</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>6.7</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>6.3</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>1.9</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>6.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>1.8</td>
+      <td>virginica</td>
+    </tr>
+  </tbody>
+</table>
+<p>150 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>데이터프레임 iris의 <code class="docutils literal notranslate"><span class="pre">sepal_length</span></code>, <code class="docutils literal notranslate"><span class="pre">sepal_width</span></code>, <code class="docutils literal notranslate"><span class="pre">petal_length</span></code>, <code class="docutils literal notranslate"><span class="pre">petal_width</span></code>의 자료로 상자그림을 그려보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[[</span><span class="s1">&#39;sepal_length&#39;</span><span class="p">,</span> <span class="s1">&#39;sepal_width&#39;</span><span class="p">,</span> <span class="s1">&#39;petal_length&#39;</span><span class="p">,</span> <span class="s1">&#39;petal_width&#39;</span><span class="p">]]</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>6.7</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.3</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>6.3</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>1.9</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>6.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>1.8</td>
+    </tr>
+  </tbody>
+</table>
+<p>150 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>데이터프레임의 <code class="docutils literal notranslate"><span class="pre">boxplot()</span></code> 메소드를 사용하여 쉽게 상자그림을 그릴 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span> <span class="c1"># figsize로 그래프의 figure의 크기를 변경할 수 있다.</span>
+<span class="n">data</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># 격자를 없애려면, grid를 False로 둔다.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ch18_93_0.png" src="_images/ch18_93_0.png" />
+</div>
+</div>
+<p>상자그림을 보면, <code class="docutils literal notranslate"><span class="pre">sepal_width</span></code>열에 4개 이상의 이상치가 있는 것으로 보인다.</p>
+<p>사분위수를 이용하여 이상치를 처리해보자. 이를 위해 데이터프레임iris에 <code class="docutils literal notranslate"><span class="pre">Lower</span></code>, <code class="docutils literal notranslate"><span class="pre">Upper</span></code>, <code class="docutils literal notranslate"><span class="pre">Outlier</span></code>열을 추가해보자.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Lower</span></code>열 : <code class="docutils literal notranslate"><span class="pre">Q1</span> <span class="pre">-</span> <span class="pre">1.5*Q3</span></code>를 계산한 값</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Upper</span></code>열 : <code class="docutils literal notranslate"><span class="pre">Q3</span> <span class="pre">+</span> <span class="pre">1.5*Q3</span></code>를 계산한 값</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Outlier</span></code>열 : <code class="docutils literal notranslate"><span class="pre">Lower</span></code>보다 작거나 <code class="docutils literal notranslate"><span class="pre">Upper</span></code>보다 크면 <code class="docutils literal notranslate"><span class="pre">True</span></code>, 아니면 <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+<p>참고) 사분위수는 <code class="docutils literal notranslate"><span class="pre">quantile()</span></code> 메소드로 구할 수 있다. 예를 들어, iris의 <code class="docutils literal notranslate"><span class="pre">sepal_width</span></code>열의 제 1사분위수는 아래와 같이 구할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;sepal_width&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.8
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Lower</span></code>, <code class="docutils literal notranslate"><span class="pre">Upper</span></code>, <code class="docutils literal notranslate"><span class="pre">Outlier</span></code>열을 추가한 다음, 이상치를 확인해보자.</p>
+<p>주의) 시리즈 또는 데이터프레임에서 여러 개의 불리언 조건을 조합하여 사용할 때는 and와 or 대신 &amp; 와 |을 사용해야 한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;Lower&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;sepal_width&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="mf">.25</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">1.5</span><span class="o">*</span><span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;sepal_width&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="mf">.75</span><span class="p">)</span> <span class="o">-</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;sepal_width&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="mf">.25</span><span class="p">)))</span>
+<span class="n">iris</span><span class="p">[</span><span class="s1">&#39;Upper&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;sepal_width&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="mf">.75</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.5</span><span class="o">*</span><span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;sepal_width&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="mf">.75</span><span class="p">)</span> <span class="o">-</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;sepal_width&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="mf">.25</span><span class="p">)))</span>
+<span class="n">iris</span><span class="p">[</span><span class="s1">&#39;Outlier&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;sepal_width&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;Lower&#39;</span><span class="p">])</span> <span class="o">|</span> <span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;sepal_width&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;Upper&#39;</span><span class="p">])</span>
+<span class="n">iris</span><span class="p">[</span><span class="n">iris</span><span class="o">.</span><span class="n">Outlier</span> <span class="o">==</span> <span class="kc">True</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
+      <th>Lower</th>
+      <th>Upper</th>
+      <th>Outlier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>15</th>
+      <td>5.7</td>
+      <td>4.4</td>
+      <td>1.5</td>
+      <td>0.4</td>
+      <td>setosa</td>
+      <td>2.05</td>
+      <td>4.05</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>5.2</td>
+      <td>4.1</td>
+      <td>1.5</td>
+      <td>0.1</td>
+      <td>setosa</td>
+      <td>2.05</td>
+      <td>4.05</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>5.5</td>
+      <td>4.2</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+      <td>2.05</td>
+      <td>4.05</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>3.5</td>
+      <td>1.0</td>
+      <td>versicolor</td>
+      <td>2.05</td>
+      <td>4.05</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>사분위수를 이용하여 4개의 이상치를 확인하였다.<br />
+참고) <code class="docutils literal notranslate"><span class="pre">df.loc[]</span></code>를 사용하여 이상치를 다른 값으로 대체할 수 있다.</p>
+<p>이제 각 그룹별로 <code class="docutils literal notranslate"><span class="pre">sepal_width</span></code>열의 이상치를 확인하는 코드를 작성해보자.</p>
+<p>우선, 상자그림(boxplot)을 그려보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sepal_width 자료로 상자그림을 그리기 위해 column은 sepal_width로 둔다.</span>
+<span class="c1"># by 를 species로 두면, species를 기준으로 그룹화하여 상자그림을 그려준다.</span>
+<span class="n">iris</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;sepal_width&#39;</span><span class="p">],</span><span class="n">grid</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;species&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ch18_100_0.png" src="_images/ch18_100_0.png" />
+</div>
+</div>
+<p>상자그림을 살펴보면, <code class="docutils literal notranslate"><span class="pre">setosa</span></code>와 <code class="docutils literal notranslate"><span class="pre">virginica</span></code> 그룹에 각각 2개 이상의 이상치가 있을 것으로 보인다.<br />
+실제로 이상치를 확인해보자.</p>
+<p>우선, 데이터프레임 iris의 <code class="docutils literal notranslate"><span class="pre">sepal_width</span></code>와 <code class="docutils literal notranslate"><span class="pre">species</span></code>열만 가져와서 그룹별로 이상치를 확인하는 방법을 살펴보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;sepal_width&#39;</span><span class="p">,</span> <span class="s1">&#39;species&#39;</span><span class="p">]]</span>
+<span class="n">iris</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_width</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3.5</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3.0</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3.1</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3.6</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>3.0</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>2.5</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>3.0</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>3.4</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>3.0</td>
+      <td>virginica</td>
+    </tr>
+  </tbody>
+</table>
+<p>150 rows × 2 columns</p>
+</div></div></div>
+</div>
+<p>각 그룹별로 Lower, Upper를 계산해야 한다. 이를 위해 <code class="docutils literal notranslate"><span class="pre">transform()</span></code>을 사용한다.<br />
+<code class="docutils literal notranslate"><span class="pre">Lower</span></code>, <code class="docutils literal notranslate"><span class="pre">Upper</span></code>, <code class="docutils literal notranslate"><span class="pre">Outlier</span></code>열을 추가한 다음, 이상치를 확인해보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris_gp</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;species&#39;</span><span class="p">)</span>
+
+<span class="n">iris</span><span class="p">[</span><span class="s1">&#39;Lower&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">iris_gp</span><span class="p">[</span><span class="s1">&#39;sepal_width&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="mf">.25</span><span class="p">)</span><span class="o">-</span> <span class="mf">1.5</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="mf">.75</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span> <span class="mf">.25</span><span class="p">)))</span>
+<span class="n">iris</span><span class="p">[</span><span class="s1">&#39;Upper&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">iris_gp</span><span class="p">[</span><span class="s1">&#39;sepal_width&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="mf">.75</span><span class="p">)</span><span class="o">+</span> <span class="mf">1.5</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="mf">.75</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span> <span class="mf">.25</span><span class="p">)))</span>
+<span class="n">iris</span><span class="p">[</span><span class="s1">&#39;Outlier&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;sepal_width&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;Lower&#39;</span><span class="p">])</span> <span class="o">|</span> <span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;sepal_width&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;Upper&#39;</span><span class="p">])</span>
+<span class="n">iris</span><span class="p">[</span><span class="n">iris</span><span class="o">.</span><span class="n">Outlier</span> <span class="o">==</span> <span class="kc">True</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_width</th>
+      <th>species</th>
+      <th>Lower</th>
+      <th>Upper</th>
+      <th>Outlier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>15</th>
+      <td>4.4</td>
+      <td>setosa</td>
+      <td>2.4875</td>
+      <td>4.3875</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>2.3</td>
+      <td>setosa</td>
+      <td>2.4875</td>
+      <td>4.3875</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>3.8</td>
+      <td>virginica</td>
+      <td>2.2375</td>
+      <td>3.7375</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>2.2</td>
+      <td>virginica</td>
+      <td>2.2375</td>
+      <td>3.7375</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>3.8</td>
+      <td>virginica</td>
+      <td>2.2375</td>
+      <td>3.7375</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">setosa</span></code>그룹에는 2개, <code class="docutils literal notranslate"><span class="pre">virginica</span></code>그룹에는 3개의 이상치가 있는 것을 확인할 수 있다.<br />
+참고) <code class="docutils literal notranslate"><span class="pre">df.loc[]</span></code>를 사용하여 이상치를 다른 값으로 대체할 수 있다.</p>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="id3">
+<h1><span class="section-number">27. </span>데이터시각화<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>단어 구름(word cloud)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">wordcloud</span> <span class="kn">import</span> <span class="n">WordCloud</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>워드 클라우드에 한글이 있다면 아래 코드를 실행한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!apt install -y fonts-nanum
+!fc-cache -fv
+
+applyfont = &quot;NanumBarunGothic&quot;
+
+import matplotlib.font_manager as fm
+if not any(map(lambda ft: ft.name == applyfont, fm.fontManager.ttflist)):
+    fm.fontManager.addfont(&quot;/usr/share/fonts/truetype/nanum/NanumBarunGothic.ttf&quot;)
+
+plt.rc(&quot;font&quot;, family=applyfont)
+plt.rc(&quot;axes&quot;, unicode_minus=False)
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="s2">&quot;strawberry banana strawberry apple tomato tomato tomato strawberry strawberry apple&quot;</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;strawberry banana strawberry apple tomato tomato tomato strawberry strawberry apple&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 한글이 있다면 font_path=&#39;/usr/share/fonts/truetype/nanum/NanumBarunGothic.ttf&#39; 추가</span>
+<span class="n">wc</span> <span class="o">=</span> <span class="n">WordCloud</span><span class="p">(</span><span class="n">background_color</span><span class="o">=</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">600</span><span class="p">,</span> <span class="n">prefer_horizontal</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">wc</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ch18_112_0.png" src="_images/ch18_112_0.png" />
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="id4">
+<h1><span class="section-number">28. </span>판다스3 요약<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>판다스 모듈 임포트 : <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code></p></li>
+<li><p>넘파이 모듈 임포트 : <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code></p></li>
+</ul>
+<hr class="docutils" />
+<p><font color="red">apply 메서드</font></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df.apply()</span></code> 메서드 : 데이터프레임의 행 또는 열을 따라 인자로 입력된 함수를 적용</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">axis</span> <span class="pre">=</span> <span class="pre">0</span></code> : 열별로 함수를 적용</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">axis</span> <span class="pre">=</span> <span class="pre">1</span></code> : 행별로 함수를 적용</p></li>
+</ul>
+</li>
+</ul>
+<p>예제1)<code class="docutils literal notranslate"><span class="pre">df.apply(np.sqrt)</span></code> # 모든 열에 제곱근 함수를 적용</p>
+<p><strong>주의</strong> : <code class="docutils literal notranslate"><span class="pre">apply()</span></code> 메서드를 사용해도 데이터프레임 <code class="docutils literal notranslate"><span class="pre">df</span></code>는 변하지 않는다.</p>
+<p>예제2) <code class="docutils literal notranslate"><span class="pre">df.apply(np.sum)</span></code> # 각 열에 <code class="docutils literal notranslate"><span class="pre">np.sum()</span></code>함수를 적용. 각 열별로 합을 구함.
+예제3) <code class="docutils literal notranslate"><span class="pre">df.apply(np.sum,</span> <span class="pre">axis</span> <span class="pre">=</span> <span class="pre">1)</span></code> # 각 행에 <code class="docutils literal notranslate"><span class="pre">np.sum()</span></code>함수를 적용. 각 행별로 합을 구함.
+예제4) <code class="docutils literal notranslate"><span class="pre">df.apply(lambda</span> <span class="pre">x</span> <span class="pre">:</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">10)</span></code> : 각 열에 인자로 들어온 람다 함수를 적용.</p>
+<hr class="docutils" />
+<p><font color="red">transform 메서드</font></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df.transform()</span></code> 메서드 : 인자로 입력된 함수에 의해 변환된 값을 가진 데이터프레임을 만듦.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">axis</span> <span class="pre">=</span> <span class="pre">0</span></code> : 열별로 함수를 적용</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">axis</span> <span class="pre">=</span> <span class="pre">1</span></code> : 행별로 함수를 적용</p></li>
+</ul>
+</li>
+</ul>
+<p>예제1)<code class="docutils literal notranslate"><span class="pre">df.transform(np.sqrt)</span></code> # 모든 열에 제곱근 함수를 적용, 모양은 df와 같음.</p>
+<p><strong>주의</strong> : <code class="docutils literal notranslate"><span class="pre">transform()</span></code> 메서드는 집계된 결과를 만들지 못함.
+예제2) `df.transfrom(np.sum) # 오류 발생</p>
+<hr class="docutils" />
+<p><font color="red">groupby 그룹화</font><br />
+<code class="docutils literal notranslate"><span class="pre">df_gp</span> <span class="pre">=</span> <span class="pre">df.groupby('그룹기준이되는열이름')</span></code></p>
+<ul class="simple">
+<li><p>그룹별로 특정열의 합을 집계된 결과로 구하기 - <code class="docutils literal notranslate"><span class="pre">df_gp.apply(np.sum)</span></code></p></li>
+<li><p>그룹별로 특정열의 합을 데이터프레임과 같은 크기로 구하기 - <code class="docutils literal notranslate"><span class="pre">df_gp.transform(np.sum)</span></code></p></li>
+</ul>
+<hr class="docutils" />
+<p><font color="red">람다lambda 함수</font></p>
+<ul class="simple">
+<li><p>익명함수 또는 lambda 함수 : <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">arguments</span> <span class="pre">:</span> <span class="pre">expression</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">x</span> <span class="pre">:</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">3</span></code>  # 숫자를 인자로 받아 3을 더한 값을 반환하는 람다 함수</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">a,</span> <span class="pre">b</span> <span class="pre">:</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code>  # 두 숫자를 인자로 받아, 더한 값을 반환하는 람다 함수</p></li>
+</ul>
+</li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="ch17.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">23. </span>판다스(Pandas) 2</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By HJ & codingalzi<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
