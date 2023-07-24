@@ -257,7 +257,8 @@
 
 # 구글 코랩은 구글에서 제공하는 주피터 노트북이다. 레플릿과 마찬가지로 사용 방법은 간단하다.
 
-# * 구글 https://www.google.com/ 에 접속한다. 그리고 구글 계정으로 로그인을 한다. 이때, 사용할 웹 브라우저는 크롬을 추천한다. 
+# * 구글 https://www.google.com/ 에 접속한다. 그리고 구글 계정으로 로그인을 한다. 이때, 사용할 웹 브라우저는 크롬을 추천한다.   
+# 사파리Safari는 일부 기능이 제대로 동작하지 않는다.  
 
 # <div align="center">
 #     <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/colab01.png" style="width:800px;">

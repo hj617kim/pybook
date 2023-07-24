@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>9. 오류 및 예외처리 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>10. 오류 및 예외처리 &#8212; 파이썬 프로그래밍 기초</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,8 +52,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="10. 함수" href="ch10.html" />
-    <link rel="prev" title="8. 입력과 출력" href="ch08.html" />
+    <link rel="next" title="11. 함수" href="ch10.html" />
+    <link rel="prev" title="9. 입력과 출력" href="ch08.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -130,52 +130,57 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch08.html">
-   8. 입력과 출력
+   9. 입력과 출력
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   9. 오류 및 예외처리
+   10. 오류 및 예외처리
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch10.html">
-   10. 함수
+   11. 함수
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch11.html">
-   12. 리스트
+   13. 리스트
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch12.html">
-   13. 튜플
+   14. 튜플
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch13.html">
-   14. 딕셔너리
+   15. 딕셔너리
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch14.html">
-   15. 파일 다루기
+   16. 파일 다루기
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch15.html">
-   16. 웹 사이트에서 데이터 가져오기
+   17. 웹 사이트에서 데이터 가져오기
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch16.html">
-   18. 넘파이(Numpy)
+   19. 넘파이(Numpy)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch17.html">
-   23. 판다스(Pandas) 2
+   24. 판다스(Pandas) 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch18.html">
+   27. 판다스(Pandas) 3
   </a>
  </li>
 </ul>
@@ -284,22 +289,22 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   9.1. 오류
+   10.1. 오류
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   9.2. 예외처리
+   10.2. 예외처리
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   9.3. 예외 일으키기
+   10.3. 예외 일으키기
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   9.4. 코드의 안전성 문제
+   10.4. 코드의 안전성 문제
   </a>
  </li>
 </ul>
@@ -324,22 +329,22 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   9.1. 오류
+   10.1. 오류
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   9.2. 예외처리
+   10.2. 예외처리
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   9.3. 예외 일으키기
+   10.3. 예외 일으키기
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   9.4. 코드의 안전성 문제
+   10.4. 코드의 안전성 문제
   </a>
  </li>
 </ul>
@@ -352,7 +357,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1><span class="section-number">9. </span>오류 및 예외처리<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">10. </span>오류 및 예외처리<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>아래의 코드는 정수를 입력받아 그 정수의 제곱을 출력하는 내용을 담고 있다. 코드를 실행하면 숫자를 입력하라는 창이 나오고, 여기에 정수 6을 입력하면 정상적으로 작동한다. 하지만, 예를 들어, 3.5를 입력하면 값 오류(value error)가 발생한다. <code class="docutils literal notranslate"><span class="pre">int()</span></code> 함수는 정수모양의 문자열에만 사용할 수 있기 때문이다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">int_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;정수를 입력하세요 : &quot;</span><span class="p">))</span>
 <span class="go">정수를 입력하세요 : 6</span>
@@ -373,7 +378,7 @@
 </div>
 <p>프로그램을 만들다보면 여러 오류가 발생할 수 있다. 파이썬은 오류가 발생하면 오류 메시지를 보여주며 프로그램을 중단한다. 하지만 때로는 오류를 다른 방식으로 처리하고 싶을 때도 있다. 여기서 그에 대한 해결책을 다루고자 한다.</p>
 <div class="section" id="id2">
-<h2><span class="section-number">9.1. </span>오류<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.1. </span>오류<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>오류를 처리하는 방법을 살펴보기 전에, 발생할 수 있는 오류 몇 가지를 살펴보자. 오류의 종류를 파악하면 어디서 왜 오류가 발생하였는지를 보다 쉽게 파악하여 코드를 수정할 수 있게 된다.</p>
 <p>다음의 코드들은 모두 오류를 발생시킨다.</p>
 <p><strong>문법 오류</strong></p>
@@ -518,8 +523,8 @@
 <p>지금 살펴본 오류 외에도 다양한 오류가 발생할 수 있다. 그때마다 스스로 오류의 내용과 원인을 확인해 나가는 과정이 필요하다.</p>
 </div>
 <div class="section" id="id3">
-<h2><span class="section-number">9.2. </span>예외처리<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>프로그램 중간에 오류가 발생할 수 있는 경우를 미리 생각하여 대비하는 과정을 **예외처리(exception handling)**라고 부른다.</p>
+<h2><span class="section-number">10.2. </span>예외처리<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>프로그램 중간에 오류가 발생할 수 있는 경우를 미리 생각하여 대비하는 과정을 <strong>예외처리(exception handling)</strong> 라고 부른다.</p>
 <p>예를 들어, 오류가 발생하더라도 오류발생 이전까지 생성된 정보들을 저장하거나, 오류발생 이유를 조금 더 자세히 다루거나, 아니면 오류발생에 대한 보다 자세한 정보를 사용자에게 알려주기 위해 예외처리를 사용한다.</p>
 <p>사용방식은 다음과 같다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">:</span>
@@ -633,7 +638,7 @@
 </div>
 </div>
 <div class="section" id="id4">
-<h2><span class="section-number">9.3. </span>예외 일으키기<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.3. </span>예외 일으키기<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>강제로 오류를 발생시키고 싶다면 <code class="docutils literal notranslate"><span class="pre">raise</span></code> 명령어를 사용하면 된다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">raise</span>
 <span class="go">---------------------------------------------------------------------------</span>
@@ -664,7 +669,7 @@
 </div>
 </div>
 <div class="section" id="id5">
-<h2><span class="section-number">9.4. </span>코드의 안전성 문제<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.4. </span>코드의 안전성 문제<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>문법 오류 또는 실행 중 오류가 발생하지 않더라도 <strong>코드의 안전성</strong>이 보장되지는 않는다. 즉, 오류가 발생하지 않더라도 코드를 실행했을 때 기대하는 결과가 나오지 않을 수도 있으니 주의해야 한다.</p>
 <p>아래의 코드는 입력받은 정수의 제곱을 출력해주는 코드를 제대로 구현하지 못한 경우를 다룬다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">int_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;정수를 입력하세요 : &quot;</span><span class="p">))</span>
@@ -705,13 +710,13 @@
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">8. </span>입력과 출력</p>
+            <p class="prev-next-title"><span class="section-number">9. </span>입력과 출력</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="ch10.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>함수</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>함수</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

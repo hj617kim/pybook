@@ -5,8 +5,8 @@
 # 
 
 # 여기서는 아래의 내용을 다룬다.
-# * lambda, apply(), transform() 메소드
-# * groupby + apply(), transform() 메소드  
+# * lambda, apply(), transform() 메서드
+# * groupby + apply(), transform() 메서드  
 #     → 결측치(missing data) 처리, 이상치(outlier) 처리
 # * 데이터 시각화
 #   * 상자 그림(box plot)
@@ -95,11 +95,11 @@ b = list(map(lambda x : x ** 2 + 5, a))
 b
 
 
-# ## apply() 메소드
+# ## apply() 메서드
 # 
-# `df.apply()` 메소드는 데이터프레임의 행 또는 열을 따라 인자로 입력된 함수를 적용한다. 
+# `df.apply()` 메서드는 데이터프레임의 행 또는 열을 따라 인자로 입력된 함수를 적용한다. 
 # 
-# `df.apply()`메소드의 aixs 키워드(default는 axis = 0)는 행을 기준으로 할지, 열을 기준으로 할지를 결정한다.
+# `df.apply()`메서드의 aixs 키워드(default는 axis = 0)는 행을 기준으로 할지, 열을 기준으로 할지를 결정한다.
 #   * axis = 0은 열별로 함수를 적용
 #   * axis = 1은 행별로 함수를 적용
 
@@ -121,7 +121,7 @@ df
 df.apply(np.sqrt)
 
 
-# `apply()`메소드를 사용해도 데이터프레임df는 변하지 않는다. 
+# `apply()`메서드를 사용해도 데이터프레임df는 변하지 않는다. 
 
 # In[9]:
 
@@ -147,7 +147,7 @@ df.apply(np.sum, axis = 0) #axis의 default 값은 0
 df.apply(np.sum, axis = 1)
 
 
-# `apply()`메소드의 인자로 람다함수를 사용해보자. 아래는 10을 더한 값을 반환하는 함수를 적용한 코드이다. 
+# `apply()`메서드의 인자로 람다함수를 사용해보자. 아래는 10을 더한 값을 반환하는 함수를 적용한 코드이다. 
 
 # In[12]:
 
@@ -155,7 +155,7 @@ df.apply(np.sum, axis = 1)
 df.apply(lambda x : x + 10)
 
 
-# 물론, 다음과 같이 실제 함수를 정의한 다음 `apply()`메소드의 인자로 사용할 수도 있다.  
+# 물론, 다음과 같이 실제 함수를 정의한 다음 `apply()`메서드의 인자로 사용할 수도 있다.  
 # 하지만 람다함수를 사용하면 실제 함수를 사용할 때보다 더 적게, 더 간결하게 코드를 작성할 수 있다. 
 
 # In[13]:
@@ -188,9 +188,9 @@ df.A.apply(lambda x : x + 100)
 df.apply(lambda x : x.min(), axis = 1)
 
 
-# ## transform() 메소드  
+# ## transform() 메서드  
 # 
-# `df.transform()` 메소드는 인자로 입력된 함수에 의해 변환된 값을 가진 데이터프레임을 만든다.  
+# `df.transform()` 메서드는 인자로 입력된 함수에 의해 변환된 값을 가진 데이터프레임을 만든다.  
 # * aixs = 0 은 열별로 함수를 적용
 # * axis = 1 은 행별로 함수를 적용  
 # 
@@ -264,7 +264,7 @@ df.A.transform(plus_5)
 
 
 # 주의) `apply()`와 `transform()`은 다르다. 예를 들어, `transform()`은 집계된 결과를 만들지 못한다.  
-# 아래와 같이 `transform()` 메소드를 이용하여 각 열별 합을 구하려고 하면 오류가 발생한다.  
+# 아래와 같이 `transform()` 메서드를 이용하여 각 열별 합을 구하려고 하면 오류가 발생한다.  
 
 # ```python
 # >>> df.transform(np.sum)
@@ -298,7 +298,7 @@ df.A.transform(plus_5)
 # 
 # <div align="center"><img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch18/gp01.png" style="width:700px;"></div>  
 
-# 여기서는 다양한 그룹 연산을 수행할 수 있는 `apply()`와 `transfrom()` 메소드를 예제와 함께 살펴보자.  
+# 여기서는 다양한 그룹 연산을 수행할 수 있는 `apply()`와 `transfrom()` 메서드를 예제와 함께 살펴보자.  
 # 
 # * `apply()` : 데이터프레임의 행 또는 열을 따라 인자로 입력된 함수를 적용한다. 
 # * `transform()` : 인자로 입력된 함수에 의해 변환된 값을 가진 데이터프레임을 만든다. 
@@ -322,7 +322,7 @@ df
 df_gp = df.groupby('key')
 
 
-# `apply()`메소드를 사용하여, 각 그룹별로 합을 구해보자. 
+# `apply()`메서드를 사용하여, 각 그룹별로 합을 구해보자. 
 
 # In[27]:
 
@@ -332,7 +332,7 @@ df_gp.apply(np.sum)
 
 # 그러면, 각 그룹별로 `key`, `data1`, `data2`열의 합을 집계된 결과로 얻을 수 있다. 
 
-# `apply()` 메소드의 인자로 람다함수를 사용할 수도 있다.   
+# `apply()` 메서드의 인자로 람다함수를 사용할 수도 있다.   
 # 예를 들어, 각 그룹별로 최댓값을 구하는 코드는 아래와 같다.  
 
 # In[28]:
@@ -341,8 +341,8 @@ df_gp.apply(np.sum)
 df_gp.apply(lambda x : x.max())
 
 
-# `apply()` 메소드의 인자로 사용했던 함수를 `transform()` 메소드의 인자로 사용해보자.   
-# `transform()` 메소드를 사용하면, 데이터프레임(또는 시리즈)와 같은 길이의 데이터프레임(또는 시리즈)가 만들어진다. 
+# `apply()` 메서드의 인자로 사용했던 함수를 `transform()` 메서드의 인자로 사용해보자.   
+# `transform()` 메서드를 사용하면, 데이터프레임(또는 시리즈)와 같은 길이의 데이터프레임(또는 시리즈)가 만들어진다. 
 
 # In[29]:
 
@@ -396,7 +396,7 @@ df_score_gp = df_score.groupby('Group')
 df_score_gp.mean()
 
 
-# `apply()` 메소드를 사용하여, 각 그룹별 영어 점수의 평균을 구하는 코드는 아래와 같다. 
+# `apply()` 메서드를 사용하여, 각 그룹별 영어 점수의 평균을 구하는 코드는 아래와 같다. 
 
 # In[35]:
 
@@ -404,7 +404,7 @@ df_score_gp.mean()
 df_score_gp.English.apply(lambda x:x.mean())
 
 
-# `transform()` 메소드를 사용하여, 각 그룹별 영어 점수의 평균을 구하는 코드는 아래와 같다. 
+# `transform()` 메서드를 사용하여, 각 그룹별 영어 점수의 평균을 구하는 코드는 아래와 같다. 
 
 # In[36]:
 
@@ -412,7 +412,7 @@ df_score_gp.English.apply(lambda x:x.mean())
 df_score_gp.English.transform(lambda x:x.mean())
 
 
-# `apply()` 메소드를 사용하여, 각 그룹별 영어 점수의 결측치를 해당하는 그룹의 영어 점수 평균으로 대체하는 코드는 아래와 같다.  
+# `apply()` 메서드를 사용하여, 각 그룹별 영어 점수의 결측치를 해당하는 그룹의 영어 점수 평균으로 대체하는 코드는 아래와 같다.  
 # 
 # 참고) 결측치는 `fillna()`를 사용해 다른 값으로 대체할 수 있다. 인자로 대체하고 싶은 값을 사용하면 된다.   
 # 참고) `round()` 함수는 인자로 들어온 값을 반올림해준다. 
@@ -423,7 +423,7 @@ df_score_gp.English.transform(lambda x:x.mean())
 df_score_gp.English.apply(lambda x : x.fillna(round(x.mean())))
 
 
-# `transform()` 메소드를 사용하여, 각 그룹별 영어 점수의 결측치를 해당하는 그룹의 영어 점수 평균으로 대체하는 코드는 아래와 같다. 
+# `transform()` 메서드를 사용하여, 각 그룹별 영어 점수의 결측치를 해당하는 그룹의 영어 점수 평균으로 대체하는 코드는 아래와 같다. 
 
 # In[38]:
 
@@ -476,7 +476,7 @@ data = iris[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]
 data
 
 
-# 데이터프레임의 `boxplot()` 메소드를 사용하여 쉽게 상자그림을 그릴 수 있다.  
+# 데이터프레임의 `boxplot()` 메서드를 사용하여 쉽게 상자그림을 그릴 수 있다.  
 
 # In[41]:
 
@@ -493,7 +493,7 @@ plt.show()
 # * `Upper`열 : `Q3 + 1.5*Q3`를 계산한 값
 # * `Outlier`열 : `Lower`보다 작거나 `Upper`보다 크면 `True`, 아니면 `False`  
 # 
-# 참고) 사분위수는 `quantile()` 메소드로 구할 수 있다. 예를 들어, iris의 `sepal_width`열의 제 1사분위수는 아래와 같이 구할 수 있다. 
+# 참고) 사분위수는 `quantile()` 메서드로 구할 수 있다. 예를 들어, iris의 `sepal_width`열의 제 1사분위수는 아래와 같이 구할 수 있다. 
 
 # In[42]:
 
@@ -622,11 +622,11 @@ plt.show()
 # 
 # 예제1)`df.apply(np.sqrt)` # 모든 열에 제곱근 함수를 적용
 # 
-# **주의** : `apply()` 메서드를 사용해도 데이터프레임 `df`는 변하지 않는다. 
+# **주의** : `apply()` 메서드를 사용해도 데이터프레임 `df`는 변하지 않는다.   
 # 
-# 예제2) `df.apply(np.sum)` # 각 열에 `np.sum()`함수를 적용. 각 열별로 합을 구함. 
-# 예제3) `df.apply(np.sum, axis = 1)` # 각 행에 `np.sum()`함수를 적용. 각 행별로 합을 구함. 
-# 예제4) `df.apply(lambda x : x + 10)` : 각 열에 인자로 들어온 람다 함수를 적용.
+# 예제2) `df.apply(np.sum)` # 각 열에 `np.sum()`함수를 적용. 각 열별로 합을 구함.   
+# 예제3) `df.apply(np.sum, axis = 1)` # 각 행에 `np.sum()`함수를 적용. 각 행별로 합을 구함.   
+# 예제4) `df.apply(lambda x : x + 10)` : 각 열에 인자로 들어온 람다 함수를 적용.  
 # 
 # ---
 # <font color="red">transform 메서드</font>
@@ -651,3 +651,9 @@ plt.show()
 # * 익명함수 또는 lambda 함수 : `lambda arguments : expression`
 #   * `lambda x : x + 3`  # 숫자를 인자로 받아 3을 더한 값을 반환하는 람다 함수
 #   * `lambda a, b : a + b`  # 두 숫자를 인자로 받아, 더한 값을 반환하는 람다 함수
+
+# In[ ]:
+
+
+
+

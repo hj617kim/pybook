@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>10. 함수 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>11. 함수 &#8212; 파이썬 프로그래밍 기초</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,8 +52,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="12. 리스트" href="ch11.html" />
-    <link rel="prev" title="9. 오류 및 예외처리" href="ch09.html" />
+    <link rel="next" title="13. 리스트" href="ch11.html" />
+    <link rel="prev" title="10. 오류 및 예외처리" href="ch09.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -130,52 +130,57 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch08.html">
-   8. 입력과 출력
+   9. 입력과 출력
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch09.html">
-   9. 오류 및 예외처리
+   10. 오류 및 예외처리
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   10. 함수
+   11. 함수
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch11.html">
-   12. 리스트
+   13. 리스트
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch12.html">
-   13. 튜플
+   14. 튜플
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch13.html">
-   14. 딕셔너리
+   15. 딕셔너리
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch14.html">
-   15. 파일 다루기
+   16. 파일 다루기
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch15.html">
-   16. 웹 사이트에서 데이터 가져오기
+   17. 웹 사이트에서 데이터 가져오기
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch16.html">
-   18. 넘파이(Numpy)
+   19. 넘파이(Numpy)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch17.html">
-   23. 판다스(Pandas) 2
+   24. 판다스(Pandas) 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch18.html">
+   27. 판다스(Pandas) 3
   </a>
  </li>
 </ul>
@@ -284,49 +289,49 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   10. 함수
+   11. 함수
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id2">
-     10.1. 함수 정의하기
+     11.1. 함수 정의하기
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id3">
-     10.2. 함수 호출하기
+     11.2. 함수 호출하기
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
-     10.3. 입력값이 없는 함수
+     11.3. 입력값이 없는 함수
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id5">
-     10.4. 리턴값이 없는 함수
+     11.4. 리턴값이 없는 함수
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id6">
-     10.5. 지역변수와 전역변수
+     11.5. 지역변수와 전역변수
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#docstring">
-     10.6. 문서화 문자열(docstring) 활용
+     11.6. 문서화 문자열(docstring) 활용
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id7">
-   11. 모듈
+   12. 모듈
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
-     11.1. 모듈 사용법
+     12.1. 모듈 사용법
     </a>
    </li>
   </ul>
@@ -353,49 +358,49 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   10. 함수
+   11. 함수
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id2">
-     10.1. 함수 정의하기
+     11.1. 함수 정의하기
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id3">
-     10.2. 함수 호출하기
+     11.2. 함수 호출하기
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
-     10.3. 입력값이 없는 함수
+     11.3. 입력값이 없는 함수
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id5">
-     10.4. 리턴값이 없는 함수
+     11.4. 리턴값이 없는 함수
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id6">
-     10.5. 지역변수와 전역변수
+     11.5. 지역변수와 전역변수
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#docstring">
-     10.6. 문서화 문자열(docstring) 활용
+     11.6. 문서화 문자열(docstring) 활용
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id7">
-   11. 모듈
+   12. 모듈
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
-     11.1. 모듈 사용법
+     12.1. 모듈 사용법
     </a>
    </li>
   </ul>
@@ -410,10 +415,10 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1><span class="section-number">10. </span>함수<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">11. </span>함수<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>함수<font size="2">Function</font>는 특정 값들을 입력받아 그 값들을 조작한 다음에 그 결과값을 되돌려 주는 것으로, 그동안 여러 함수들(<code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">input</span></code> 등등)을 살펴봤다. 이러한 함수들은 파이썬에서 이미 누군가에 의해 정의된 함수로, 파이썬 <strong>내장함수</strong>라고 부른다.</p>
 <div class="section" id="id2">
-<h2><span class="section-number">10.1. </span>함수 정의하기<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.1. </span>함수 정의하기<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>한편, 사용자가 필요에 따라 함수를 임의로 정의할 수도 있다. 파이썬에서는 함수를 정의하기 위해 <code class="docutils literal notranslate"><span class="pre">def</span></code>라는 키워드를 이용하며, 아래의 형식을 따른다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">함수이름</span><span class="p">(</span><span class="n">매개변수1</span><span class="p">,</span> <span class="n">매개변수2</span><span class="p">,</span><span class="o">...</span><span class="p">,</span> <span class="n">매개변수n</span><span class="p">)</span> <span class="p">:</span>
     <span class="n">함수본문</span>
@@ -439,7 +444,7 @@
 </div>
 </div>
 <div class="section" id="id3">
-<h2><span class="section-number">10.2. </span>함수 호출하기<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.2. </span>함수 호출하기<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>함수를 정의한 후에 사용하려면 <strong>함수를 호출</strong>해야 한다.<br />
 <strong>함수를 호출한다</strong>는 말은 필요한 만큼의 값을 인자로 사용하여 함수를 실행한다는 의미이다. 즉, 함수 호출은 아래 모양의 코드를 실행하는 것이다.</p>
 <p>함수를 호출할 때 전달하는 입력값들은 <strong>인자</strong>라고 부른다.</p>
@@ -494,7 +499,7 @@
 </div>
 </div>
 <div class="section" id="id4">
-<h2><span class="section-number">10.3. </span>입력값이 없는 함수<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.3. </span>입력값이 없는 함수<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>입력값이 없다면, 아래와 같이 함수 이름 뒤의 괄호를 비워두면 된다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">함수이름</span><span class="p">()</span> <span class="p">:</span>
     <span class="n">함수본문</span>
@@ -556,7 +561,7 @@
 </div>
 </div>
 <div class="section" id="id5">
-<h2><span class="section-number">10.4. </span>리턴값이 없는 함수<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.4. </span>리턴값이 없는 함수<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>리턴값이 명시되지 않은 대표적인 함수는 <code class="docutils literal notranslate"><span class="pre">print</span></code> 함수이다. 리턴값이 명시되지 않은 함수의 리턴값은 항상 <code class="docutils literal notranslate"><span class="pre">None</span></code>이다. <code class="docutils literal notranslate"><span class="pre">None</span></code>은 사실상 아무런 의미를 갖지 않는 값이며 어떠한 재활용도 불가능하다.</p>
 <p><code class="docutils literal notranslate"><span class="pre">print</span></code> 함수가 리턴하는 값을 확인해보자.</p>
 <div class="cell docutils container">
@@ -651,7 +656,7 @@ None
 </div>
 </div>
 <div class="section" id="id6">
-<h2><span class="section-number">10.5. </span>지역변수와 전역변수<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.5. </span>지역변수와 전역변수<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>변수들은 어디에서 정의되었는가에 따라 지역변수(local variable) 또는 전역변수(global variable)라 불린다.</p>
 <p>함수 내부에서 선언되는 변수는 함수가 실행되는 동안에만 의미를 갖는 변수들이며, 이런 변수들을 <strong>지역변수</strong>라 부른다.<br />
 반면에 함수 외부에서 정의된 변수는 <strong>전역변수</strong>이다.</p>
@@ -728,11 +733,11 @@ None
 </div>
 </div>
 <div class="section" id="docstring">
-<h2><span class="section-number">10.6. </span>문서화 문자열(docstring) 활용<a class="headerlink" href="#docstring" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.6. </span>문서화 문자열(docstring) 활용<a class="headerlink" href="#docstring" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>프로그래밍 코드를 저장한 파일에는 코드 이외에 코드와 관련된 주석을 적절하게 포함하고 있어야 한다. 이를 “문서화”라고 한다.</p></li>
 <li><p>문서화는 코드 이상으로 중요하다. 문서화가 제대로 되어있지 않은 경우 코드 개발 및 관리를 매우 어렵게 만든다.</p></li>
-<li><p>문서화의 기본은 함수에 주석을 추가하는 것이다. 함수 정의에 사용되는 주석을 **docstring(문서화 문자열)**이라 부른다.</p></li>
+<li><p>문서화의 기본은 함수에 주석을 추가하는 것이다. 함수 정의에 사용되는 주석을 <strong>docstring(문서화 문자열)</strong> 이라 부른다.</p></li>
 <li><p>큰따옴표 세 개(“””…”””) 또는 작은따옴표 세 개(‘’’…’’’)로 둘러싸인 부분이 문서화를 위해 사용되며 주석으로 처리된다.</p></li>
 <li><p>함수에 주석을 달아주면 <code class="docutils literal notranslate"><span class="pre">help</span></code> 함수를 이용하여 해당 함수의 역할 및 사용법을 확인할 수 있다.</p></li>
 </ul>
@@ -789,7 +794,7 @@ mySum(a, b)
 </div>
 </div>
 <div class="proof example admonition" id="func_ex01">
-<p class="admonition-title"><span class="caption-number">Example 10.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 11.1 </span></p>
 <div class="example-content section" id="proof-content">
 <p>주어진 자연수 <code class="docutils literal notranslate"><span class="pre">n</span></code>이 짝수면 <code class="docutils literal notranslate"><span class="pre">True</span></code>를, 홀수면 <code class="docutils literal notranslate"><span class="pre">False</span></code>를 리턴하는 함수 <code class="docutils literal notranslate"><span class="pre">even_test(n)</span></code>를 구현하여라.</p>
 </div>
@@ -868,7 +873,7 @@ mySum(a, b)
 </div>
 </div>
 <div class="proof example admonition" id="func_ex02">
-<p class="admonition-title"><span class="caption-number">Example 10.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 11.2 </span></p>
 <div class="example-content section" id="proof-content">
 <p>자연수 <code class="docutils literal notranslate"><span class="pre">n</span></code>이 주어졌을 때, 1부터 n까지의 모든 자연수의 곱을 리턴하는 함수 <code class="docutils literal notranslate"><span class="pre">factorial(n)</span></code>을 구현하여라.</p>
 </div>
@@ -943,13 +948,13 @@ mySum(a, b)
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="id7">
-<h1><span class="section-number">11. </span>모듈<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">12. </span>모듈<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h1>
 <p>모듈<font size="2">Module</font>은 우선 단순한 파이썬 코드를 담고 있는, 확장자가 <code class="docutils literal notranslate"><span class="pre">py</span></code>인 파일이다. 그리고 하나의 모듈에는 관련된 일을 처리할 때 사용하는 여러 프로그램 코드들이 포함되어 있다.</p>
 <p>예를 들어, <code class="docutils literal notranslate"><span class="pre">math</span></code> 모듈은 <code class="docutils literal notranslate"><span class="pre">sin</span></code>, <code class="docutils literal notranslate"><span class="pre">cos</span></code>, <code class="docutils literal notranslate"><span class="pre">log</span></code> 등 수학에서 매우 중요한 역할을 하는 함수들이 정의되어 있다. 그리고 <code class="docutils literal notranslate"><span class="pre">time</span></code> 모듈에는 <code class="docutils literal notranslate"><span class="pre">sleep</span></code> 함수처럼 시간 활용과 관련된 다양한 함수가 포함되어 있다.</p>
 <p>참고) 파일 확장자는 파일의 형식이나 종류를 표시하기 위해 파일명 뒤에 사용하는 것이다.<br />
 예를 들어, 확장자가 <code class="docutils literal notranslate"><span class="pre">hwp</span></code>라면 한글 문서 파일인 것을 알 수 있다.</p>
 <div class="section" id="id8">
-<h2><span class="section-number">11.1. </span>모듈 사용법<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.1. </span>모듈 사용법<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <p>특정 모듈에 포함된 코드(예를 들어, 함수)를 사용하려면 먼저 해당 모듈을 <code class="docutils literal notranslate"><span class="pre">import</span></code> 해야 한다.</p>
 <p>모듈을 임포트하는 방법을 살펴보자.</p>
 <p><strong>모듈 임포트 방법1</strong></p>
@@ -1472,13 +1477,13 @@ sqrt(x, /)
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">9. </span>오류 및 예외처리</p>
+            <p class="prev-next-title"><span class="section-number">10. </span>오류 및 예외처리</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="ch11.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">12. </span>리스트</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>리스트</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -821,7 +821,7 @@ pd.isnull(sr5)
 pd.notnull(sr5)
 
 
-# `isnull()`과 `notnull()` 메소드를 사용해도 같은 결과가 나온다. 
+# `isnull()`과 `notnull()` 메서드를 사용해도 같은 결과가 나온다. 
 
 # In[85]:
 

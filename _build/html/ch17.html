@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>23. 판다스(Pandas) 2 &#8212; 파이썬 프로그래밍 기초</title>
+    <title>24. 판다스(Pandas) 2 &#8212; 파이썬 프로그래밍 기초</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,7 +52,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="18. 넘파이(Numpy)" href="ch16.html" />
+    <link rel="next" title="27. 판다스(Pandas) 3" href="ch18.html" />
+    <link rel="prev" title="19. 넘파이(Numpy)" href="ch16.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -129,52 +130,57 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch08.html">
-   8. 입력과 출력
+   9. 입력과 출력
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch09.html">
-   9. 오류 및 예외처리
+   10. 오류 및 예외처리
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch10.html">
-   10. 함수
+   11. 함수
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch11.html">
-   12. 리스트
+   13. 리스트
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch12.html">
-   13. 튜플
+   14. 튜플
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch13.html">
-   14. 딕셔너리
+   15. 딕셔너리
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch14.html">
-   15. 파일 다루기
+   16. 파일 다루기
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch15.html">
-   16. 웹 사이트에서 데이터 가져오기
+   17. 웹 사이트에서 데이터 가져오기
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch16.html">
-   18. 넘파이(Numpy)
+   19. 넘파이(Numpy)
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   23. 판다스(Pandas) 2
+   24. 판다스(Pandas) 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch18.html">
+   27. 판다스(Pandas) 3
   </a>
  </li>
 </ul>
@@ -283,71 +289,71 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   23. 판다스(Pandas) 2
+   24. 판다스(Pandas) 2
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     23.1. 데이터 호출1
+     24.1. 데이터 호출1
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id2">
-     23.2. 데이터 분석
+     24.2. 데이터 분석
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#groupby">
-       23.2.1. groupby()
+       24.2.1. groupby()
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id3">
-     23.3. 데이터 시각화1
+     24.3. 데이터 시각화1
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id4">
-       23.3.1. 막대 그래프
+       24.3.1. 막대 그래프
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id5">
-       23.3.2. 원 그래프(파이 차트)
+       24.3.2. 원 그래프(파이 차트)
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id6">
-     23.4. 데이터 호출2
+     24.4. 데이터 호출2
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id7">
-     23.5. 데이터 전처리
+     24.5. 데이터 전처리
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
-     23.6. 데이터 시각화2
+     24.6. 데이터 시각화2
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id9">
-       23.6.1. 선 그래프
+       24.6.1. 선 그래프
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id10">
-       23.6.2. 산점도
+       24.6.2. 산점도
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id11">
-       23.6.3. 움직이는 산점도
+       24.6.3. 움직이는 산점도
       </a>
      </li>
     </ul>
@@ -356,12 +362,12 @@
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id12">
-   24. 판다스2 요약
+   25. 판다스2 요약
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id13">
-   25. 데이터 시각화 요약
+   26. 데이터 시각화 요약
   </a>
  </li>
 </ul>
@@ -386,71 +392,71 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   23. 판다스(Pandas) 2
+   24. 판다스(Pandas) 2
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     23.1. 데이터 호출1
+     24.1. 데이터 호출1
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id2">
-     23.2. 데이터 분석
+     24.2. 데이터 분석
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#groupby">
-       23.2.1. groupby()
+       24.2.1. groupby()
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id3">
-     23.3. 데이터 시각화1
+     24.3. 데이터 시각화1
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id4">
-       23.3.1. 막대 그래프
+       24.3.1. 막대 그래프
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id5">
-       23.3.2. 원 그래프(파이 차트)
+       24.3.2. 원 그래프(파이 차트)
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id6">
-     23.4. 데이터 호출2
+     24.4. 데이터 호출2
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id7">
-     23.5. 데이터 전처리
+     24.5. 데이터 전처리
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
-     23.6. 데이터 시각화2
+     24.6. 데이터 시각화2
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id9">
-       23.6.1. 선 그래프
+       24.6.1. 선 그래프
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id10">
-       23.6.2. 산점도
+       24.6.2. 산점도
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id11">
-       23.6.3. 움직이는 산점도
+       24.6.3. 움직이는 산점도
       </a>
      </li>
     </ul>
@@ -459,12 +465,12 @@
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id12">
-   24. 판다스2 요약
+   25. 판다스2 요약
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id13">
-   25. 데이터 시각화 요약
+   26. 데이터 시각화 요약
   </a>
  </li>
 </ul>
@@ -477,7 +483,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="pandas-2">
-<h1><span class="section-number">23. </span>판다스(Pandas) 2<a class="headerlink" href="#pandas-2" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">24. </span>판다스(Pandas) 2<a class="headerlink" href="#pandas-2" title="Permalink to this headline">¶</a></h1>
 <p>여기서는 아래와 같은 내용을 다룬다.</p>
 <ul class="simple">
 <li><p>csv 파일 불러오기</p></li>
@@ -486,7 +492,7 @@
 <li><p>데이터 시각화(막대 그래프, 원 그래프, 선 그래프, 산점도)</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">drinks.csv</span></code>에는 국가별 음주 데이터가 담겨있다.</p>
-<p>참고) csv는 Comma-Separated Values의 줄임말로, 쉼표(콤마,)를 기준으로 항목을 구분하여 정리되어 있는 파일을 의미한다.</p>
+<p>참고) csv는 Comma-Separated Values의 줄임말로, 콤마(,)를 기준으로 항목을 구분하여 정리되어 있는 파일을 의미한다.</p>
 <p>우선, pandas 모듈을 임포트하자.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -496,7 +502,7 @@
 </div>
 </div>
 <div class="section" id="id1">
-<h2><span class="section-number">23.1. </span>데이터 호출1<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">24.1. </span>데이터 호출1<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>csv 파일을 불러오기 위해, pandas 모듈의 <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> 함수를 이용한다.<br />
 <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> 함수에 대해 알고 싶으면, <code class="docutils literal notranslate"><span class="pre">help</span></code> 함수를 사용하여 확인할 수 있다.</p>
 <blockquote>
@@ -869,7 +875,7 @@
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">info()</span></code> 메소드로 데이터의 기본 정보 몇 가지를 확인해보자.</p>
+<p><code class="docutils literal notranslate"><span class="pre">info()</span></code> 메서드로 데이터의 기본 정보 몇 가지를 확인해보자.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drinks</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -907,7 +913,7 @@ memory usage: 9.2+ KB
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">describe()</span></code> 메소드로 빈도수, 평균, 표준편차, 최댓값, 최솟값 등과 같은 기초통계량을 확인할 수 있다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">describe()</span></code> 메서드로 빈도수, 평균, 표준편차, 최댓값, 최솟값 등과 같은 기초통계량을 확인할 수 있다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drinks</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -1000,8 +1006,8 @@ memory usage: 9.2+ KB
 </table>
 </div></div></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">unique()</span></code> 메소드를 사용하면, 중복 값을 제거하고 유일한 값만을 보여준다.<br />
-예를 들어, <code class="docutils literal notranslate"><span class="pre">continent</span></code>열에 어떠한 항목들이 있는지 알고 싶을 때 아래와 같이 <code class="docutils literal notranslate"><span class="pre">unique()</span></code> 메소드를 사용할 수 있다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">unique()</span></code> 메서드를 사용하면, 중복 값을 제거하고 유일한 값만을 보여준다.<br />
+예를 들어, <code class="docutils literal notranslate"><span class="pre">continent</span></code>열에 어떠한 항목들이 있는지 알고 싶을 때 아래와 같이 <code class="docutils literal notranslate"><span class="pre">unique()</span></code> 메서드를 사용할 수 있다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drinks</span><span class="o">.</span><span class="n">continent</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
@@ -1014,7 +1020,7 @@ memory usage: 9.2+ KB
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> 메소드는 유일한 값과 그 개수를 확인할 때 사용한다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> 메서드는 유일한 값과 그 개수를 확인할 때 사용한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drinks</span><span class="o">.</span><span class="n">continent</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
@@ -1034,11 +1040,11 @@ Name: continent, dtype: int64
 </div>
 </div>
 <div class="section" id="id2">
-<h2><span class="section-number">23.2. </span>데이터 분석<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">24.2. </span>데이터 분석<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>예를 들어, 맥주 소비량이 가장 높은 나라의 이름을 찾기 위해서 다음 두 가지 방식 중에 한 가지를 활용할 수 있다.</p>
 <ul class="simple">
 <li><p>방법 1 : <code class="docutils literal notranslate"><span class="pre">beer_servings</span></code> 열을 기준으로 내림차순으로 정렬한 후 첫째 항 선택</p></li>
-<li><p>방법 2 : <code class="docutils literal notranslate"><span class="pre">beer_servings</span></code> 열에 대해 <code class="docutils literal notranslate"><span class="pre">max()</span></code> 함수 적용.</p></li>
+<li><p>방법 2 : <code class="docutils literal notranslate"><span class="pre">beer_servings</span></code> 열에 대해 <code class="docutils literal notranslate"><span class="pre">max()</span></code> 메서드 적용.</p></li>
 </ul>
 <ul class="simple">
 <li><p>방법 1 : 특정 열을 기준으로 내림차순으로 정렬하는 방법은 아래와 같다.</p></li>
@@ -1232,7 +1238,7 @@ Name: continent, dtype: int64
 </div>
 <p>맥주 소비량이 가장 높은 나라는 나미비아Namibia인 것을 알 수 있다.</p>
 <ul class="simple">
-<li><p>방법 2 : <code class="docutils literal notranslate"><span class="pre">beer_servings</span></code>열의 포함된 숫자들을 대상으로 최댓값을 찾기 위해 <code class="docutils literal notranslate"><span class="pre">max()</span></code> 함수를 적용하는 방식은 다음과 같다. 특정 열에 대해 일괄적으로 어떤 함수를 적용하는 방식은 <code class="docutils literal notranslate"><span class="pre">max()</span></code> 함수를 활용하는 방식과 유사하다.</p></li>
+<li><p>방법 2 : <code class="docutils literal notranslate"><span class="pre">beer_servings</span></code>열의 포함된 숫자들을 대상으로 최댓값을 찾기 위해 <code class="docutils literal notranslate"><span class="pre">max()</span></code> 메서드를 적용하는 방식은 다음과 같다. 특정 열에 대해 일괄적으로 어떤 메서드를 적용하는 방식은 <code class="docutils literal notranslate"><span class="pre">max()</span></code> 메서드를 활용하는 방식과 유사하다.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1295,7 +1301,7 @@ Name: continent, dtype: int64
 </div></div></div>
 </div>
 <div class="section" id="groupby">
-<h3><span class="section-number">23.2.1. </span>groupby()<a class="headerlink" href="#groupby" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">24.2.1. </span>groupby()<a class="headerlink" href="#groupby" title="Permalink to this headline">¶</a></h3>
 <p>데이터를 그룹별로 나누어 분석하고자 할 때, <code class="docutils literal notranslate"><span class="pre">groupby()</span></code>를 사용할 수 있다.<br />
 예를 들어, <code class="docutils literal notranslate"><span class="pre">drinks</span></code>를 대륙(continent)별로 분석하고 싶다면, 아래와 같이 코드를 작성하면 된다.</p>
 <div class="cell docutils container">
@@ -1306,7 +1312,7 @@ Name: continent, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7ff6d08f66d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f1607ff66a0&gt;
 </pre></div>
 </div>
 </div>
@@ -1680,7 +1686,7 @@ Name: continent, dtype: int64
 </div>
 </div>
 </div>
-<p>예를 들어, 대륙별 각 열의 평균이 알고 싶다면, <code class="docutils literal notranslate"><span class="pre">GroupBy</span></code> 객체에 <code class="docutils literal notranslate"><span class="pre">mean()</span></code> 메소드를 사용하면 된다.</p>
+<p>예를 들어, 대륙별 각 열의 평균이 알고 싶다면, <code class="docutils literal notranslate"><span class="pre">GroupBy</span></code> 객체에 <code class="docutils literal notranslate"><span class="pre">mean()</span></code> 메서드를 사용하면 된다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drinks_gp</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -1780,7 +1786,7 @@ Name: beer_servings, dtype: float64
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">median()</span></code> 메소드를 사용하여, 대륙별 맥주 소비량의 중앙값을 구할 수도 있다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">median()</span></code> 메서드를 사용하여, 대륙별 맥주 소비량의 중앙값을 구할 수도 있다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beer_median</span> <span class="o">=</span> <span class="n">drinks_gp</span><span class="o">.</span><span class="n">beer_servings</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
@@ -1843,7 +1849,7 @@ Name: wine_servings, dtype: float64
 </div>
 </div>
 <div class="section" id="id3">
-<h2><span class="section-number">23.3. </span>데이터 시각화1<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">24.3. </span>데이터 시각화1<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>데이터 분석을 위해 기본적으로 하는 일 중 하나가 데이터 시각화이다. 데이터를 시각화하는 것은 어렵지 않지만, 적합한 시각화를 만드는 일은 매우 어려우며, 많은 훈련과 직관이 요구된다.</p>
 <p>여기서는 데이터를 시각화하는 기본적인 두 가지 방법을 배운다.</p>
 <ul class="simple">
@@ -1851,7 +1857,7 @@ Name: wine_servings, dtype: float64
 <li><p>원 그래프</p></li>
 </ul>
 <div class="section" id="id4">
-<h3><span class="section-number">23.3.1. </span>막대 그래프<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">24.3.1. </span>막대 그래프<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>막대 그래프는 각 항목의 크기를 한 눈에 비교할 수 있도록 도와주는 그래프이다.<br />
 <code class="docutils literal notranslate"><span class="pre">plt.bar()</span></code> 를 이용하여 막대 그래프를 그릴 수 있다.</p>
 <div class="cell docutils container">
@@ -1883,7 +1889,7 @@ Name: wine_servings, dtype: float64
 </div>
 </div>
 <div class="section" id="id5">
-<h3><span class="section-number">23.3.2. </span>원 그래프(파이 차트)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">24.3.2. </span>원 그래프(파이 차트)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>원 그래프는 각 항목이 전체에서 차지하는 비중을 한 눈에 알아볼 수 있도록 도와주는 그래프이다.<br />
 <code class="docutils literal notranslate"><span class="pre">plt.pie()</span></code> 를 이용하여 원 그래프를 그릴 수 있다.</p>
 <div class="cell docutils container">
@@ -1924,7 +1930,7 @@ Name: wine_servings, dtype: float64
 </div>
 </div>
 <div class="section" id="id6">
-<h2><span class="section-number">23.4. </span>데이터 호출2<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">24.4. </span>데이터 호출2<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code> 함수를 이용해, <code class="docutils literal notranslate"><span class="pre">ABdata.csv</span></code> 파일을 불러오자.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2154,7 +2160,7 @@ Name: wine_servings, dtype: float64
 <p>117 rows × 3 columns</p>
 </div></div></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">info()</span></code> 메소드로 데이터의 기본 정보 몇 가지를 확인해보자.</p>
+<p><code class="docutils literal notranslate"><span class="pre">info()</span></code> 메서드로 데이터의 기본 정보 몇 가지를 확인해보자.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ab_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -2177,7 +2183,7 @@ memory usage: 3.8+ KB
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">describe()</span></code> 메소드로 기초통계량을 확인해보자.</p>
+<p><code class="docutils literal notranslate"><span class="pre">describe()</span></code> 메서드로 기초통계량을 확인해보자.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ab_df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -2254,7 +2260,7 @@ memory usage: 3.8+ KB
 </div>
 </div>
 <div class="section" id="id7">
-<h2><span class="section-number">23.5. </span>데이터 전처리<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">24.5. </span>데이터 전처리<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <p>여러 개의 데이터를 합하는 방법과 결측치를 처리하는 방법을 살펴보자.</p>
 <p><code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code> 함수를 이용해 <code class="docutils literal notranslate"><span class="pre">ABdata1.csv</span></code>파일을 불러오자.</p>
 <div class="cell docutils container">
@@ -4286,14 +4292,14 @@ dtype: int64
 </div>
 </div>
 <div class="section" id="id8">
-<h2><span class="section-number">23.6. </span>데이터 시각화2<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">24.6. </span>데이터 시각화2<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <p>여기서는 데이터를 시각화하는 두 가지 방법을 살펴보자.</p>
 <ul class="simple">
 <li><p>선 그래프</p></li>
 <li><p>산점도</p></li>
 </ul>
 <div class="section" id="id9">
-<h3><span class="section-number">23.6.1. </span>선 그래프<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">24.6.1. </span>선 그래프<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>선 그래프는 변화 추이를 살펴보는 것을 도와주는 그래프이다.<br />
 plt.plot() 를 이용하여 선 그래프를 그릴 수 있다.</p>
 <p>예를 들어, 데이터프레임 <code class="docutils literal notranslate"><span class="pre">df</span></code>의 일부 자료로 선 그래프를 그려보자.</p>
@@ -4317,7 +4323,7 @@ plt.plot() 를 이용하여 선 그래프를 그릴 수 있다.</p>
 </div>
 </div>
 <div class="section" id="id10">
-<h3><span class="section-number">23.6.2. </span>산점도<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">24.6.2. </span>산점도<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <p>산점도는 두 변수의 관계를 보여주는 데에 매우 적합한 그래프이다.</p>
 <p>산점도를 그리기 전에 피어슨 상관계수(Pearson correlation coefficient)를 구해보자.<br />
 피어슨 상관계수는 두 변수 간의 관련성 정도를 나타낸다.</p>
@@ -4426,7 +4432,7 @@ plt.plot() 를 이용하여 선 그래프를 그릴 수 있다.</p>
 </div>
 </div>
 <div class="section" id="id11">
-<h3><span class="section-number">23.6.3. </span>움직이는 산점도<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">24.6.3. </span>움직이는 산점도<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p>시간에 따라 움직이는 산점도를 그려보자.<br />
 데이터프레임 <code class="docutils literal notranslate"><span class="pre">df</span></code>는 아래와 같다. 이 데이터는 시간(Time)이 0일 때라고 가정하자.</p>
 <div class="cell docutils container">
@@ -4717,7 +4723,7 @@ plt.plot() 를 이용하여 선 그래프를 그릴 수 있다.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7ff6cc5cd970&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f1603c27100&gt;
 </pre></div>
 </div>
 <img alt="_images/ch17_126_1.png" src="_images/ch17_126_1.png" />
@@ -4743,7 +4749,7 @@ plt.plot() 를 이용하여 선 그래프를 그릴 수 있다.</p>
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="id12">
-<h1><span class="section-number">24. </span>판다스2 요약<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">25. </span>판다스2 요약<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h1>
 <ul>
 <li><p>판다스 모듈 임포트 : <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code></p></li>
 <li><p><font color="red">csv 파일</font> 불러오기 : <code class="docutils literal notranslate"><span class="pre">pd.read_csv(파일이름)</span></code> 파일이름에는 경로를 포함하고, 문자열로 지정</p>
@@ -4839,7 +4845,7 @@ plt.plot() 를 이용하여 선 그래프를 그릴 수 있다.</p>
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="id13">
-<h1><span class="section-number">25. </span>데이터 시각화 요약<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">26. </span>데이터 시각화 요약<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>시각화 모듈 임포트 : <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">matplotlib.pyplot</span> <span class="pre">as</span> <span class="pre">plt</span></code></p></li>
 </ul>
@@ -4960,8 +4966,15 @@ plt.plot() 를 이용하여 선 그래프를 그릴 수 있다.</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">18. </span>넘파이(Numpy)</p>
+            <p class="prev-next-title"><span class="section-number">19. </span>넘파이(Numpy)</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="ch18.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">27. </span>판다스(Pandas) 3</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             

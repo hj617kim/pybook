@@ -188,9 +188,15 @@ if you not in members :
 # 지금까지 살펴본 파이썬의 특징으로 인해  파이썬의 인기는 날이 갈수록 높아지고 있다. 
 # 프로그래밍 언어들의 인기도를 측정하는 
 # TIOBE 인덱스<font size="2">https://www.tiobe.com/tiobe-index//</font>에 
-# 따르면, 2022년 1월 기준으로 파이썬은 가장 인기있는 프로그래밍 언어이다. 
+# 따르면, 2023년 7월 기준으로 파이썬은 가장 인기있는 프로그래밍 언어이다. 
 # 이에 지금 당장 프로그래밍을 배우고자 한다면, 파이썬을 추천한다. 
 
 # <div align="center">
 #     <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch01/tiobe.png" style="width:800px;">
 # </div>
+
+# In[ ]:
+
+
+
+
